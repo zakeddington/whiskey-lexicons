@@ -6,9 +6,9 @@
 }
 
 body {
-	background-color: var(--color-token-surface);
-	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	background-color: var(--color-token-surface);
 }
 
 ::selection {
