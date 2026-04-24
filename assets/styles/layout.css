@@ -1,0 +1,76 @@
+/* Header styles */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--color-token-surface);
+  border-bottom: 1px solid rgba(218, 194, 182, 0.1);
+  z-index: 60;
+  width: 100%;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  max-width: 128rem;
+  margin: 0 auto;
+}
+
+.nav-title {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -0.025em;
+  color: var(--color-token-primary);
+}
+
+.nav-buttons {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-btn {
+  font-family: var(--font-label);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 0.25rem;
+  border: none;
+  background: none;
+  color: rgba(28, 28, 22, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-btn.active {
+  color: var(--color-token-primary);
+  border-bottom: 2px solid var(--color-token-primary);
+}
+
+.nav-btn:hover {
+  color: var(--color-token-primary);
+}
+
+/* Main content */
+.main-content {
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  max-width: 128rem;
+  margin: 0 auto;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}

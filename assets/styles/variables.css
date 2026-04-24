@@ -1,0 +1,45 @@
+/* Color Palette */
+:root {
+  /* Brown scale */
+  --color-palette-brown-900: #1c1c16;  /* darkest */
+  --color-palette-brown-700: #5f3800;  /* dark */
+  --color-palette-brown-600: #7f4d03;  /* medium-dark */
+  --color-palette-brown-500: #54433a;  /* medium */
+  --color-palette-brown-400: #712B13;  /* reddish */
+  --color-palette-brown-300: #877369;  /* light */
+
+  /* Cream scale */
+  --color-palette-cream-50: #fdf9ef;   /* lightest */
+  --color-palette-cream-100: #f7f3e9;  /* very light */
+  --color-palette-cream-200: #ece8de;  /* light */
+  --color-palette-cream-300: #e6e2d8;  /* medium */
+  --color-palette-cream-400: #dac2b6;  /* medium-dark */
+
+  /* Accent colors */
+  --color-palette-green-500: #52634f;  /* green */
+  --color-palette-blue-500: #304353;  /* blue-gray */
+}
+
+/* Color Tokens */
+:root {
+  --color-token-primary: var(--color-palette-brown-700);
+  --color-token-primary-container: var(--color-palette-brown-600);
+  --color-token-surface: var(--color-palette-cream-50);
+  --color-token-surface-low: var(--color-palette-cream-100);
+  --color-token-surface-high: var(--color-palette-cream-200);
+  --color-token-surface-highest: var(--color-palette-cream-300);
+  --color-token-on-surface: var(--color-palette-brown-900);
+  --color-token-on-variant: var(--color-palette-brown-500);
+  --color-token-outline: var(--color-palette-brown-300);
+  --color-token-outline-variant: var(--color-palette-cream-400);
+  --color-token-secondary: var(--color-palette-green-500);
+  --color-token-tertiary: var(--color-palette-blue-500);
+  --color-token-accent: var(--color-palette-brown-400);
+}
+
+/* Font variables */
+:root {
+  --font-serif: "Noto Serif", serif;
+  --font-body: "Newsreader", serif;
+  --font-label: "Work Sans", sans-serif;
+}

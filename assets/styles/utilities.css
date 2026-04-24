@@ -1,0 +1,12 @@
+/* Scrollbar styles */
+.glossary-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.glossary-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.glossary-scroll::-webkit-scrollbar-thumb {
+  background: rgba(218, 194, 182, 0.4);
+}
