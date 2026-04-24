@@ -1,176 +1,176 @@
 // Data constants
 const LEXICON_TERMS = [
-  {
-    id: 'abv',
-    name: 'Abv',
-    category: 'Measurement',
-    letter: 'A',
-    description: 'Alcohol by Volume. A standard measure of how much alcohol (ethanol) is contained in a given volume of an alcoholic beverage. Whiskey typically ranges from 40% to cask strength levels above 60%.'
-  },
-  {
-    id: 'angels-share',
-    name: "Angel's Share",
-    category: 'Phenomenon',
-    letter: 'A',
-    description: 'The portion of whiskey that evaporates from the barrel into the atmosphere during the aging process. In humid climates like Scotland, more alcohol evaporates, while in drier climates like Kentucky, more water evaporates.'
-  },
-  {
-    id: 'annihilation',
-    name: 'Annihilation',
-    category: 'Tasting',
-    letter: 'A',
-    description: 'A colloquial tasting term referring to the complete masking of subtle nuances by a dominant note, often heavy peat or overly aggressive oak influence.'
-  },
-  {
-    id: 'ballast',
-    name: 'Ballast',
-    category: 'Physics',
-    letter: 'B',
-    description: "The structural weight of a spirit's body, often derived from non-volatile components such as oils and esters that provide mouthfeel and viscosity."
-  },
-  {
-    id: 'bung',
-    name: 'Bung',
-    category: 'Component',
-    letter: 'B',
-    description: 'The stopper used to seal the bung-hole in a barrel. Traditionally made of poplar or cork, modern bungs may be nylon or silicone. The bung-hole is always located in the widest part of the barrel (the bilge).'
-  },
-  {
-    id: 'cask-strength',
-    name: 'Cask Strength',
-    category: 'Classification',
-    letter: 'C',
-    description: 'A whiskey bottled exactly as it comes out of the barrel, without the addition of water to lower the ABV. These spirits are prized for their purity and intensity of flavor.'
-  },
-  {
-    id: 'charring',
-    name: 'Charring',
-    category: 'Process',
-    letter: 'C',
-    description: 'The process of burning the interior of a barrel. This creates a layer of carbon that acts as a filter and breaks down hemicellulose into sugars, providing vanilla and caramel notes to the whiskey.'
-  }
+	{
+		id: 'abv',
+		name: 'Abv',
+		category: 'Measurement',
+		letter: 'A',
+		description: 'Alcohol by Volume. A standard measure of how much alcohol (ethanol) is contained in a given volume of an alcoholic beverage. Whiskey typically ranges from 40% to cask strength levels above 60%.'
+	},
+	{
+		id: 'angels-share',
+		name: "Angel's Share",
+		category: 'Phenomenon',
+		letter: 'A',
+		description: 'The portion of whiskey that evaporates from the barrel into the atmosphere during the aging process. In humid climates like Scotland, more alcohol evaporates, while in drier climates like Kentucky, more water evaporates.'
+	},
+	{
+		id: 'annihilation',
+		name: 'Annihilation',
+		category: 'Tasting',
+		letter: 'A',
+		description: 'A colloquial tasting term referring to the complete masking of subtle nuances by a dominant note, often heavy peat or overly aggressive oak influence.'
+	},
+	{
+		id: 'ballast',
+		name: 'Ballast',
+		category: 'Physics',
+		letter: 'B',
+		description: "The structural weight of a spirit's body, often derived from non-volatile components such as oils and esters that provide mouthfeel and viscosity."
+	},
+	{
+		id: 'bung',
+		name: 'Bung',
+		category: 'Component',
+		letter: 'B',
+		description: 'The stopper used to seal the bung-hole in a barrel. Traditionally made of poplar or cork, modern bungs may be nylon or silicone. The bung-hole is always located in the widest part of the barrel (the bilge).'
+	},
+	{
+		id: 'cask-strength',
+		name: 'Cask Strength',
+		category: 'Classification',
+		letter: 'C',
+		description: 'A whiskey bottled exactly as it comes out of the barrel, without the addition of water to lower the ABV. These spirits are prized for their purity and intensity of flavor.'
+	},
+	{
+		id: 'charring',
+		name: 'Charring',
+		category: 'Process',
+		letter: 'C',
+		description: 'The process of burning the interior of a barrel. This creates a layer of carbon that acts as a filter and breaks down hemicellulose into sugars, providing vanilla and caramel notes to the whiskey.'
+	}
 ];
 
 const REGIONS = [
-  {
-    id: 'scotland',
-    name: 'Scotland',
-    regulator: 'Scotch Whisky Association (SWA) & HMRC',
-    protectedIndication: 'Protected Indication',
-    bottleImage: 'assets/images/bottle-scotch.svg',
-    mapImage: 'assets/images/scotch-regions.svg',
-    legalFramework: {
-      location: 'Scotland.',
-      ingredients: 'Water, yeast, malted barley.',
-      aging: 'Min. 3 years.',
-      bottling: 'Min. 40% ABV.'
-    },
-    varieties: [
-      {
-        name: 'Single Malt',
-        category: 'Category 01',
-        description: '100% malted barley, batch distilled in copper pot stills at a single distillery. Aged for a minimum of 3 years in oak casks not exceeding 700L.',
-        tags: ['100% Malted Barley', 'Pot Still', 'Single Distillery']
-      },
-      {
-        name: 'Blended Scotch',
-        category: 'Category 02',
-        description: 'A combination of one or more single malt Scotch whiskies with one or more single grain Scotch whiskies. The largest category by volume globally.',
-        tags: ['Multi-Distillery', 'Malt & Grain']
-      }
-    ],
-    subRegions: [
-      { name: 'Speyside', description: "Home to over half of Scotland's distilleries. Known for elegant, complex, and fruit-forward malts." },
-      { name: 'Islay', description: 'Famous for pungent, peaty whiskies with notes of smoke, brine, and medicinal seaweed.' },
-      { name: 'Highlands', description: 'The largest region by area, offering a vast range of styles from light and floral to rich and peated.' },
-      { name: 'Lowlands', description: 'Traditionally known for lighter, grassier, unpeated whiskies, often triple-distilled.' },
-      { name: 'Campbeltown', description: "Once the 'Whisky Capital of the World', now a small but distinct region with robust, oily characters." }
-    ]
-  },
-  {
-    id: 'usa',
-    name: 'United States',
-    regulator: 'TTB (Alcohol and Tobacco Tax and Trade Bureau)',
-    protectedIndication: 'Title 27 CFR',
-    bottleImage: 'assets/images/bottle-bourbon.svg',
-    legalFramework: {
-      grain: 'Fermented cereal grain.',
-      aging: 'New charred oak containers.',
-      bottling: 'Min. 80° proof.',
-      special: { label: '"Straight"', value: 'Min. 2 years.' }
-    },
-    varieties: [
-      {
-        name: 'Bourbon',
-        category: 'Definitive Spirit',
-        description: 'Produced from at least 51% corn. Must be aged in new charred oak containers. Distilled to no more than 160° proof.',
-        tags: ['≥51% Corn', 'New Charred Oak', 'USA Only']
-      }
-    ]
-  },
-  {
-    id: 'ireland',
-    name: 'Ireland',
-    regulator: 'Dept. of Agriculture, Food and the Marine',
-    protectedIndication: 'Technical File (2014)',
-    bottleImage: 'assets/images/bottle-irish.svg',
-    legalFramework: {
-      location: 'Island of Ireland.',
-      grain: 'Malted cereals.',
-      aging: 'Min. 3 years wood.',
-      bottling: 'Min. 40% ABV.'
-    },
-    varieties: [
-      {
-        name: 'Single Pot Still',
-        category: 'Uniquely Irish',
-        description: 'Mix of malted (min 30%) and unmalted barley (min 30%). Distilled in pot stills at a single distillery.',
-        tags: ['Malted & Unmalted Barley', 'Pot Still']
-      }
-    ]
-  },
-  {
-    id: 'japan',
-    name: 'Japan',
-    regulator: 'Japan Spirits & Liqueurs Makers Association',
-    protectedIndication: 'Voluntary Standards',
-    bottleImage: 'assets/images/bottle-japanese.svg',
-    legalFramework: {
-      location: 'Japan only.',
-      ingredients: 'Water: Japanese source.',
-      aging: 'Min. 3 years wood.',
-      bottling: 'Japan, min 40% ABV.'
-    },
-    varieties: [
-      {
-        name: 'Single Malt',
-        category: 'Category 01',
-        description: '100% malted barley, distilled in pot stills at a single distillery. Aged for a minimum of 3 years in oak casks.',
-        tags: ['100% Malted Barley', 'Pot Still', 'Single Distillery']
-      }
-    ]
-  },
-  {
-    id: 'canada',
-    name: 'Canada',
-    regulator: 'Canadian Food Inspection Agency',
-    protectedIndication: 'Voluntary Standards',
-    bottleImage: 'assets/images/bottle-canadian.svg',
-    legalFramework: {
-      location: 'Canada.',
-      grain: 'Fermented cereal grain.',
-      aging: 'Min. 3 years wood.',
-      bottling: 'Min. 40% ABV.'
-    },
-    varieties: [
-      {
-        name: 'Canadian Whisky',
-        category: 'Category 01',
-        description: 'Typically a blend of corn, rye, and barley whiskies. Aged for a minimum of 3 years in oak barrels.',
-        tags: ['Blend', 'Corn Base', 'Light & Smooth']
-      }
-    ]
-  }
+	{
+		id: 'scotland',
+		name: 'Scotland',
+		regulator: 'Scotch Whisky Association (SWA) & HMRC',
+		protectedIndication: 'Protected Indication',
+		bottleImage: 'assets/images/bottle-scotch.svg',
+		mapImage: 'assets/images/scotch-regions.svg',
+		legalFramework: {
+			location: 'Scotland.',
+			ingredients: 'Water, yeast, malted barley.',
+			aging: 'Min. 3 years.',
+			bottling: 'Min. 40% ABV.'
+		},
+		varieties: [
+			{
+				name: 'Single Malt',
+				category: 'Category 01',
+				description: '100% malted barley, batch distilled in copper pot stills at a single distillery. Aged for a minimum of 3 years in oak casks not exceeding 700L.',
+				tags: ['100% Malted Barley', 'Pot Still', 'Single Distillery']
+			},
+			{
+				name: 'Blended Scotch',
+				category: 'Category 02',
+				description: 'A combination of one or more single malt Scotch whiskies with one or more single grain Scotch whiskies. The largest category by volume globally.',
+				tags: ['Multi-Distillery', 'Malt & Grain']
+			}
+		],
+		subRegions: [
+			{ name: 'Speyside', description: "Home to over half of Scotland's distilleries. Known for elegant, complex, and fruit-forward malts." },
+			{ name: 'Islay', description: 'Famous for pungent, peaty whiskies with notes of smoke, brine, and medicinal seaweed.' },
+			{ name: 'Highlands', description: 'The largest region by area, offering a vast range of styles from light and floral to rich and peated.' },
+			{ name: 'Lowlands', description: 'Traditionally known for lighter, grassier, unpeated whiskies, often triple-distilled.' },
+			{ name: 'Campbeltown', description: "Once the 'Whisky Capital of the World', now a small but distinct region with robust, oily characters." }
+		]
+	},
+	{
+		id: 'usa',
+		name: 'United States',
+		regulator: 'TTB (Alcohol and Tobacco Tax and Trade Bureau)',
+		protectedIndication: 'Title 27 CFR',
+		bottleImage: 'assets/images/bottle-bourbon.svg',
+		legalFramework: {
+			grain: 'Fermented cereal grain.',
+			aging: 'New charred oak containers.',
+			bottling: 'Min. 80° proof.',
+			special: { label: '"Straight"', value: 'Min. 2 years.' }
+		},
+		varieties: [
+			{
+				name: 'Bourbon',
+				category: 'Definitive Spirit',
+				description: 'Produced from at least 51% corn. Must be aged in new charred oak containers. Distilled to no more than 160° proof.',
+				tags: ['≥51% Corn', 'New Charred Oak', 'USA Only']
+			}
+		]
+	},
+	{
+		id: 'ireland',
+		name: 'Ireland',
+		regulator: 'Dept. of Agriculture, Food and the Marine',
+		protectedIndication: 'Technical File (2014)',
+		bottleImage: 'assets/images/bottle-irish.svg',
+		legalFramework: {
+			location: 'Island of Ireland.',
+			grain: 'Malted cereals.',
+			aging: 'Min. 3 years wood.',
+			bottling: 'Min. 40% ABV.'
+		},
+		varieties: [
+			{
+				name: 'Single Pot Still',
+				category: 'Uniquely Irish',
+				description: 'Mix of malted (min 30%) and unmalted barley (min 30%). Distilled in pot stills at a single distillery.',
+				tags: ['Malted & Unmalted Barley', 'Pot Still']
+			}
+		]
+	},
+	{
+		id: 'japan',
+		name: 'Japan',
+		regulator: 'Japan Spirits & Liqueurs Makers Association',
+		protectedIndication: 'Voluntary Standards',
+		bottleImage: 'assets/images/bottle-japanese.svg',
+		legalFramework: {
+			location: 'Japan only.',
+			ingredients: 'Water: Japanese source.',
+			aging: 'Min. 3 years wood.',
+			bottling: 'Japan, min 40% ABV.'
+		},
+		varieties: [
+			{
+				name: 'Single Malt',
+				category: 'Category 01',
+				description: '100% malted barley, distilled in pot stills at a single distillery. Aged for a minimum of 3 years in oak casks.',
+				tags: ['100% Malted Barley', 'Pot Still', 'Single Distillery']
+			}
+		]
+	},
+	{
+		id: 'canada',
+		name: 'Canada',
+		regulator: 'Canadian Food Inspection Agency',
+		protectedIndication: 'Voluntary Standards',
+		bottleImage: 'assets/images/bottle-canadian.svg',
+		legalFramework: {
+			location: 'Canada.',
+			grain: 'Fermented cereal grain.',
+			aging: 'Min. 3 years wood.',
+			bottling: 'Min. 40% ABV.'
+		},
+		varieties: [
+			{
+				name: 'Canadian Whisky',
+				category: 'Category 01',
+				description: 'Typically a blend of corn, rye, and barley whiskies. Aged for a minimum of 3 years in oak barrels.',
+				tags: ['Blend', 'Corn Base', 'Light & Smooth']
+			}
+		]
+	}
 ];
 
 // DOM elements
@@ -191,166 +191,166 @@ let sortMode = 'alphabetical';
 
 // Initialize the app
 function init() {
-  setupEventListeners();
-  renderLexicon();
-  renderRegions();
-  updateAlphabetNav();
+	setupEventListeners();
+	renderLexicon();
+	renderRegions();
+	updateAlphabetNav();
 }
 
 // Event listeners
 function setupEventListeners() {
-  regionsBtn.addEventListener('click', () => switchView('regions'));
-  lexiconBtn.addEventListener('click', () => switchView('lexicon'));
-  searchInput.addEventListener('input', handleSearch);
-  sortAlphaBtn.addEventListener('click', () => setSortMode('alphabetical'));
-  sortCategoryBtn.addEventListener('click', () => setSortMode('category'));
+	regionsBtn.addEventListener('click', () => switchView('regions'));
+	lexiconBtn.addEventListener('click', () => switchView('lexicon'));
+	searchInput.addEventListener('input', handleSearch);
+	sortAlphaBtn.addEventListener('click', () => setSortMode('alphabetical'));
+	sortCategoryBtn.addEventListener('click', () => setSortMode('category'));
 }
 
 // View switching
 function switchView(view) {
-  currentView = view;
+	currentView = view;
 
-  // Update button states
-  regionsBtn.classList.toggle('active', view === 'regions');
-  lexiconBtn.classList.toggle('active', view === 'lexicon');
+	// Update button states
+	regionsBtn.classList.toggle('active', view === 'regions');
+	lexiconBtn.classList.toggle('active', view === 'lexicon');
 
-  // Update view visibility
-  lexiconView.classList.toggle('active', view === 'lexicon');
-  regionsView.classList.toggle('active', view === 'regions');
+	// Update view visibility
+	lexiconView.classList.toggle('active', view === 'lexicon');
+	regionsView.classList.toggle('active', view === 'regions');
 }
 
 // Search functionality
 function handleSearch(e) {
-  searchQuery = e.target.value.toLowerCase();
-  renderLexicon();
+	searchQuery = e.target.value.toLowerCase();
+	renderLexicon();
 }
 
 // Sort functionality
 function setSortMode(mode) {
-  sortMode = mode;
-  sortAlphaBtn.classList.toggle('active', mode === 'alphabetical');
-  sortCategoryBtn.classList.toggle('active', mode === 'category');
-  renderLexicon();
+	sortMode = mode;
+	sortAlphaBtn.classList.toggle('active', mode === 'alphabetical');
+	sortCategoryBtn.classList.toggle('active', mode === 'category');
+	renderLexicon();
 }
 
 // Render lexicon
 function renderLexicon() {
-  const filteredTerms = LEXICON_TERMS.filter(term =>
-    term.name.toLowerCase().includes(searchQuery) ||
-    term.category.toLowerCase().includes(searchQuery)
-  );
+	const filteredTerms = LEXICON_TERMS.filter(term =>
+		term.name.toLowerCase().includes(searchQuery) ||
+		term.category.toLowerCase().includes(searchQuery)
+	);
 
-  const groupedTerms = {};
-  filteredTerms.forEach(term => {
-    const key = term.letter;
-    if (!groupedTerms[key]) groupedTerms[key] = [];
-    groupedTerms[key].push(term);
-  });
+	const groupedTerms = {};
+	filteredTerms.forEach(term => {
+		const key = term.letter;
+		if (!groupedTerms[key]) groupedTerms[key] = [];
+		groupedTerms[key].push(term);
+	});
 
-  const sortedLetters = Object.keys(groupedTerms).sort();
+	const sortedLetters = Object.keys(groupedTerms).sort();
 
-  lexiconEntries.innerHTML = sortedLetters.map(letter => {
-    const terms = groupedTerms[letter];
-    return `
-      <div class="lexicon-letter" id="${letter}">${letter}</div>
-      <div class="term-group">
-        ${terms.map(term => `
-          <article class="term-item">
-            <div>
-              <span class="term-category">${term.category}</span>
-              <h3 class="term-title">${term.name}</h3>
-            </div>
-            <p class="term-description">${term.description}</p>
-          </article>
-        `).join('')}
-      </div>
-    `;
-  }).join('');
+	lexiconEntries.innerHTML = sortedLetters.map(letter => {
+		const terms = groupedTerms[letter];
+		return `
+			<div class="lexicon-letter" id="${letter}">${letter}</div>
+			<div class="term-group">
+				${terms.map(term => `
+					<article class="term-item">
+						<div>
+							<span class="term-category">${term.category}</span>
+							<h3 class="term-title">${term.name}</h3>
+						</div>
+						<p class="term-description">${term.description}</p>
+					</article>
+				`).join('')}
+			</div>
+		`;
+	}).join('');
 
-  updateAlphabetNav();
+	updateAlphabetNav();
 }
 
 // Update alphabet navigation
 function updateAlphabetNav() {
-  const activeLetters = new Set(LEXICON_TERMS.map(t => t.letter));
-  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+	const activeLetters = new Set(LEXICON_TERMS.map(t => t.letter));
+	const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
 
-  const alphabetList = document.querySelector('.alphabet-list');
-  if (alphabetList) {
-    alphabetList.innerHTML = alphabet.map(letter => {
-      const hasTerms = activeLetters.has(letter);
-      return hasTerms ? `<a href="#${letter}" class="alphabet-link active">${letter}</a>` : `<a href="#${letter}" class="alphabet-link">${letter}</a>`;
-    }).join('');
-  }
+	const alphabetList = document.querySelector('.alphabet-list');
+	if (alphabetList) {
+		alphabetList.innerHTML = alphabet.map(letter => {
+			const hasTerms = activeLetters.has(letter);
+			return hasTerms ? `<a href="#${letter}" class="alphabet-link active">${letter}</a>` : `<a href="#${letter}" class="alphabet-link">${letter}</a>`;
+		}).join('');
+	}
 }
 
 // Render regions
 function renderRegions() {
-  regionsList.innerHTML = REGIONS.map(region => `
-    <section class="region-section">
-      <aside class="region-sidebar">
-        <h3 class="sidebar-title">
-          LEGAL FRAMEWORK
-        </h3>
-        <ul class="legal-list">
-          ${region.legalFramework.location ? `<li><strong>Location:</strong> ${region.legalFramework.location}</li>` : ''}
-          ${region.legalFramework.ingredients ? `<li><strong>Ingredients:</strong> ${region.legalFramework.ingredients}</li>` : ''}
-          ${region.legalFramework.grain ? `<li><strong>Grain:</strong> ${region.legalFramework.grain}</li>` : ''}
-          <li><strong>Aging:</strong> ${region.legalFramework.aging}</li>
-          <li><strong>Bottling:</strong> ${region.legalFramework.bottling}</li>
-          ${region.legalFramework.special ? `<li><strong>${region.legalFramework.special.label}:</strong> ${region.legalFramework.special.value}</li>` : ''}
-        </ul>
-        <img alt="${region.name} Bottle" class="region-bottle" src="${region.bottleImage}" />
-      </aside>
+	regionsList.innerHTML = REGIONS.map(region => `
+		<section class="region-section">
+			<aside class="region-sidebar">
+				<h3 class="sidebar-title">
+					LEGAL FRAMEWORK
+				</h3>
+				<ul class="legal-list">
+					${region.legalFramework.location ? `<li><strong>Location:</strong> ${region.legalFramework.location}</li>` : ''}
+					${region.legalFramework.ingredients ? `<li><strong>Ingredients:</strong> ${region.legalFramework.ingredients}</li>` : ''}
+					${region.legalFramework.grain ? `<li><strong>Grain:</strong> ${region.legalFramework.grain}</li>` : ''}
+					<li><strong>Aging:</strong> ${region.legalFramework.aging}</li>
+					<li><strong>Bottling:</strong> ${region.legalFramework.bottling}</li>
+					${region.legalFramework.special ? `<li><strong>${region.legalFramework.special.label}:</strong> ${region.legalFramework.special.value}</li>` : ''}
+				</ul>
+				<img alt="${region.name} Bottle" class="region-bottle" src="${region.bottleImage}" />
+			</aside>
 
-      <div class="region-main">
-        <div class="region-header">
-          <span class="region-indicator">${region.protectedIndication}</span>
-          <h2 class="region-title">${region.name}</h2>
-          <p class="region-regulator">Regulator: ${region.regulator}</p>
-        </div>
+			<div class="region-main">
+				<div class="region-header">
+					<span class="region-indicator">${region.protectedIndication}</span>
+					<h2 class="region-title">${region.name}</h2>
+					<p class="region-regulator">Regulator: ${region.regulator}</p>
+				</div>
 
-        <div class="region-varieties">
-          <h3 class="varieties-title">${region.name} Varieties</h3>
-          <div class="varieties-list">
-            ${region.varieties.map(variety => `
-              <div class="variety-item">
-                <div class="variety-info">
-                  <h4 class="variety-name">${variety.name}</h4>
-                  <span class="variety-category">${variety.category}</span>
-                </div>
-                <div class="variety-description">
-                  <p>${variety.description}</p>
-                  <div class="variety-tags">
-                    ${variety.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
-                  </div>
-                </div>
-              </div>
-            `).join('')}
-          </div>
-        </div>
+				<div class="region-varieties">
+					<h3 class="varieties-title">${region.name} Varieties</h3>
+					<div class="varieties-list">
+						${region.varieties.map(variety => `
+							<div class="variety-item">
+								<div class="variety-info">
+									<h4 class="variety-name">${variety.name}</h4>
+									<span class="variety-category">${variety.category}</span>
+								</div>
+								<div class="variety-description">
+									<p>${variety.description}</p>
+									<div class="variety-tags">
+										${variety.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+									</div>
+								</div>
+							</div>
+						`).join('')}
+					</div>
+				</div>
 
-        ${region.subRegions ? `
-          <div class="region-map">
-            <h3 class="varieties-title">${region.name} Regions</h3>
-            <div class="map-container">
-              <div class="map-image">
-                <img alt="${region.name} Regions Map" src="${region.mapImage}" />
-              </div>
-              <div class="sub-regions">
-                ${region.subRegions.map(sub => `
-                  <div class="sub-region">
-                    <h5>${sub.name}</h5>
-                    <p>${sub.description}</p>
-                  </div>
-                `).join('')}
-              </div>
-            </div>
-          </div>
-        ` : ''}
-      </div>
-    </section>
-  `).join('');
+				${region.subRegions ? `
+					<div class="region-map">
+						<h3 class="varieties-title">${region.name} Regions</h3>
+						<div class="map-container">
+							<div class="map-image">
+								<img alt="${region.name} Regions Map" src="${region.mapImage}" />
+							</div>
+							<div class="sub-regions">
+								${region.subRegions.map(sub => `
+									<div class="sub-region">
+										<h5>${sub.name}</h5>
+										<p>${sub.description}</p>
+									</div>
+								`).join('')}
+							</div>
+						</div>
+					</div>
+				` : ''}
+			</div>
+		</section>
+	`).join('');
 }
 
 // Initialize when DOM is loaded

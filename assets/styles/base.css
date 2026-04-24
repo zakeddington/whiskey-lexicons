@@ -1,20 +1,20 @@
 /* Base styles */
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  font-family: var(--font-body);
-  background-color: var(--color-token-surface);
-  color: var(--color-token-on-surface);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: var(--font-body);
+	background-color: var(--color-token-surface);
+	color: var(--color-token-on-surface);
+	line-height: 1.6;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
-  background-color: var(--color-token-primary-container);
-  color: white;
+	background-color: var(--color-token-primary-container);
+	color: white;
 }
