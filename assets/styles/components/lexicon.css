@@ -30,10 +30,6 @@
 }
 
 .alphabet-label {
-	font-family: var(--font-label);
-	font-size: 0.625rem;
-	font-weight: bold;
-	letter-spacing: 0.1em;
 	color: rgba(48, 67, 83, 0.4);
 	margin-bottom: 1rem;
 }
@@ -48,9 +44,6 @@
 }
 
 .alphabet-link {
-	font-family: var(--font-label);
-	font-size: 0.6875rem;
-	font-weight: bold;
 	color: rgba(95, 56, 0, 0.4);
 	text-decoration: none;
 	transition: color 0.2s;
@@ -73,27 +66,13 @@
 }
 
 .lexicon-title {
-	font-family: var(--font-serif);
-	font-size: 5rem;
-	font-weight: bold;
-	letter-spacing: -0.025em;
 	color: var(--color-token-on-surface);
 	margin-bottom: 1.5rem;
 }
 
-@media (min-width: 768px) {
-	.lexicon-title {
-		font-size: 9rem;
-	}
-}
-
 .lexicon-subtitle {
-	font-family: var(--font-body);
-	font-size: 1.25rem;
-	font-style: italic;
 	color: var(--color-token-on-variant);
 	max-width: 32rem;
-	line-height: 1.4;
 }
 
 .lexicon-controls {
@@ -127,8 +106,6 @@
 	width: 100%;
 	background-color: rgba(236, 232, 222, 0.5);
 	border: none;
-	font-family: var(--font-label);
-	font-size: 0.875rem;
 	padding: 0.625rem 2.5rem;
 	border-radius: 0.25rem;
 	color: var(--color-token-on-surface);
@@ -151,11 +128,6 @@
 }
 
 .sort-btn {
-	font-family: var(--font-label);
-	font-size: 0.6875rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	font-weight: bold;
 	background: none;
 	border: none;
 	color: rgba(28, 28, 22, 0.4);
@@ -184,11 +156,7 @@
 }
 
 .lexicon-letter {
-	font-family: var(--font-serif);
-	font-size: 5rem;
-	font-weight: bold;
 	color: rgba(127, 77, 3, 0.1);
-	line-height: 1;
 	position: sticky;
 	top: 6rem;
 	height: fit-content;
@@ -204,28 +172,16 @@
 }
 
 .term-category {
-	font-family: var(--font-label);
-	font-size: 0.625rem;
-	text-transform: uppercase;
-	letter-spacing: 0.25em;
-	font-weight: bold;
 	color: rgba(28, 28, 22, 0.4);
 	margin-bottom: 0.5rem;
 }
 
 .term-title {
-	font-family: var(--font-serif);
-	font-size: 2.5rem;
-	font-weight: bold;
-	letter-spacing: -0.025em;
 	color: var(--color-token-on-surface);
 	margin-bottom: 0;
 }
 
 .term-description {
-	font-family: var(--font-body);
-	font-size: 1.25rem;
 	color: var(--color-token-on-variant);
-	line-height: 1.4;
 	max-width: 48rem;
 }

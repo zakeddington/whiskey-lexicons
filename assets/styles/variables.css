@@ -37,9 +37,57 @@
 	--color-token-accent: var(--color-palette-brown-400);
 }
 
-/* Font variables */
+/* Typography Families */
 :root {
 	--font-serif: "Noto Serif", serif;
 	--font-body: "Newsreader", serif;
 	--font-label: "Work Sans", sans-serif;
+}
+
+/* Typography Scales - Font Sizes */
+:root {
+	/* Display/Hero sizes */
+	--font-size-display-lg: 9rem;
+	--font-size-display-md: 5rem;
+	--font-size-display-sm: 3.75rem;
+
+	/* Heading sizes */
+	--font-size-heading-xl: 3.125rem;
+	--font-size-heading-lg: 2.5rem;
+	--font-size-heading-md: 1.5rem;
+	--font-size-heading-sm: 1.125rem;
+
+	/* Body sizes */
+	--font-size-body-lg: 1.25rem;
+	--font-size-body-md: 1rem;
+	--font-size-body-sm: 0.875rem;
+
+	/* Label/UI sizes */
+	--font-size-label-lg: 0.875rem;
+	--font-size-label-md: 0.75rem;
+	--font-size-label-sm: 0.625rem;
+	--font-size-label-xs: 0.6875rem;
+}
+
+/* Typography Weights */
+:root {
+	--font-weight-regular: 400;
+	--font-weight-medium: 500;
+	--font-weight-semibold: 600;
+	--font-weight-bold: 700;
+}
+
+/* Typography Line Heights */
+:root {
+	--line-height-tight: 1;
+	--line-height-normal: 1.4;
+	--line-height-relaxed: 1.6;
+}
+
+/* Typography Letter Spacing */
+:root {
+	--letter-spacing-tight: 0;
+	--letter-spacing-normal: 0;
+	--letter-spacing-wide: 0.1em;
+	--letter-spacing-wider: 0.25em;
 }

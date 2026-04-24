@@ -21,10 +21,6 @@
 }
 
 .nav-title {
-	font-family: var(--font-serif);
-	font-size: 1.5rem;
-	font-weight: bold;
-	letter-spacing: -0.025em;
 	color: var(--color-token-primary);
 }
 
@@ -35,10 +31,6 @@
 }
 
 .nav-btn {
-	font-family: var(--font-label);
-	font-size: 0.75rem;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
 	padding: 0.25rem;
 	border: none;
 	background: none;
