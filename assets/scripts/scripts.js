@@ -68,13 +68,11 @@ const REGIONS = [
 		varieties: [
 			{
 				name: 'Single Malt',
-				category: 'Category 01',
 				description: '100% malted barley, batch distilled in copper pot stills at a single distillery. Aged for a minimum of 3 years in oak casks not exceeding 700L.',
 				tags: ['100% Malted Barley', 'Pot Still', 'Single Distillery']
 			},
 			{
 				name: 'Blended Scotch',
-				category: 'Category 02',
 				description: 'A combination of one or more single malt Scotch whiskies with one or more single grain Scotch whiskies. The largest category by volume globally.',
 				tags: ['Multi-Distillery', 'Malt & Grain']
 			}
@@ -102,7 +100,6 @@ const REGIONS = [
 		varieties: [
 			{
 				name: 'Bourbon',
-				category: 'Definitive Spirit',
 				description: 'Produced from at least 51% corn. Must be aged in new charred oak containers. Distilled to no more than 160° proof.',
 				tags: ['≥51% Corn', 'New Charred Oak', 'USA Only']
 			}
@@ -123,7 +120,6 @@ const REGIONS = [
 		varieties: [
 			{
 				name: 'Single Pot Still',
-				category: 'Uniquely Irish',
 				description: 'Mix of malted (min 30%) and unmalted barley (min 30%). Distilled in pot stills at a single distillery.',
 				tags: ['Malted & Unmalted Barley', 'Pot Still']
 			}
@@ -144,7 +140,6 @@ const REGIONS = [
 		varieties: [
 			{
 				name: 'Single Malt',
-				category: 'Category 01',
 				description: '100% malted barley, distilled in pot stills at a single distillery. Aged for a minimum of 3 years in oak casks.',
 				tags: ['100% Malted Barley', 'Pot Still', 'Single Distillery']
 			}
@@ -165,7 +160,6 @@ const REGIONS = [
 		varieties: [
 			{
 				name: 'Canadian Whisky',
-				category: 'Category 01',
 				description: 'Typically a blend of corn, rye, and barley whiskies. Aged for a minimum of 3 years in oak barrels.',
 				tags: ['Blend', 'Corn Base', 'Light & Smooth']
 			}
@@ -317,7 +311,6 @@ function renderRegions() {
 							<div class="variety-item">
 								<div class="variety-info">
 									<h4 class="variety-name">${variety.name}</h4>
-									<span class="variety-category">${variety.category}</span>
 								</div>
 								<div class="variety-description">
 									<p>${variety.description}</p>

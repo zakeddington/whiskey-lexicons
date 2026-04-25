@@ -206,15 +206,6 @@
 	margin-bottom: 0.5rem;
 }
 
-.variety-category {
-	background-color: var(--color-token-surface-high);
-	border-radius: 9999px;
-	color: var(--color-token-on-variant);
-	display: inline-block;
-	margin-top: 0.5rem;
-	padding: 0.125rem 0.5rem;
-}
-
 .variety-description,
 .variety-description p {
 	color: var(--color-token-on-variant);

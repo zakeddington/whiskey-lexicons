@@ -188,7 +188,6 @@
 	.alphabet-label,
 	.meta-item h6,
 	.region-indicator,
-	.variety-category,
 	.tag {
 		font-family: var(--font-label);
 		font-size: var(--font-size-label-sm);
