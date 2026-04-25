@@ -10,17 +10,11 @@
 	h1 {
 		color: var(--color-token-on-surface);
 		font-family: var(--font-serif);
-		font-size: var(--font-size-display-md);
+		font-size: var(--font-size-display-lg);
 		font-weight: var(--font-weight-bold);
 		letter-spacing: var(--letter-spacing-tight);
 		line-height: var(--line-height-tight);
 		margin: 0 0 1rem 0;
-	}
-
-	@media (min-width: 768px) {
-		h1 {
-			font-size: var(--font-size-display-lg);
-		}
 	}
 
 	h2 {

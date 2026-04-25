@@ -47,18 +47,18 @@
 /* Typography Scales - Font Sizes */
 :root {
 	/* Display/Hero sizes */
-	--font-size-display-lg: 9rem;
-	--font-size-display-md: 5rem;
-	--font-size-display-sm: 3.75rem;
+	--font-size-display-lg: clamp(4.25rem, 12vw, 9rem); /* 68px - 144px */
+	--font-size-display-md: clamp(3.75rem, 8vw, 5rem); /* 60px - 80px */
+	--font-size-display-sm: clamp(2.75rem, 6vw, 3.75rem); /* 44px - 60px */
 
 	/* Heading sizes */
-	--font-size-heading-xl: 3.125rem;
-	--font-size-heading-lg: 2.5rem;
-	--font-size-heading-md: 1.5rem;
-	--font-size-heading-sm: 1.125rem;
+	--font-size-heading-xl: clamp(2.25rem, 5vw, 3.125rem); /* 36px - 50px */
+	--font-size-heading-lg: clamp(1.875rem, 4vw, 2.5rem); /* 30px - 40px */
+	--font-size-heading-md: clamp(1.25rem, 2.5vw, 1.5rem); /* 20px - 24px */
+	--font-size-heading-sm: clamp(1rem, 2vw, 1.125rem); /* 16px - 18px */
 
 	/* Body sizes */
-	--font-size-body-lg: 1.25rem;
+	--font-size-body-lg: clamp(1.125rem, 1.5vw, 1.25rem); /* 18px - 20px */
 	--font-size-body-md: 1rem;
 	--font-size-body-sm: 0.875rem;
 
