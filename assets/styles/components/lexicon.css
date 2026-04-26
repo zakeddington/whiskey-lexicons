@@ -129,36 +129,11 @@
 	color: var(--color-token-primary);
 }
 
-.lexicon-entries {
-	display: grid;
-	gap: var(--grid-gap);
-	grid-template-columns: 1fr;
-}
-
-@media (min-width: 768px) {
-	.lexicon-entries {
-		grid-template-columns: var(--grid-template-columns);
-	}
-
-	.lexicon-letter {
-		grid-column: span 2;
-	}
-
-	.term-group {
-		grid-column: span 10;
-	}
-}
-
 .lexicon-letter {
 	color: rgba(127, 77, 3, 0.1);
 	height: fit-content;
 	position: sticky;
 	top: 6rem;
-}
-
-.term-group {
-	display: grid;
-	gap: 4rem;
 }
 
 .term-item {

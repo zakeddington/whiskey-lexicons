@@ -1,0 +1,44 @@
+/* Global grid classes */
+.grid {
+	display: grid;
+	gap: var(--grid-gap);
+	grid-template-columns: 1fr;
+}
+
+.grid-align-start {
+	align-items: start;
+}
+
+.grid-align-stretch {
+	align-items: stretch;
+}
+
+.grid-col-full {
+	grid-column: 1 / -1;
+}
+
+@media (min-width: 768px) {
+	.grid {
+		grid-template-columns: var(--grid-template-columns);
+	}
+
+	.grid-col-md-2 {
+		grid-column: span 2;
+	}
+
+	.grid-col-md-3 {
+		grid-column: span 3;
+	}
+
+	.grid-col-md-6 {
+		grid-column: span 6;
+	}
+
+	.grid-col-md-9 {
+		grid-column: span 9;
+	}
+
+	.grid-col-md-10 {
+		grid-column: span 10;
+	}
+}

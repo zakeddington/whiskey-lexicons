@@ -246,10 +246,10 @@ function renderLexicon() {
 	lexiconEntries.innerHTML = sortedLetters.map(letter => {
 		const terms = groupedTerms[letter];
 		return `
-			<div class="lexicon-letter" id="${letter}">${letter}</div>
-			<div class="term-group">
+			<div class="lexicon-letter grid-col-md-2" id="${letter}">${letter}</div>
+			<div class="term-group grid grid-col-md-10">
 				${terms.map(term => `
-					<article class="term-item">
+					<article class="term-item grid-col-full">
 						<div>
 							<span class="term-category">${term.category}</span>
 							<h3 class="term-title">${term.name}</h3>
@@ -281,8 +281,8 @@ function updateAlphabetNav() {
 // Render regions
 function renderRegions() {
 	regionsList.innerHTML = REGIONS.map(region => `
-		<section class="region-section">
-			<aside class="region-sidebar">
+		<section class="region-section grid grid-align-stretch grid-col-full">
+			<aside class="region-sidebar grid-col-md-3">
 				<div class="legal-framework">
 					<h3 class="sidebar-title">
 						LEGAL FRAMEWORK
@@ -299,7 +299,7 @@ function renderRegions() {
 				<img alt="${region.name} Bottle" class="region-bottle" src="${region.bottleImage}" />
 			</aside>
 
-			<div class="region-main">
+			<div class="region-main grid-col-md-9">
 				<div class="region-header">
 					<span class="region-indicator">${region.protectedIndication}</span>
 					<h2 class="region-title">${region.name}</h2>
@@ -310,11 +310,11 @@ function renderRegions() {
 					<h3 class="varieties-title">${region.name} Varieties</h3>
 					<div class="varieties-list">
 						${region.varieties.map(variety => `
-							<div class="variety-item">
-								<div class="variety-info">
+							<div class="variety-item grid">
+								<div class="variety-info grid-col-md-3">
 									<h4 class="variety-name">${variety.name}</h4>
 								</div>
-								<div class="variety-description">
+								<div class="variety-description grid-col-md-9">
 									<p>${variety.description}</p>
 									<div class="variety-tags">
 										${variety.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
@@ -328,13 +328,13 @@ function renderRegions() {
 				${region.subRegions ? `
 					<div class="region-map">
 						<h3 class="varieties-title">${region.name} Regions</h3>
-						<div class="map-container">
-							<div class="map-image">
+						<div class="map-container grid grid-align-start">
+							<div class="map-image grid-col-md-6">
 								<img alt="${region.name} Regions Map" src="${region.mapImage}" />
 							</div>
-							<div class="sub-regions">
+							<div class="sub-regions grid grid-col-md-6">
 								${region.subRegions.map(sub => `
-									<div class="sub-region">
+									<div class="sub-region grid-col-full">
 										<h5>${sub.name}</h5>
 										<p>${sub.description}</p>
 									</div>
