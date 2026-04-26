@@ -219,7 +219,8 @@
 		text-transform: uppercase;
 	}
 
-	.hero-phonetic {
+	.hero-kicker {
+		color: var(--color-token-primary);
 		font-family: var(--font-label);
 		font-size: var(--font-size-label-lg);
 		font-weight: var(--font-weight-bold);
@@ -236,21 +237,13 @@
 		line-height: var(--line-height-normal);
 	}
 
-	.hero-pronunciation {
+	.hero-title-note {
 		font-family: var(--font-body);
 		font-size: var(--font-size-display-sm);
 		font-style: italic;
 		line-height: var(--line-height-tight);
 	}
 
-	.hero-description {
-		font-family: var(--font-body);
-		font-size: var(--font-size-heading-md);
-		font-style: italic;
-		line-height: var(--line-height-normal);
-	}
-
-	.lexicon-subtitle,
 	.term-description,
 	.variety-description,
 	.variety-description p {

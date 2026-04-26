@@ -60,20 +60,22 @@
 
 					<!-- Main Content -->
 					<div class="lexicon-main">
-						<header class="lexicon-header">
-							<h1 class="lexicon-title">Lexicon</h1>
-							<p class="lexicon-subtitle">An exhaustive index of the technical, chemical, and poetic language defining the world of fine spirits.</p>
-
-							<div class="lexicon-controls">
-								<div class="search-container">
-									<input type="text" id="search-input" placeholder="Find a term..." class="search-input">
-								</div>
-								<div class="sort-buttons">
-									<button id="sort-alpha" class="sort-btn active">Alphabetical</button>
-									<button id="sort-category" class="sort-btn">Category</button>
-								</div>
+						<section class="hero">
+							<div class="hero-heading">
+								<h1 class="hero-title">Lexicon</h1>
+								<p>An exhaustive index of the technical, chemical, and poetic language defining the world of fine spirits.</p>
 							</div>
-						</header>
+						</section>
+
+						<section class="lexicon-controls">
+							<div class="search-container">
+								<input type="text" id="search-input" placeholder="Find a term..." class="search-input">
+							</div>
+							<div class="sort-buttons">
+								<button id="sort-alpha" class="sort-btn active">Alphabetical</button>
+								<button id="sort-category" class="sort-btn">Category</button>
+							</div>
+						</section>
 
 						<section id="lexicon-entries" class="lexicon-entries">
 							<!-- Terms will be populated by JavaScript -->
@@ -86,13 +88,12 @@
 			<div id="regions-view" class="view active">
 				<div class="regions-container">
 					<!-- Hero Section -->
-					<section class="regions-hero">
-						<div class="hero-title">
-							<h1>Whiskey</h1>
-							<span class="hero-pronunciation">n.</span>
+					<section class="hero">
+						<div class="hero-heading">
+							<h1 class="hero-title">Whiskey <span class="hero-title-note">n.</span></h1>
+							<p class="hero-kicker">/'hwiski, 'wiski/</p>
+							<p>Derived from the Classical Gaelic "uisce beatha," meaning "water of life." An alcoholic liquor distilled from a fermented mash of grain, such as barley, rye, or corn, and usually aged in oak containers.</p>
 						</div>
-						<div class="hero-phonetic">/'hwiski, 'wiski/</div>
-						<p class="hero-description">Derived from the Classical Gaelic "uisce beatha," meaning "water of life." An alcoholic liquor distilled from a fermented mash of grain, such as barley, rye, or corn, and usually aged in oak containers.</p>
 						<div class="hero-meta">
 							<div class="meta-item">
 								<h6>Etymology</h6>
@@ -121,4 +122,3 @@
 	<script src="assets/scripts/scripts.js"></script>
 </body>
 </html>
-

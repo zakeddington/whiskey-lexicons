@@ -61,27 +61,13 @@
 	flex: 1;
 }
 
-.lexicon-header {
-	margin-bottom: 4rem;
-}
-
-.lexicon-title {
-	color: var(--color-token-on-surface);
-	margin-bottom: 1.5rem;
-}
-
-.lexicon-subtitle {
-	color: var(--color-token-on-variant);
-	max-width: 32rem;
-}
-
 .lexicon-controls {
 	align-items: center;
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 	justify-content: space-between;
-	margin-top: 4rem;
+	margin-bottom: 4rem;
 	padding-bottom: 2rem;
 }
 

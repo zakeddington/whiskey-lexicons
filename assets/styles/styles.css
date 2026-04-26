@@ -5,6 +5,7 @@
 @import "base/base.css" layer(base);
 @import "base/typography.css";
 @import "layout.css" layer(layout);
+@import "components/hero.css" layer(components);
 @import "components/lexicon.css" layer(components);
 @import "components/regions.css" layer(components);
 @import "utilities.css" layer(utilities);
