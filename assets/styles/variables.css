@@ -37,6 +37,16 @@
 	--color-token-accent: var(--color-palette-brown-400);
 }
 
+/* Layout Grid */
+:root {
+	--layout-max-width: 1600px;
+	--layout-inline-padding: clamp(1.5rem, 2vw, 2rem);
+	--grid-column-count: 12;
+	--grid-template-columns: repeat(var(--grid-column-count), minmax(0, 1fr));
+	--grid-gap: clamp(1.5rem, 3vw, 3rem);
+	--grid-gap-sm: clamp(1rem, 2vw, 2rem);
+}
+
 /* Typography Families */
 :root {
 	--font-serif: "Noto Serif", serif;

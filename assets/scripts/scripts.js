@@ -283,17 +283,19 @@ function renderRegions() {
 	regionsList.innerHTML = REGIONS.map(region => `
 		<section class="region-section">
 			<aside class="region-sidebar">
-				<h3 class="sidebar-title">
-					LEGAL FRAMEWORK
-				</h3>
-				<ul class="legal-list">
-					${region.legalFramework.location ? `<li><strong>Location:</strong> ${region.legalFramework.location}</li>` : ''}
-					${region.legalFramework.ingredients ? `<li><strong>Ingredients:</strong> ${region.legalFramework.ingredients}</li>` : ''}
-					${region.legalFramework.grain ? `<li><strong>Grain:</strong> ${region.legalFramework.grain}</li>` : ''}
-					<li><strong>Aging:</strong> ${region.legalFramework.aging}</li>
-					<li><strong>Bottling:</strong> ${region.legalFramework.bottling}</li>
-					${region.legalFramework.special ? `<li><strong>${region.legalFramework.special.label}:</strong> ${region.legalFramework.special.value}</li>` : ''}
-				</ul>
+				<div class="legal-framework">
+					<h3 class="sidebar-title">
+						LEGAL FRAMEWORK
+					</h3>
+					<ul class="legal-list">
+						${region.legalFramework.location ? `<li><strong>Location:</strong> ${region.legalFramework.location}</li>` : ''}
+						${region.legalFramework.ingredients ? `<li><strong>Ingredients:</strong> ${region.legalFramework.ingredients}</li>` : ''}
+						${region.legalFramework.grain ? `<li><strong>Grain:</strong> ${region.legalFramework.grain}</li>` : ''}
+						<li><strong>Aging:</strong> ${region.legalFramework.aging}</li>
+						<li><strong>Bottling:</strong> ${region.legalFramework.bottling}</li>
+						${region.legalFramework.special ? `<li><strong>${region.legalFramework.special.label}:</strong> ${region.legalFramework.special.value}</li>` : ''}
+					</ul>
+				</div>
 				<img alt="${region.name} Bottle" class="region-bottle" src="${region.bottleImage}" />
 			</aside>
 

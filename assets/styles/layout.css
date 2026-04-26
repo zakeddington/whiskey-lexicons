@@ -15,8 +15,8 @@
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
-	max-width: 128rem;
-	padding: 1.5rem 2rem;
+	max-width: var(--layout-max-width);
+	padding: 1.5rem var(--layout-inline-padding);
 	width: 100%;
 }
 
@@ -52,10 +52,10 @@
 /* Main content */
 .main-content {
 	margin: 0 auto;
-	max-width: 128rem;
+	max-width: var(--layout-max-width);
 	padding-bottom: 6rem;
-	padding-left: 2rem;
-	padding-right: 2rem;
+	padding-left: var(--layout-inline-padding);
+	padding-right: var(--layout-inline-padding);
 	padding-top: 8rem;
 }
 

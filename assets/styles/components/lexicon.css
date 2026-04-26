@@ -145,13 +145,21 @@
 
 .lexicon-entries {
 	display: grid;
-	gap: 6rem;
+	gap: var(--grid-gap);
 	grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
 	.lexicon-entries {
-		grid-template-columns: 10rem 1fr;
+		grid-template-columns: var(--grid-template-columns);
+	}
+
+	.lexicon-letter {
+		grid-column: span 2;
+	}
+
+	.term-group {
+		grid-column: span 10;
 	}
 }
 

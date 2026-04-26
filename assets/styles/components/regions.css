@@ -6,8 +6,6 @@
 
 .regions-hero {
 	margin-bottom: 6rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
 }
 
 @media (min-width: 768px) {
@@ -66,56 +64,52 @@
 .regions-list {
 	display: grid;
 	gap: 12rem;
-	padding-left: 1.5rem;
-	padding-right: 1.5rem;
-}
-
-@media (min-width: 768px) {
-	.regions-list {
-		padding-left: 0;
-		padding-right: 0;
-	}
 }
 
 .region-section {
 	align-items: stretch;
 	display: grid;
-	gap: 3rem;
+	gap: var(--grid-gap);
 	grid-template-columns: 1fr;
 }
 
 @media (min-width: 768px) {
 	.region-section {
-		grid-template-columns: 12rem 1fr;
+		grid-template-columns: var(--grid-template-columns);
+	}
+
+	.region-sidebar {
+		grid-column: span 3;
+	}
+
+	.region-main {
+		grid-column: span 9;
 	}
 }
 
 .region-sidebar {
-	background-color: var(--color-token-accent);
-	color: var(--color-token-surface);
-	padding: 2rem;
+	border-right: 2px solid var(--color-token-accent);
 	position: relative;
 	z-index: 10;
 }
 
-@media (min-width: 768px) {
-	.region-sidebar {
-		margin-right: -1rem;
-	}
+.legal-framework {
+	background-color: var(--color-token-accent);
+	padding: 1.5rem;
 }
 
 .sidebar-title {
 	align-items: center;
 	color: rgba(255, 255, 255, 0.9);
-	display: flex;
-	gap: 0.25rem;
-	margin-bottom: 1.5rem;
 }
 
 .legal-list {
 	color: rgba(253, 249, 239, 0.8);
-	display: grid;
-	gap: 0.75rem;
+	margin: 0;
+
+	:last-child {
+		margin-bottom: 0;
+	}
 }
 
 .legal-list strong {
@@ -181,7 +175,7 @@
 
 .variety-item {
 	display: grid;
-	gap: 2rem;
+	gap: var(--grid-gap-sm);
 	grid-template-columns: 1fr;
 	padding: 2.5rem 1.5rem;
 	transition: background-color 0.5s;
@@ -189,16 +183,20 @@
 
 @media (min-width: 640px) {
 	.variety-item {
-		grid-template-columns: 12.5rem 1fr;
+		grid-template-columns: var(--grid-template-columns);
+	}
+
+	.variety-info {
+		grid-column: span 3;
+	}
+
+	.variety-description {
+		grid-column: span 9;
 	}
 }
 
 .variety-item:hover {
 	background-color: var(--color-token-surface-low);
-}
-
-.variety-info {
-	padding-right: 1rem;
 }
 
 .variety-name {
@@ -231,12 +229,17 @@
 .map-container {
 	align-items: start;
 	display: grid;
-	gap: 3rem;
+	gap: var(--grid-gap);
 }
 
 @media (min-width: 768px) {
 	.map-container {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: var(--grid-template-columns);
+	}
+
+	.map-image,
+	.sub-regions {
+		grid-column: span 6;
 	}
 }
 
