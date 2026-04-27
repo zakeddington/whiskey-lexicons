@@ -246,13 +246,13 @@ function renderLexicon() {
 	lexiconEntries.innerHTML = sortedLetters.map(letter => {
 		const terms = groupedTerms[letter];
 		return `
-			<div class="lexicon-letter grid-col-md-2" id="${letter}">${letter}</div>
-			<div class="term-group grid grid-col-md-10">
+			<div class="lexicon-letter grid-col-md-2 grid-col-md-start-1" id="${letter}">${letter}</div>
+			<div class="term-group grid grid-col-md-8">
 				${terms.map(term => `
 					<article class="term-item grid-col-full">
-						<div>
+						<div class="term-heading">
 							<span class="term-category">${term.category}</span>
-							<h3 class="term-title">${term.name}</h3>
+							<h3>${term.name}</h3>
 						</div>
 						<p class="term-description">${term.description}</p>
 					</article>

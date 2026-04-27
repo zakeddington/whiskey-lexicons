@@ -45,7 +45,8 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 2rem;
-	max-width: 200px;
+	max-height: 35dvh;
+	max-width: 50%;
 	mix-blend-mode: multiply;
 	object-fit: contain;
 	transition: transform 0.5s ease;

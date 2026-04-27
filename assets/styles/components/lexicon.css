@@ -145,12 +145,6 @@
 	margin-bottom: 0.5rem;
 }
 
-.term-title {
-	color: var(--color-token-on-surface);
-	margin-bottom: 0;
-}
-
 .term-description {
 	color: var(--color-token-on-variant);
-	max-width: 48rem;
 }
