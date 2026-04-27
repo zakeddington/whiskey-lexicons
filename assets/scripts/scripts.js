@@ -178,8 +178,15 @@ const sortCategoryBtn = document.getElementById('sort-category');
 const lexiconEntries = document.getElementById('lexicon-entries');
 const regionsList = document.getElementById('regions-list');
 
+const ROOT_VIEW = 'regions';
+const VALID_VIEWS = new Set(['regions', 'lexicon']);
+const VIEW_ROUTES = {
+	regions: '#regions',
+	lexicon: '#lexicon'
+};
+
 // State
-let currentView = 'regions';
+let currentView = ROOT_VIEW;
 let searchQuery = '';
 let sortMode = 'alphabetical';
 
@@ -189,19 +196,33 @@ function init() {
 	renderLexicon();
 	renderRegions();
 	updateAlphabetNav();
+	switchView(getViewFromHash(), { updateUrl: false });
 }
 
 // Event listeners
 function setupEventListeners() {
-	regionsBtn.addEventListener('click', () => switchView('regions'));
-	lexiconBtn.addEventListener('click', () => switchView('lexicon'));
+	regionsBtn.addEventListener('click', event => handleNavClick(event, 'regions'));
+	lexiconBtn.addEventListener('click', event => handleNavClick(event, 'lexicon'));
+	window.addEventListener('hashchange', () => switchView(getViewFromHash(), { updateUrl: false }));
 	searchInput.addEventListener('input', handleSearch);
 	sortAlphaBtn.addEventListener('click', () => setSortMode('alphabetical'));
 	sortCategoryBtn.addEventListener('click', () => setSortMode('category'));
 }
 
+function handleNavClick(event, view) {
+	event.preventDefault();
+	switchView(view);
+}
+
+function getViewFromHash() {
+	const view = window.location.hash.replace('#', '');
+
+	return VALID_VIEWS.has(view) ? view : ROOT_VIEW;
+}
+
 // View switching
-function switchView(view) {
+function switchView(view, options = {}) {
+	const { updateUrl = true } = options;
 	currentView = view;
 
 	// Update button states
@@ -211,6 +232,13 @@ function switchView(view) {
 	// Update view visibility
 	lexiconView.classList.toggle('active', view === 'lexicon');
 	regionsView.classList.toggle('active', view === 'regions');
+
+	if (updateUrl) {
+		const route = VIEW_ROUTES[view] || '';
+		if (window.location.hash !== route) {
+			window.location.hash = route;
+		}
+	}
 }
 
 // Search functionality
