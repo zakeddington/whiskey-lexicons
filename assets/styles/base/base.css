@@ -13,5 +13,5 @@ body {
 
 ::selection {
 	background-color: var(--color-token-primary-container);
-	color: white;
+	color: var(--color-token-on-primary);
 }

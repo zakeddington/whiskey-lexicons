@@ -30,7 +30,7 @@
 }
 
 .alphabet-label {
-	color: rgba(48, 67, 83, 0.4);
+	color: var(--color-token-tertiary-muted);
 	margin-bottom: 1rem;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .alphabet-link {
-	color: rgba(95, 56, 0, 0.4);
+	color: var(--color-token-primary-muted);
 	text-decoration: none;
 	transition: color 0.2s;
 }
@@ -89,7 +89,7 @@
 }
 
 .search-input {
-	background-color: rgba(236, 232, 222, 0.5);
+	background-color: var(--color-token-surface-high-muted);
 	border: none;
 	border-radius: 0.25rem;
 	color: var(--color-token-on-surface);
@@ -99,11 +99,11 @@
 }
 
 .search-input::placeholder {
-	color: rgba(28, 28, 22, 0.3);
+	color: var(--color-token-on-surface-subtle);
 }
 
 .search-input:focus {
-	box-shadow: 0 0 0 1px rgba(218, 194, 182, 0.3);
+	box-shadow: 0 0 0 1px var(--color-token-outline-muted);
 	outline: none;
 }
 
@@ -116,7 +116,7 @@
 .sort-btn {
 	background: none;
 	border: none;
-	color: rgba(28, 28, 22, 0.4);
+	color: var(--color-token-on-surface-muted);
 	cursor: pointer;
 	transition: color 0.2s;
 }
@@ -130,7 +130,7 @@
 }
 
 .lexicon-letter {
-	color: rgba(127, 77, 3, 0.1);
+	color: var(--color-token-primary-ghost);
 	height: fit-content;
 	position: sticky;
 	top: 6rem;
@@ -141,7 +141,7 @@
 }
 
 .term-category {
-	color: rgba(28, 28, 22, 0.4);
+	color: var(--color-token-on-surface-muted);
 	margin-bottom: 0.5rem;
 }
 

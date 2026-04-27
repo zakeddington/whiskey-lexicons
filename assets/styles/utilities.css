@@ -4,9 +4,9 @@
 }
 
 .glossary-scroll::-webkit-scrollbar-track {
-	background: transparent;
+	background: var(--color-token-transparent);
 }
 
 .glossary-scroll::-webkit-scrollbar-thumb {
-	background: rgba(218, 194, 182, 0.4);
+	background: var(--color-token-outline-strong);
 }

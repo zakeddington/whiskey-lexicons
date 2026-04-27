@@ -23,11 +23,11 @@
 
 .sidebar-title {
 	align-items: center;
-	color: rgba(255, 255, 255, 0.9);
+	color: var(--color-token-on-accent);
 }
 
 .legal-list {
-	color: rgba(253, 249, 239, 0.8);
+	color: var(--color-token-on-accent-muted);
 	margin: 0;
 
 	:last-child {
@@ -36,7 +36,7 @@
 }
 
 .legal-list strong {
-	color: white;
+	color: var(--color-token-on-primary);
 }
 
 .region-bottle {
@@ -81,14 +81,14 @@
 }
 
 .varieties-title {
-	border-bottom: 1px solid rgba(218, 194, 182, 0.3);
+	border-bottom: 1px solid var(--color-token-outline-muted);
 	color: var(--color-token-on-surface);
 	margin-bottom: 1rem;
 	padding-bottom: 1rem;
 }
 
 .varieties-list {
-	border-top: 1px solid rgba(218, 194, 182, 0.1);
+	border-top: 1px solid var(--color-token-outline-faint);
 }
 
 .variety-item {
@@ -141,7 +141,7 @@
 }
 
 .sub-region {
-	border-left: 2px solid rgba(95, 56, 0, 0.2);
+	border-left: 2px solid var(--color-token-primary-faint);
 	padding-left: 1rem;
 	transition: border-color 0.2s;
 }
@@ -155,7 +155,7 @@
 }
 
 .footer {
-	border-top: 1px solid rgba(218, 194, 182, 0.2);
+	border-top: 1px solid var(--color-token-outline-soft);
 	margin-top: 8rem;
 	padding: 6rem 0;
 	text-align: center;
