@@ -274,12 +274,12 @@ function renderLexicon() {
 	lexiconEntries.innerHTML = sortedLetters.map(letter => {
 		const terms = groupedTerms[letter];
 		return `
-			<div class="lexicon-letter grid-col-md-2 grid-col-md-start-1" id="${letter}">${letter}</div>
+			<div class="lexicon-letter text-display-md grid-col-md-2 grid-col-md-start-1" id="${letter}">${letter}</div>
 			<div class="term-group grid grid-col-md-8">
 				${terms.map(term => `
 					<article class="term-item grid-col-full">
 						<div class="term-heading">
-							<span class="term-category">${term.category}</span>
+							<span class="term-category text-label-sm tracking-wider">${term.category}</span>
 							<h3>${term.name}</h3>
 						</div>
 						<p class="term-description">${term.description}</p>
@@ -301,7 +301,7 @@ function updateAlphabetNav() {
 	if (alphabetList) {
 		alphabetList.innerHTML = alphabet.map(letter => {
 			const hasTerms = activeLetters.has(letter);
-			return hasTerms ? `<a href="#${letter}" class="alphabet-link active">${letter}</a>` : `<a href="#${letter}" class="alphabet-link">${letter}</a>`;
+			return hasTerms ? `<a href="#${letter}" class="alphabet-link text-label-xs active">${letter}</a>` : `<a href="#${letter}" class="alphabet-link text-label-xs">${letter}</a>`;
 		}).join('');
 	}
 }
@@ -312,10 +312,10 @@ function renderRegions() {
 		<section class="region-section grid grid-align-stretch grid-col-full">
 			<aside class="region-sidebar grid-col-md-3">
 				<div class="legal-framework">
-					<h3 class="sidebar-title">
+					<h3 class="sidebar-title text-label-sm font-serif">
 						LEGAL FRAMEWORK
 					</h3>
-					<ul class="legal-list">
+					<ul class="legal-list text-body-sm">
 						${region.legalFramework.location ? `<li><strong>Location:</strong> ${region.legalFramework.location}</li>` : ''}
 						${region.legalFramework.ingredients ? `<li><strong>Ingredients:</strong> ${region.legalFramework.ingredients}</li>` : ''}
 						${region.legalFramework.grain ? `<li><strong>Grain:</strong> ${region.legalFramework.grain}</li>` : ''}
@@ -329,13 +329,13 @@ function renderRegions() {
 
 			<div class="region-main grid-col-md-9">
 				<div class="region-header">
-					<span class="region-indicator">${region.protectedIndication}</span>
-					<h2 class="region-title">${region.name}</h2>
+					<span class="region-indicator text-label-sm">${region.protectedIndication}</span>
+					<h2>${region.name}</h2>
 					<p class="region-regulator">Regulator: ${region.regulator}</p>
 				</div>
 
 				<div class="region-varieties">
-					<h3 class="varieties-title">${region.name} Varieties</h3>
+					<h3 class="varieties-title text-heading-md tracking-wide uppercase leading-normal">${region.name} Varieties</h3>
 					<div class="varieties-list">
 						${region.varieties.map(variety => `
 							<div class="variety-item grid">
@@ -345,7 +345,7 @@ function renderRegions() {
 								<div class="variety-description grid-col-md-9">
 									<p>${variety.description}</p>
 									<div class="variety-tags">
-										${variety.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+										${variety.tags.map(tag => `<span class="tag text-label-sm">${tag}</span>`).join('')}
 									</div>
 								</div>
 							</div>
@@ -355,7 +355,7 @@ function renderRegions() {
 
 				${region.subRegions ? `
 					<div class="region-map">
-						<h3 class="varieties-title">${region.name} Regions</h3>
+						<h3 class="varieties-title text-heading-md tracking-wide uppercase leading-normal">${region.name} Regions</h3>
 						<div class="map-container grid grid-align-start">
 							<div class="map-image grid-col-md-6">
 								<img alt="${region.name} Regions Map" src="${region.mapImage}" />

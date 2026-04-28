@@ -21,7 +21,6 @@
 }
 
 .nav-title {
-	color: var(--color-token-primary);
 	text-decoration: none;
 
 	&:hover {
