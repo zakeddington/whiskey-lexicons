@@ -61,13 +61,5 @@
 	padding-bottom: 6rem;
 	padding-left: var(--layout-inline-padding);
 	padding-right: var(--layout-inline-padding);
-	padding-top: 8rem;
-}
-
-.view {
-	display: none;
-}
-
-.view.active {
-	display: block;
+	padding-top: calc(var(--layout-nav-offset) + 2rem);
 }

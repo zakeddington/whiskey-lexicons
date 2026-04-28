@@ -129,11 +129,20 @@
 	color: var(--color-token-primary);
 }
 
+.lexicon-section {
+	position: relative;
+}
+
 .lexicon-letter {
 	color: var(--color-token-primary-ghost);
-	height: fit-content;
-	position: sticky;
-	top: 6rem;
+}
+
+@media (min-width: 768px) {
+	.lexicon-letter {
+		height: fit-content;
+		position: sticky;
+		top: var(--layout-nav-offset);
+	}
 }
 
 .term-item {

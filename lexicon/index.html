@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lexicon | The Whiskey Lexicon</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="../assets/styles/styles.css">
+</head>
+<body>
+	<div id="app">
+		<header class="header">
+			<nav class="nav">
+				<a class="nav-title text-heading-md leading-normal" href="/">The Whiskey Lexicon</a>
+				<div class="nav-buttons">
+					<a id="regions-btn" class="nav-btn text-label-md" href="/">Regions</a>
+					<a id="lexicon-btn" class="nav-btn text-label-md active" href="/lexicon/">Lexicon</a>
+				</div>
+			</nav>
+		</header>
+
+		<main class="main-content">
+			<div class="lexicon-container">
+				<aside class="alphabet-nav">
+					<span class="alphabet-label text-label-sm">A-Z</span>
+					<div class="alphabet-list">
+						<a href="#A" class="alphabet-link text-label-xs active">A</a>
+						<a href="#B" class="alphabet-link text-label-xs active">B</a>
+						<a href="#C" class="alphabet-link text-label-xs active">C</a>
+						<a href="#D" class="alphabet-link text-label-xs">D</a>
+						<a href="#E" class="alphabet-link text-label-xs">E</a>
+						<a href="#F" class="alphabet-link text-label-xs">F</a>
+						<a href="#G" class="alphabet-link text-label-xs">G</a>
+						<a href="#H" class="alphabet-link text-label-xs">H</a>
+						<a href="#I" class="alphabet-link text-label-xs">I</a>
+						<a href="#J" class="alphabet-link text-label-xs">J</a>
+						<a href="#K" class="alphabet-link text-label-xs">K</a>
+						<a href="#L" class="alphabet-link text-label-xs">L</a>
+						<a href="#M" class="alphabet-link text-label-xs">M</a>
+						<a href="#N" class="alphabet-link text-label-xs">N</a>
+						<a href="#O" class="alphabet-link text-label-xs">O</a>
+						<a href="#P" class="alphabet-link text-label-xs">P</a>
+						<a href="#Q" class="alphabet-link text-label-xs">Q</a>
+						<a href="#R" class="alphabet-link text-label-xs">R</a>
+						<a href="#S" class="alphabet-link text-label-xs">S</a>
+						<a href="#T" class="alphabet-link text-label-xs">T</a>
+						<a href="#U" class="alphabet-link text-label-xs">U</a>
+						<a href="#V" class="alphabet-link text-label-xs">V</a>
+						<a href="#W" class="alphabet-link text-label-xs">W</a>
+						<a href="#X" class="alphabet-link text-label-xs">X</a>
+						<a href="#Y" class="alphabet-link text-label-xs">Y</a>
+						<a href="#Z" class="alphabet-link text-label-xs">Z</a>
+					</div>
+				</aside>
+
+				<div class="lexicon-main">
+					<section class="hero grid">
+						<div class="hero-heading grid-col-md-9">
+							<h1 class="hero-title">Lexicon</h1>
+							<p>An exhaustive index of the technical, chemical, and poetic language defining the world of fine spirits.</p>
+						</div>
+					</section>
+
+					<section class="lexicon-controls">
+						<div class="search-container">
+							<input type="text" id="search-input" placeholder="Find a term..." class="search-input text-label-lg">
+						</div>
+						<div class="sort-buttons">
+							<button id="sort-alpha" class="sort-btn active">Alphabetical</button>
+							<button id="sort-category" class="sort-btn">Category</button>
+						</div>
+					</section>
+
+					<section id="lexicon-entries" class="lexicon-entries grid">
+						<!-- Terms will be populated by JavaScript -->
+					</section>
+					<div style="display: block; height: 500vh;"></div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<script src="../assets/scripts/scripts.js"></script>
+</body>
+</html>

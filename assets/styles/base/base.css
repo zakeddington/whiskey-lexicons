@@ -5,6 +5,11 @@
 	padding: 0;
 }
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: var(--layout-nav-offset);
+}
+
 body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;

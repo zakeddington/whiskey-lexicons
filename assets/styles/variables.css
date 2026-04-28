@@ -57,6 +57,7 @@
 :root {
 	--layout-max-width: 1600px;
 	--layout-inline-padding: clamp(1.5rem, 2vw, 2rem);
+	--layout-nav-offset: 6rem;
 	--grid-column-count: 12;
 	--grid-template-columns: repeat(var(--grid-column-count), minmax(0, 1fr));
 	--grid-gap: clamp(1.5rem, 3vw, 3rem);

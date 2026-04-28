@@ -168,76 +168,42 @@ const REGIONS = [
 ];
 
 // DOM elements
-const regionsBtn = document.getElementById('regions-btn');
-const lexiconBtn = document.getElementById('lexicon-btn');
-const lexiconView = document.getElementById('lexicon-view');
-const regionsView = document.getElementById('regions-view');
 const searchInput = document.getElementById('search-input');
 const sortAlphaBtn = document.getElementById('sort-alpha');
 const sortCategoryBtn = document.getElementById('sort-category');
 const lexiconEntries = document.getElementById('lexicon-entries');
 const regionsList = document.getElementById('regions-list');
 
-const ROOT_VIEW = 'regions';
-const VALID_VIEWS = new Set(['regions', 'lexicon']);
-const VIEW_ROUTES = {
-	regions: '#regions',
-	lexicon: '#lexicon'
-};
-
 // State
-let currentView = ROOT_VIEW;
 let searchQuery = '';
 let sortMode = 'alphabetical';
 
 // Initialize the app
 function init() {
 	setupEventListeners();
-	renderLexicon();
-	renderRegions();
-	updateAlphabetNav();
-	switchView(getViewFromHash(), { updateUrl: false });
+
+	if (lexiconEntries) {
+		renderLexicon();
+		updateAlphabetNav();
+	}
+
+	if (regionsList) {
+		renderRegions();
+	}
 }
 
 // Event listeners
 function setupEventListeners() {
-	regionsBtn.addEventListener('click', event => handleNavClick(event, 'regions'));
-	lexiconBtn.addEventListener('click', event => handleNavClick(event, 'lexicon'));
-	window.addEventListener('hashchange', () => switchView(getViewFromHash(), { updateUrl: false }));
-	searchInput.addEventListener('input', handleSearch);
-	sortAlphaBtn.addEventListener('click', () => setSortMode('alphabetical'));
-	sortCategoryBtn.addEventListener('click', () => setSortMode('category'));
-}
+	if (searchInput) {
+		searchInput.addEventListener('input', handleSearch);
+	}
 
-function handleNavClick(event, view) {
-	event.preventDefault();
-	switchView(view);
-}
+	if (sortAlphaBtn) {
+		sortAlphaBtn.addEventListener('click', () => setSortMode('alphabetical'));
+	}
 
-function getViewFromHash() {
-	const view = window.location.hash.replace('#', '');
-
-	return VALID_VIEWS.has(view) ? view : ROOT_VIEW;
-}
-
-// View switching
-function switchView(view, options = {}) {
-	const { updateUrl = true } = options;
-	currentView = view;
-
-	// Update button states
-	regionsBtn.classList.toggle('active', view === 'regions');
-	lexiconBtn.classList.toggle('active', view === 'lexicon');
-
-	// Update view visibility
-	lexiconView.classList.toggle('active', view === 'lexicon');
-	regionsView.classList.toggle('active', view === 'regions');
-
-	if (updateUrl) {
-		const route = VIEW_ROUTES[view] || '';
-		if (window.location.hash !== route) {
-			window.location.hash = route;
-		}
+	if (sortCategoryBtn) {
+		sortCategoryBtn.addEventListener('click', () => setSortMode('category'));
 	}
 }
 
@@ -257,6 +223,8 @@ function setSortMode(mode) {
 
 // Render lexicon
 function renderLexicon() {
+	if (!lexiconEntries) return;
+
 	const filteredTerms = LEXICON_TERMS.filter(term =>
 		term.name.toLowerCase().includes(searchQuery) ||
 		term.category.toLowerCase().includes(searchQuery)
@@ -274,18 +242,20 @@ function renderLexicon() {
 	lexiconEntries.innerHTML = sortedLetters.map(letter => {
 		const terms = groupedTerms[letter];
 		return `
-			<div class="lexicon-letter text-display-md grid-col-md-2 grid-col-md-start-1" id="${letter}">${letter}</div>
-			<div class="term-group grid grid-col-md-8">
-				${terms.map(term => `
-					<article class="term-item grid-col-full">
-						<div class="term-heading">
-							<span class="term-category text-label-sm tracking-wider">${term.category}</span>
-							<h3>${term.name}</h3>
-						</div>
-						<p class="term-description">${term.description}</p>
-					</article>
-				`).join('')}
-			</div>
+			<section class="lexicon-section grid grid-col-full" id="${letter}">
+				<div class="lexicon-letter text-display-md grid-col-md-2">${letter}</div>
+				<div class="term-group grid grid-col-md-8">
+					${terms.map(term => `
+						<article class="term-item grid-col-full">
+							<div class="term-heading">
+								<span class="term-category text-label-sm tracking-wider">${term.category}</span>
+								<h3>${term.name}</h3>
+							</div>
+							<p class="term-description">${term.description}</p>
+						</article>
+					`).join('')}
+				</div>
+			</section>
 		`;
 	}).join('');
 
@@ -308,6 +278,8 @@ function updateAlphabetNav() {
 
 // Render regions
 function renderRegions() {
+	if (!regionsList) return;
+
 	regionsList.innerHTML = REGIONS.map(region => `
 		<section class="region-section grid grid-align-stretch grid-col-full">
 			<aside class="region-sidebar grid-col-md-3">

@@ -15,106 +15,39 @@
 			<nav class="nav">
 				<a class="nav-title text-heading-md leading-normal" href="/">The Whiskey Lexicon</a>
 				<div class="nav-buttons">
-					<a id="regions-btn" class="nav-btn text-label-md active" href="#regions">Regions</a>
-					<a id="lexicon-btn" class="nav-btn text-label-md" href="#lexicon">Lexicon</a>
+					<a id="regions-btn" class="nav-btn text-label-md active" href="/">Regions</a>
+					<a id="lexicon-btn" class="nav-btn text-label-md" href="/lexicon/">Lexicon</a>
 				</div>
 			</nav>
 		</header>
 
 		<main class="main-content">
-			<!-- Lexicon View -->
-			<div id="lexicon-view" class="view">
-				<div class="lexicon-container">
-					<!-- Alphabet Navigation -->
-					<aside class="alphabet-nav">
-						<span class="alphabet-label text-label-sm">A-Z</span>
-						<div class="alphabet-list">
-							<a href="#A" class="alphabet-link text-label-xs active">A</a>
-							<a href="#B" class="alphabet-link text-label-xs active">B</a>
-							<a href="#C" class="alphabet-link text-label-xs active">C</a>
-							<a href="#D" class="alphabet-link text-label-xs">D</a>
-							<a href="#E" class="alphabet-link text-label-xs">E</a>
-							<a href="#F" class="alphabet-link text-label-xs">F</a>
-							<a href="#G" class="alphabet-link text-label-xs">G</a>
-							<a href="#H" class="alphabet-link text-label-xs">H</a>
-							<a href="#I" class="alphabet-link text-label-xs">I</a>
-							<a href="#J" class="alphabet-link text-label-xs">J</a>
-							<a href="#K" class="alphabet-link text-label-xs">K</a>
-							<a href="#L" class="alphabet-link text-label-xs">L</a>
-							<a href="#M" class="alphabet-link text-label-xs">M</a>
-							<a href="#N" class="alphabet-link text-label-xs">N</a>
-							<a href="#O" class="alphabet-link text-label-xs">O</a>
-							<a href="#P" class="alphabet-link text-label-xs">P</a>
-							<a href="#Q" class="alphabet-link text-label-xs">Q</a>
-							<a href="#R" class="alphabet-link text-label-xs">R</a>
-							<a href="#S" class="alphabet-link text-label-xs">S</a>
-							<a href="#T" class="alphabet-link text-label-xs">T</a>
-							<a href="#U" class="alphabet-link text-label-xs">U</a>
-							<a href="#V" class="alphabet-link text-label-xs">V</a>
-							<a href="#W" class="alphabet-link text-label-xs">W</a>
-							<a href="#X" class="alphabet-link text-label-xs">X</a>
-							<a href="#Y" class="alphabet-link text-label-xs">Y</a>
-							<a href="#Z" class="alphabet-link text-label-xs">Z</a>
-						</div>
-					</aside>
-
-					<!-- Main Content -->
-					<div class="lexicon-main">
-						<section class="hero grid">
-							<div class="hero-heading grid-col-md-9">
-								<h1 class="hero-title">Lexicon</h1>
-								<p>An exhaustive index of the technical, chemical, and poetic language defining the world of fine spirits.</p>
-							</div>
-						</section>
-
-						<section class="lexicon-controls">
-							<div class="search-container">
-								<input type="text" id="search-input" placeholder="Find a term..." class="search-input text-label-lg">
-							</div>
-							<div class="sort-buttons">
-								<button id="sort-alpha" class="sort-btn active">Alphabetical</button>
-								<button id="sort-category" class="sort-btn">Category</button>
-							</div>
-						</section>
-
-						<section id="lexicon-entries" class="lexicon-entries grid">
-							<!-- Terms will be populated by JavaScript -->
-						</section>
+			<div class="regions-container">
+				<section class="hero grid">
+					<div class="hero-heading grid-col-md-9">
+						<h1 class="hero-title">Whiskey <span class="hero-title-note text-display-sm font-body italic">n.</span></h1>
+						<p class="hero-kicker text-label-md">/'hwiski, 'wiski/</p>
+						<p>Derived from the Classical Gaelic "uisce beatha," meaning "water of life." An alcoholic liquor distilled from a fermented mash of grain, such as barley, rye, or corn, and usually aged in oak containers.</p>
 					</div>
-				</div>
-			</div>
-
-			<!-- Regions View -->
-			<div id="regions-view" class="view active">
-				<div class="regions-container">
-					<!-- Hero Section -->
-					<section class="hero grid">
-						<div class="hero-heading grid-col-md-9">
-							<h1 class="hero-title">Whiskey <span class="hero-title-note text-display-sm font-body italic">n.</span></h1>
-							<p class="hero-kicker text-label-md">/'hwiski, 'wiski/</p>
-							<p>Derived from the Classical Gaelic "uisce beatha," meaning "water of life." An alcoholic liquor distilled from a fermented mash of grain, such as barley, rye, or corn, and usually aged in oak containers.</p>
+					<div class="hero-meta grid-col-full">
+						<div class="meta-item">
+							<h6>Etymology</h6>
+							<p>Old Irish • 12th Century</p>
 						</div>
-						<div class="hero-meta grid-col-full">
-							<div class="meta-item">
-								<h6>Etymology</h6>
-								<p>Old Irish • 12th Century</p>
-							</div>
-							<div class="meta-item">
-								<h6>Variants</h6>
-								<p>Whisky (Scotch/Japanese), Whiskey (Irish/American)</p>
-							</div>
+						<div class="meta-item">
+							<h6>Variants</h6>
+							<p>Whisky (Scotch/Japanese), Whiskey (Irish/American)</p>
 						</div>
-					</section>
-
-					<!-- Regions List -->
-					<div id="regions-list" class="regions-list grid">
-						<!-- Regions will be populated by JavaScript -->
 					</div>
+				</section>
 
-					<footer class="footer">
-						<p class="text-label-md">Established 1824 · Digitized 2024</p>
-					</footer>
+				<div id="regions-list" class="regions-list grid">
+					<!-- Regions will be populated by JavaScript -->
 				</div>
+
+				<footer class="footer">
+					<p class="text-label-md">Established 1824 · Digitized 2024</p>
+				</footer>
 			</div>
 		</main>
 	</div>
