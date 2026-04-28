@@ -184,7 +184,6 @@ function init() {
 
 	if (lexiconEntries) {
 		renderLexicon();
-		updateAlphabetNav();
 	}
 
 	if (regionsList) {
@@ -259,20 +258,24 @@ function renderLexicon() {
 		`;
 	}).join('');
 
-	updateAlphabetNav();
+	updateAlphabetNav(filteredTerms);
 }
 
 // Update alphabet navigation
-function updateAlphabetNav() {
-	const activeLetters = new Set(LEXICON_TERMS.map(t => t.letter));
+function updateAlphabetNav(filteredTerms) {
+	const activeLetters = new Set(filteredTerms.map(t => t.letter));
 	const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+	const alphabetLinks = document.querySelectorAll('.alphabet-link');
 
-	const alphabetList = document.querySelector('.alphabet-list');
-	if (alphabetList) {
-		alphabetList.innerHTML = alphabet.map(letter => {
-			const hasTerms = activeLetters.has(letter);
-			return hasTerms ? `<a href="#${letter}" class="alphabet-link text-label-xs active">${letter}</a>` : `<a href="#${letter}" class="alphabet-link text-label-xs">${letter}</a>`;
-		}).join('');
+	if (alphabetLinks.length) {
+		alphabetLinks.forEach(link => {
+			const letter = link.textContent;
+			if (activeLetters.has(letter)) {
+				link.classList.remove('is-disabled');
+			} else {
+				link.classList.add('is-disabled');
+			}
+		});
 	}
 }
 
