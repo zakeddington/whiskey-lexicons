@@ -1,4 +1,4 @@
-@layer variables, base, layout, components, utilities;
+@layer variables, base, layout, components, utilities, themes;
 
 /* Import all CSS layers */
 @import "variables.css" layer(variables);
@@ -10,3 +10,4 @@
 @import "components/lexicon.css" layer(components);
 @import "components/regions.css" layer(components);
 @import "utilities.css" layer(utilities);
+@import "themes/theme-accent.css" layer(themes);

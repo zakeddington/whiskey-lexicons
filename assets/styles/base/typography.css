@@ -337,4 +337,14 @@
 	.normal-case {
 		text-transform: none;
 	}
+
+	.list-reset {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			margin-bottom: 0;
+		}
+	}
 }

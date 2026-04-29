@@ -281,11 +281,11 @@ function renderRegions() {
 	regionsList.innerHTML = REGIONS.map(region => `
 		<section class="region-section grid grid-align-stretch grid-col-full">
 			<aside class="region-sidebar grid-col-md-3">
-				<div class="legal-framework">
+				<div class="region-sidebar-block theme-accent">
 					<h3 class="sidebar-title text-label">
 						LEGAL FRAMEWORK
 					</h3>
-					<ul class="legal-list text-body-sm">
+					<ul class="list-reset text-body-sm">
 						${region.legalFramework.location ? `<li><strong>Location:</strong> ${region.legalFramework.location}</li>` : ''}
 						${region.legalFramework.ingredients ? `<li><strong>Ingredients:</strong> ${region.legalFramework.ingredients}</li>` : ''}
 						${region.legalFramework.grain ? `<li><strong>Grain:</strong> ${region.legalFramework.grain}</li>` : ''}

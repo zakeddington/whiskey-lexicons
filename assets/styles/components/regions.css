@@ -16,26 +16,17 @@
 	border-right: 2px solid var(--color-token-accent);
 }
 
-.legal-framework {
-	background-color: var(--color-token-accent);
+.region-sidebar-block {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 	padding: 1.5rem;
 
-	.text-label {
-		color: var(--color-token-on-accent);
+	.list-reset {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
-}
-
-.legal-list {
-	color: var(--color-token-on-accent-muted);
-	margin: 0;
-
-	:last-child {
-		margin-bottom: 0;
-	}
-}
-
-.legal-list strong {
-	color: var(--color-token-on-primary);
 }
 
 .region-bottle {
