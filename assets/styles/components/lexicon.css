@@ -37,7 +37,7 @@
 
 .alphabet-link {
 	display: block;
-	font-family: var(--font-label);
+	font-family: var(--font-sans-serif);
 	font-weight: var(--font-weight-bold);
 	height: 1.5em;
 	text-align: center;

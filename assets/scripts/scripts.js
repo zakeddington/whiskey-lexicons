@@ -287,7 +287,7 @@ function renderRegions() {
 		<section class="region-section grid grid-align-stretch grid-col-full">
 			<aside class="region-sidebar grid-col-md-3">
 				<div class="legal-framework">
-					<h3 class="sidebar-title text-label-sm font-serif">
+					<h3 class="sidebar-title text-label-sm">
 						LEGAL FRAMEWORK
 					</h3>
 					<ul class="legal-list text-body-sm">
@@ -310,7 +310,7 @@ function renderRegions() {
 				</div>
 
 				<div class="region-varieties">
-					<h3 class="varieties-title text-heading-md tracking-wide uppercase leading-normal">${region.name} Varieties</h3>
+					<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${region.name} Varieties</h3>
 					<div class="varieties-list">
 						${region.varieties.map(variety => `
 							<div class="variety-item grid">
@@ -330,7 +330,7 @@ function renderRegions() {
 
 				${region.subRegions ? `
 					<div class="region-map">
-						<h3 class="varieties-title text-heading-md tracking-wide uppercase leading-normal">${region.name} Regions</h3>
+						<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${region.name} Regions</h3>
 						<div class="map-container grid grid-align-start">
 							<div class="map-image grid-col-md-6">
 								<img alt="${region.name} Regions Map" src="${region.mapImage}" />

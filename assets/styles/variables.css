@@ -65,9 +65,8 @@
 
 /* Typography Families */
 :root {
-	--font-serif: "Noto Serif", serif;
 	--font-body: "Newsreader", serif;
-	--font-label: "Work Sans", sans-serif;
+	--font-sans-serif: "Work Sans", sans-serif;
 }
 
 /* Typography Scales - Font Sizes */
