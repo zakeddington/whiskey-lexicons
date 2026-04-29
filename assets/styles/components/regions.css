@@ -13,7 +13,18 @@
 }
 
 .region-sidebar {
-	border-right: 2px solid var(--color-token-accent);
+	border-top: 2px solid var(--color-token-accent);
+	display: flex;
+	flex-direction: column-reverse;
+	gap: var(--grid-gap);
+	padding-top: var(--grid-gap);
+
+	@media (min-width: 768px) {
+		border-right: 2px solid var(--color-token-accent);
+		border-top: 0;
+		flex-direction: column;
+		padding-top: 0;
+	}
 }
 
 .region-sidebar-block {
@@ -34,7 +45,6 @@
 	height: auto;
 	margin-left: auto;
 	margin-right: auto;
-	margin-top: 2rem;
 	max-height: 35dvh;
 	max-width: 50%;
 	mix-blend-mode: multiply;
