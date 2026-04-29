@@ -34,26 +34,6 @@
 	gap: 2rem;
 }
 
-.nav-btn {
-	background: none;
-	border: none;
-	color: var(--color-token-on-surface-soft);
-	cursor: pointer;
-	padding: 0.25rem;
-	position: relative;
-	text-decoration: none;
-	transition: all 0.3s ease;
-}
-
-.nav-btn.active {
-	border-bottom: 2px solid var(--color-token-primary);
-	color: var(--color-token-primary);
-}
-
-.nav-btn:hover {
-	color: var(--color-token-primary);
-}
-
 /* Main content */
 .main-content {
 	margin: 0 auto;

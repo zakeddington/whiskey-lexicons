@@ -106,22 +106,6 @@
 	gap: 2rem;
 }
 
-.sort-btn {
-	background: none;
-	border: none;
-	color: var(--color-token-on-surface-muted);
-	cursor: pointer;
-	transition: color 0.2s;
-}
-
-.sort-btn.active {
-	color: var(--color-token-primary);
-}
-
-.sort-btn:hover {
-	color: var(--color-token-primary);
-}
-
 .lexicon-section {
 	position: relative;
 }
@@ -140,11 +124,6 @@
 
 .term-item {
 	margin-bottom: 0;
-}
-
-.term-category {
-	color: var(--color-token-on-surface-muted);
-	margin-bottom: 0.5rem;
 }
 
 .term-description {

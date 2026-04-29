@@ -55,8 +55,7 @@ const REGIONS = [
 	{
 		id: 'scotland',
 		name: 'Scotland',
-		regulator: 'Scotch Whisky Association (SWA) & HMRC',
-		protectedIndication: 'Protected Indication',
+		regulator: 'Regulated by the Scotch Whisky Regulations 2009 (SWR 2009)',
 		bottleImage: 'assets/images/bottle-scotch.svg',
 		mapImage: 'assets/images/scotch-regions.svg',
 		legalFramework: {
@@ -88,8 +87,7 @@ const REGIONS = [
 	{
 		id: 'usa',
 		name: 'United States',
-		regulator: 'TTB (Alcohol and Tobacco Tax and Trade Bureau)',
-		protectedIndication: 'Title 27 CFR',
+		regulator: 'Regulated by TTB (Alcohol and Tobacco Tax and Trade Bureau)',
 		bottleImage: 'assets/images/bottle-bourbon.svg',
 		legalFramework: {
 			grain: 'Fermented cereal grain.',
@@ -108,8 +106,7 @@ const REGIONS = [
 	{
 		id: 'ireland',
 		name: 'Ireland',
-		regulator: 'Dept. of Agriculture, Food and the Marine',
-		protectedIndication: 'Technical File (2014)',
+		regulator: 'Regulated by Irish Whiskey Technical File (2014) & EU Geographic Indication',
 		bottleImage: 'assets/images/bottle-irish.svg',
 		legalFramework: {
 			location: 'Island of Ireland.',
@@ -128,8 +125,7 @@ const REGIONS = [
 	{
 		id: 'japan',
 		name: 'Japan',
-		regulator: 'Japan Spirits & Liqueurs Makers Association',
-		protectedIndication: 'Voluntary Standards',
+		regulator: 'Regulated by Japan Spirits & Liqueurs Makers Association Standards (2021)',
 		bottleImage: 'assets/images/bottle-japanese.svg',
 		legalFramework: {
 			location: 'Japan only.',
@@ -148,8 +144,7 @@ const REGIONS = [
 	{
 		id: 'canada',
 		name: 'Canada',
-		regulator: 'Canadian Food Inspection Agency',
-		protectedIndication: 'Voluntary Standards',
+		regulator: `Regulated by Canada's Food and Drug Regulations (Division 2, B.02.020)`,
 		bottleImage: 'assets/images/bottle-canadian.svg',
 		legalFramework: {
 			location: 'Canada.',
@@ -247,7 +242,7 @@ function renderLexicon() {
 					${terms.map(term => `
 						<article class="term-item grid-col-full">
 							<div class="term-heading">
-								<span class="term-category text-label-sm tracking-wider">${term.category}</span>
+								<p class="text-label">${term.category}</p>
 								<h3>${term.name}</h3>
 							</div>
 							<p class="term-description">${term.description}</p>
@@ -287,7 +282,7 @@ function renderRegions() {
 		<section class="region-section grid grid-align-stretch grid-col-full">
 			<aside class="region-sidebar grid-col-md-3">
 				<div class="legal-framework">
-					<h3 class="sidebar-title text-label-sm">
+					<h3 class="sidebar-title text-label">
 						LEGAL FRAMEWORK
 					</h3>
 					<ul class="legal-list text-body-sm">
@@ -304,9 +299,8 @@ function renderRegions() {
 
 			<div class="region-main grid-col-md-9">
 				<div class="region-header">
-					<span class="region-indicator text-label-sm">${region.protectedIndication}</span>
 					<h2>${region.name}</h2>
-					<p class="region-regulator">Regulator: ${region.regulator}</p>
+					<p class="text-body-md">Regulator: ${region.regulator}</p>
 				</div>
 
 				<div class="region-varieties">
@@ -320,7 +314,7 @@ function renderRegions() {
 								<div class="variety-description grid-col-md-9">
 									<p>${variety.description}</p>
 									<div class="variety-tags">
-										${variety.tags.map(tag => `<span class="tag text-label-sm">${tag}</span>`).join('')}
+										${variety.tags.map(tag => `<span class="tag text-label">${tag}</span>`).join('')}
 									</div>
 								</div>
 							</div>

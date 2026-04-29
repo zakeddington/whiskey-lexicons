@@ -86,11 +86,7 @@
 	--font-size-body-lg: clamp(1.125rem, 1.5vw, 1.25rem); /* 18px - 20px */
 	--font-size-body-md: 1rem;
 	--font-size-body-sm: 0.875rem;
-
-	/* Label/UI sizes */
-	--font-size-label-lg: 0.875rem;
-	--font-size-label-md: 0.75rem;
-	--font-size-label-sm: 0.625rem;
+	--font-size-body-xs: 0.75rem;
 }
 
 /* Typography Weights */
