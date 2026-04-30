@@ -1,13 +1,14 @@
 // DOM elements
 const searchInput = document.getElementById('search-input');
 const sortAlphaBtn = document.getElementById('sort-alpha');
-const sortCategoryBtn = document.getElementById('sort-category');
+const categorySelect = document.getElementById('category-select');
 const lexiconEntries = document.getElementById('lexicon-entries');
 const regionsList = document.getElementById('regions-list');
 
 // State
 let searchQuery = '';
 let sortMode = 'alphabetical';
+let selectedCategory = '';
 
 const CATEGORY_ORDER = [
 	'Measurements & Labeling',
@@ -70,6 +71,7 @@ function renderSeeAlso(term) {
 
 // Initialize the app
 function init() {
+	setupCategorySelect();
 	setupEventListeners();
 
 	if (lexiconEntries) {
@@ -91,8 +93,8 @@ function setupEventListeners() {
 		sortAlphaBtn.addEventListener('click', () => setSortMode('alphabetical'));
 	}
 
-	if (sortCategoryBtn) {
-		sortCategoryBtn.addEventListener('click', () => setSortMode('category'));
+	if (categorySelect) {
+		categorySelect.addEventListener('change', handleCategoryChange);
 	}
 }
 
@@ -105,8 +107,28 @@ function handleSearch(e) {
 // Sort functionality
 function setSortMode(mode) {
 	sortMode = mode;
+	if (mode === 'alphabetical') {
+		selectedCategory = '';
+		if (categorySelect) categorySelect.value = '';
+	}
+
 	sortAlphaBtn.classList.toggle('active', mode === 'alphabetical');
-	sortCategoryBtn.classList.toggle('active', mode === 'category');
+	renderLexicon();
+}
+
+function setupCategorySelect() {
+	if (!categorySelect) return;
+
+	categorySelect.innerHTML = `
+		<option value="">Categories</option>
+		${CATEGORY_ORDER.map(category => `<option value="${escapeHtml(category)}">${escapeHtml(category)}</option>`).join('')}
+	`;
+}
+
+function handleCategoryChange(e) {
+	selectedCategory = e.target.value;
+	sortMode = selectedCategory ? 'category' : 'alphabetical';
+	sortAlphaBtn.classList.toggle('active', sortMode === 'alphabetical');
 	renderLexicon();
 }
 
@@ -115,8 +137,12 @@ function renderLexicon() {
 	if (!lexiconEntries) return;
 
 	const filteredTerms = LEXICON_TERMS.filter(term =>
-		term.name.toLowerCase().includes(searchQuery) ||
-		term.category.toLowerCase().includes(searchQuery)
+		(!selectedCategory || term.category === selectedCategory) &&
+		(
+			term.name.toLowerCase().includes(searchQuery) ||
+			term.category.toLowerCase().includes(searchQuery) ||
+			term.description.toLowerCase().includes(searchQuery)
+		)
 	);
 
 	const groupedTerms = {};
@@ -136,8 +162,8 @@ function renderLexicon() {
 		const terms = groupedTerms[group].sort((a, b) => a.name.localeCompare(b.name));
 		const sectionId = sortMode === 'category' ? getCategoryId(group) : group;
 		const headingClass = sortMode === 'category'
-			? 'lexicon-letter text-heading-md grid-col-md-2'
-			: 'lexicon-letter text-display-md grid-col-md-2';
+			? 'lexicon-section-title is-category text-heading-md grid-col-md-2'
+			: 'lexicon-section-title text-display-md grid-col-md-2';
 
 		return `
 			<section class="lexicon-section grid grid-col-full" id="${sectionId}">
