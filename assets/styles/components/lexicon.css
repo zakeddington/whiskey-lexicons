@@ -45,7 +45,7 @@
 	width: 1.5em;
 }
 
-.alphabet-link.is-disabled {
+.alphabet-link:not(.active) {
 	color: var(--color-token-primary-ghost);
 	pointer-events: none;
 }
