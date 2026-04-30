@@ -6,12 +6,16 @@ const REGIONS = [
 		regulator: 'Regulated by the Scotch Whisky Regulations 2009 (SWR 2009)',
 		bottleImage: 'assets/images/bottle-scotch.svg',
 		mapImage: 'assets/images/scotch-regions.svg',
-		legalFramework: {
-			location: 'Scotland.',
-			ingredients: 'Water, yeast, malted barley.',
-			aging: 'Min. 3 years.',
-			bottling: 'Min. 40% ABV.'
-		},
+		legalFramework: [
+			{ label: 'Production location', value: 'Must be entirely produced at a distillery in Scotland.' },
+			{ label: 'Grain base', value: 'Made from water and malted barley for single malt, or whole grains of other cereals.' },
+			{ label: 'Yeast only', value: 'Only yeast may be added to convert starches to sugars; no enzymes.' },
+			{ label: 'Distillation ceiling', value: 'Must be distilled to fewer than 94.8% ABV to retain character of raw materials.' },
+			{ label: 'Aging minimum', value: 'Must mature in Scotland in oak casks not exceeding 700 litres for a minimum of 3 years.' },
+			{ label: 'Bottling minimum', value: 'Must be bottled at minimum 40% ABV.' },
+			{ label: 'Permitted additives', value: 'Only water and plain caramel coloring (E150a) may be added. No other additives.' },
+			{ label: 'Age statement', value: 'If stated, must reflect youngest whisky in the bottle.' }
+		],
 		varieties: [
 			{
 				name: 'Single Malt',
@@ -37,12 +41,14 @@ const REGIONS = [
 		name: 'United States',
 		regulator: 'Regulated by TTB (Alcohol and Tobacco Tax and Trade Bureau)',
 		bottleImage: 'assets/images/bottle-bourbon.svg',
-		legalFramework: {
-			grain: 'Fermented cereal grain.',
-			aging: 'New charred oak containers.',
-			bottling: 'Min. 80° proof.',
-			special: { label: '"Straight"', value: 'Min. 2 years.' }
-		},
+		legalFramework: [
+			{ label: 'Grain base', value: 'Whisky must be produced from a fermented mash of grain.' },
+			{ label: 'Distillation ceiling', value: 'Must be distilled to no more than 190° proof (95% ABV).' },
+			{ label: 'Entry proof', value: 'Must enter the barrel at no more than 125° proof (62.5% ABV).' },
+			{ label: 'Oak requirement', value: 'Must be aged in oak containers; type varies by category.' },
+			{ label: 'Bottling minimum', value: 'Must be bottled at no less than 80° proof (40% ABV).' },
+			{ label: 'Permitted additives', value: 'No colorings, flavorings, or additives permitted in straight whiskey designations. Blended categories may allow limited additions.' }
+		],
 		varieties: [
 			{
 				name: 'Bourbon',
@@ -56,12 +62,14 @@ const REGIONS = [
 		name: 'Ireland',
 		regulator: 'Regulated by Irish Whiskey Technical File (2014) & EU Geographic Indication',
 		bottleImage: 'assets/images/bottle-irish.svg',
-		legalFramework: {
-			location: 'Island of Ireland.',
-			grain: 'Malted cereals.',
-			aging: 'Min. 3 years wood.',
-			bottling: 'Min. 40% ABV.'
-		},
+		legalFramework: [
+			{ label: 'Production location', value: 'Must be distilled and matured on the island of Ireland (Republic and Northern Ireland).' },
+			{ label: 'Grain base', value: 'Produced from a mash of malted cereals, with or without whole unmalted cereal grains.' },
+			{ label: 'Distillation ceiling', value: 'Distilled to less than 94.8% ABV to retain character of raw materials.' },
+			{ label: 'Aging minimum', value: 'Aged minimum 3 years in wooden casks on the island of Ireland.' },
+			{ label: 'Bottling minimum', value: 'Minimum 40% ABV.' },
+			{ label: 'Permitted additives', value: 'Only water and caramel coloring. No other flavorings or additives.' }
+		],
 		varieties: [
 			{
 				name: 'Single Pot Still',
@@ -75,12 +83,16 @@ const REGIONS = [
 		name: 'Japan',
 		regulator: 'Regulated by Japan Spirits & Liqueurs Makers Association Standards (2021)',
 		bottleImage: 'assets/images/bottle-japanese.svg',
-		legalFramework: {
-			location: 'Japan only.',
-			ingredients: 'Water: Japanese source.',
-			aging: 'Min. 3 years wood.',
-			bottling: 'Japan, min 40% ABV.'
-		},
+		legalFramework: [
+			{ label: 'Production location', value: 'Must be saccharified, fermented, distilled, matured, and bottled in Japan.' },
+			{ label: 'Water source', value: 'Must use water extracted in Japan.' },
+			{ label: 'Grain base', value: 'Malted grains must be used; other grains may also be used.' },
+			{ label: 'Distillation ceiling', value: 'Distilled to less than 95% ABV.' },
+			{ label: 'Aging minimum', value: 'Must be aged in wooden casks of ≤700 litres for at least 3 years in Japan.' },
+			{ label: 'Bottling minimum', value: 'Minimum 40% ABV.' },
+			{ label: 'Permitted additives', value: 'Caramel coloring only. No flavoring additives.' },
+			{ label: 'Historical context', value: 'Prior to 2021, there were no binding domestic regulations, allowing producers to import foreign whisky and bottle it as "Japanese whisky." The new standards closed this gap.' }
+		],
 		varieties: [
 			{
 				name: 'Single Malt',
@@ -94,12 +106,14 @@ const REGIONS = [
 		name: 'Canada',
 		regulator: `Regulated by Canada's Food and Drug Regulations (Division 2, B.02.020)`,
 		bottleImage: 'assets/images/bottle-canadian.svg',
-		legalFramework: {
-			location: 'Canada.',
-			grain: 'Fermented cereal grain.',
-			aging: 'Min. 3 years wood.',
-			bottling: 'Min. 40% ABV.'
-		},
+		legalFramework: [
+			{ label: 'Production location', value: 'Must be mashed, distilled, and aged in Canada.' },
+			{ label: 'Grain base', value: 'Produced from cereal grains; no specific grain percentages mandated.' },
+			{ label: 'Aging minimum', value: 'Must be aged in small wood containers for not less than 3 years.' },
+			{ label: 'Bottling minimum', value: 'Minimum 40% ABV.' },
+			{ label: 'Permitted additives', value: 'May contain caramel coloring, caramel flavoring, and up to 9.09% of other Canadian or foreign spirits, wine, or other flavorings; a notably liberal rule compared to other regions.' },
+			{ label: 'Labeling note', value: '"Rye whisky" is legally synonymous with "Canadian whisky" regardless of actual rye content; historically produced with high rye content but this is not required today.' }
+		],
 		varieties: [
 			{
 				name: 'Canadian Whisky',
@@ -109,4 +123,3 @@ const REGIONS = [
 		]
 	}
 ];
-
