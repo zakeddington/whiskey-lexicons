@@ -131,10 +131,10 @@
 
 .lexicon-section-title {
 	color: var(--color-token-primary-ghost);
+}
 
-	&.is-category {
-		color: var(--color-token-primary);
-	}
+.lexicon-section-title.is-category {
+	color: var(--color-token-primary);
 }
 
 @media (min-width: 768px) {
