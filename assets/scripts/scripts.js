@@ -9,6 +9,19 @@ const regionsList = document.getElementById('regions-list');
 let searchQuery = '';
 let sortMode = 'alphabetical';
 
+const CATEGORY_ORDER = [
+	'Measurements & Labeling',
+	'Ingredients & Grain',
+	'Malting & Mashing',
+	'Fermentation & Chemistry',
+	'Distillation',
+	'Maturation & Wood',
+	'Styles & Regulations',
+	'People & Producers',
+	'Regions & Terroir',
+	'Tasting & Service'
+];
+
 function escapeHtml(value) {
 	return value
 		.replace(/&/g, '&amp;')
@@ -30,6 +43,15 @@ function normalizeTermName(value) {
 function getTermByName(name) {
 	const normalizedName = normalizeTermName(name);
 	return LEXICON_TERMS.find(term => normalizeTermName(term.name) === normalizedName);
+}
+
+function getCategoryOrder(category) {
+	const index = CATEGORY_ORDER.indexOf(category);
+	return index === -1 ? CATEGORY_ORDER.length : index;
+}
+
+function getCategoryId(category) {
+	return `category-${normalizeTermName(category).replace(/\s+/g, '-')}`;
 }
 
 function renderSeeAlso(term) {
@@ -99,18 +121,27 @@ function renderLexicon() {
 
 	const groupedTerms = {};
 	filteredTerms.forEach(term => {
-		const key = term.letter;
+		const key = sortMode === 'category' ? term.category : term.letter;
 		if (!groupedTerms[key]) groupedTerms[key] = [];
 		groupedTerms[key].push(term);
 	});
 
-	const sortedLetters = Object.keys(groupedTerms).sort();
+	const sortedGroups = Object.keys(groupedTerms).sort((a, b) => {
+		if (sortMode !== 'category') return a.localeCompare(b);
 
-	lexiconEntries.innerHTML = sortedLetters.map(letter => {
-		const terms = groupedTerms[letter];
+		return getCategoryOrder(a) - getCategoryOrder(b) || a.localeCompare(b);
+	});
+
+	lexiconEntries.innerHTML = sortedGroups.map(group => {
+		const terms = groupedTerms[group].sort((a, b) => a.name.localeCompare(b.name));
+		const sectionId = sortMode === 'category' ? getCategoryId(group) : group;
+		const headingClass = sortMode === 'category'
+			? 'lexicon-letter text-heading-md grid-col-md-2'
+			: 'lexicon-letter text-display-md grid-col-md-2';
+
 		return `
-			<section class="lexicon-section grid grid-col-full" id="${letter}">
-				<div class="lexicon-letter text-display-md grid-col-md-2">${letter}</div>
+			<section class="lexicon-section grid grid-col-full" id="${sectionId}">
+				<div class="${headingClass}">${escapeHtml(group)}</div>
 				<div class="term-group grid grid-col-md-8">
 					${terms.map(term => `
 						<article class="term-item grid-col-full" id="${term.id}">
@@ -127,7 +158,7 @@ function renderLexicon() {
 		`;
 	}).join('');
 
-	updateAlphabetNav(filteredTerms);
+	updateAlphabetNav(sortMode === 'alphabetical' ? filteredTerms : []);
 }
 
 // Update alphabet navigation
