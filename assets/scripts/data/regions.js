@@ -44,11 +44,11 @@ const REGIONS = [
 			}
 		],
 		subRegions: [
-			{ name: 'Speyside', description: 'Home to over half of Scotland\'s distilleries. Known for elegant, complex, and fruit-forward malts.' },
-			{ name: 'Islay', description: 'Famous for pungent, peaty whiskies with notes of smoke, brine, and medicinal seaweed.' },
-			{ name: 'Highlands', description: 'The largest region by area, offering a vast range of styles from light and floral to rich and peated.' },
-			{ name: 'Lowlands', description: 'Traditionally known for lighter, grassier, unpeated whiskies, often triple-distilled.' },
-			{ name: 'Campbeltown', description: 'Once the \'Whisky Capital of the World\', now a small but distinct region with robust, oily characters.' }
+			{ name: 'Speyside', description: 'Officially a sub-region of the Highlands but recognized independently, Speyside is centered on the River Spey and has the densest concentration of distilleries in Scotland. Home to names like Glenfiddich, The Macallan, and Glenlivet, it is known for elegant, complex, fruit-forward malts that are often sweet and refined.' },
+			{ name: 'Islay', description: 'Islay is an island off Scotland\'s west coast and is famous for heavily peated, maritime whiskies. Many expressions carry high phenol levels and pungent notes of smoke, brine, medicinal seaweed, and coastal peat, with Laphroaig, Ardbeg, and Lagavulin among its defining distilleries.' },
+			{ name: 'Highlands', description: 'The Highlands are Scotland\'s largest whisky region, stretching north of the line from Greenock to Dundee and formally including Speyside as a sub-region. Because of its size, the region has no single required flavor profile and ranges widely from light, floral malts to robust, rich, and peated styles.' },
+			{ name: 'Lowlands', description: 'The Lowlands sit south of the Highland line and have historically been associated with lighter, grassier, gentler whiskies. The region has a tradition of triple distillation and was once an important heartland for grain whisky production.' },
+			{ name: 'Campbeltown', description: 'Campbeltown sits on the Kintyre peninsula and was once known as Scotland\'s whisky capital. Today it is a small but distinct region with only three operating distilleries, known for briny, oily, robust, and sometimes lightly peated whiskies from producers such as Springbank, Glen Scotia, and Glengyle.' }
 		]
 	},
 	{

@@ -248,15 +248,15 @@ function renderRegions() {
 				${region.subRegions ? `
 					<div class="region-map">
 						<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${region.name} Regions</h3>
-						<div class="map-container grid grid-align-start">
-							<div class="map-image grid-col-md-6">
+						<div class="map-container grid grid-align-center">
+							<div class="map-image grid-col-md-12 grid-col-lg-6">
 								<img alt="${region.name} Regions Map" src="${region.mapImage}" />
 							</div>
-							<div class="sub-regions grid grid-col-md-6">
+							<div class="sub-regions grid grid-col-md-12 grid-col-lg-6">
 								${region.subRegions.map(sub => `
 									<div class="sub-region grid-col-full">
 										<h5>${sub.name}</h5>
-										<p>${sub.description}</p>
+										<p class="text-body-sm">${sub.description}</p>
 									</div>
 								`).join('')}
 							</div>
