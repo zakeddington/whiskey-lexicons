@@ -18,52 +18,37 @@ const REGIONS = [
 		],
 		varieties: [
 			{
-				name: 'Single Malt Scotch Whisky',
+				name: 'Single Malt',
 				description: 'Single Malt Scotch is made from 100% malted barley at one distillery, batch distilled in copper pot stills, and matured in Scotland for at least 3 years in oak casks no larger than 700 litres. It contains no grain whisky from other distilleries, so each distillery\'s make remains distinct.',
 				tags: ['100% Malted Barley', 'Batch Pot Stills', 'Single Distillery', '3+ Years in Scotland', 'Oak Casks ≤700L', 'No Grain Whisky', 'Distinct Distillery Make']
 			},
 			{
-				name: 'Single Grain Scotch',
+				name: 'Single Grain',
 				description: 'Single Grain Scotch is produced at one distillery from cereals other than, or in addition to, malted barley and is typically distilled in column stills. It tends to be lighter and more neutral than malt whisky, with major producers including Cameronbridge and Girvan.',
 				tags: ['Single Distillery', 'Other Cereals Allowed', 'Column Distilled', 'Lighter Character', 'Cameronbridge & Girvan']
 			},
 			{
-				name: 'Blended Malt Scotch',
+				name: 'Blended Malt',
 				description: 'Blended Malt Scotch combines single malts from two or more Scottish distilleries without adding grain whisky. Formerly known as vatted malt or pure malt, it must still meet all Scotch regulations.',
 				tags: ['Multiple Single Malts', 'Two or More Distilleries', 'No Grain Whisky', 'Formerly Vatted Malt', 'SWR 2009 Terms']
 			},
 			{
-				name: 'Blended Grain Scotch',
+				name: 'Blended Grain',
 				description: 'Blended Grain Scotch combines single grain whiskies from two or more distilleries without adding malt whisky. It is a relatively uncommon Scotch category.',
 				tags: ['Multiple Single Grains', 'Two or More Distilleries', 'No Malt Whisky', 'Uncommon Category']
 			},
 			{
-				name: 'Blended Scotch Whisky',
+				name: 'Blended Scotch',
 				description: 'Blended Scotch Whisky combines one or more single malts with one or more single grains and is the largest Scotch category by volume. Any age statement reflects the youngest component, major examples include Johnnie Walker and Chivas Regal, and Diageo and Pernod Ricard dominate the category.',
 				tags: ['Malt & Grain', 'Largest Scotch Category', 'Youngest Age Statement', 'Johnnie Walker & Chivas', 'Diageo/Pernod Ricard']
-			},
-			{
-				name: 'Peated Scotch',
-				description: 'Peated Scotch is a non-legally defined style made with malted barley dried over peat fires, which adds phenolic smoky character measured in ppm. Islay is the most famous source, though peat is used across Scotch regions.',
-				tags: ['Non-Legal Style', 'Peat-Dried Malt', 'Phenolic Smoke', 'Measured in PPM', 'Islay Famous', 'Used Across Regions']
-			},
-			{
-				name: 'Cask Finish Scotch',
-				description: 'Cask Finish Scotch is a non-legally defined style in which mature whisky is transferred from its primary cask into another cask type, such as sherry, port, wine, or rum, for additional maturation. The finishing duration varies by producer.',
-				tags: ['Non-Legal Term', 'Secondary Cask', 'Sherry/Port/Wine/Rum', 'Additional Maturation', 'Producer-Defined Duration']
-			},
-			{
-				name: 'NAS (No Age Statement)',
-				description: 'NAS Scotch omits an age statement while still meeting the 3-year minimum for Scotch whisky. It gives producers flexibility to vat whiskies of different ages while maintaining a consistent flavor profile.',
-				tags: ['No Age Stated', 'Still 3+ Years', 'Flexible Vatting', 'Consistent Flavor']
 			}
 		],
 		subRegions: [
-			{ name: 'Speyside', description: "Home to over half of Scotland's distilleries. Known for elegant, complex, and fruit-forward malts." },
+			{ name: 'Speyside', description: 'Home to over half of Scotland\'s distilleries. Known for elegant, complex, and fruit-forward malts.' },
 			{ name: 'Islay', description: 'Famous for pungent, peaty whiskies with notes of smoke, brine, and medicinal seaweed.' },
 			{ name: 'Highlands', description: 'The largest region by area, offering a vast range of styles from light and floral to rich and peated.' },
 			{ name: 'Lowlands', description: 'Traditionally known for lighter, grassier, unpeated whiskies, often triple-distilled.' },
-			{ name: 'Campbeltown', description: "Once the 'Whisky Capital of the World', now a small but distinct region with robust, oily characters." }
+			{ name: 'Campbeltown', description: 'Once the \'Whisky Capital of the World\', now a small but distinct region with robust, oily characters.' }
 		]
 	},
 	{
@@ -111,16 +96,6 @@ const REGIONS = [
 				tags: ['Rye Rules', '2+ Years Aging', 'Age Stated <4yr', 'No Other Whisky Types', 'No Additives', 'Spicier/Drier', 'Maryland & Monongahela Styles']
 			},
 			{
-				name: 'High-Rye Bourbon',
-				description: 'High-Rye Bourbon is a non-legal designation for bourbon with elevated rye content, typically 20–35%, in the secondary grain bill. The added rye gives a spicier character, with Bulleit and Four Roses Single Barrel as common examples.',
-				tags: ['Non-Legal Designation', '20–35% Rye', 'Secondary Grain', 'Spicier Character', 'Bulleit & Four Roses']
-			},
-			{
-				name: 'Wheated Bourbon',
-				description: 'Wheated Bourbon is a non-legal designation for bourbon that uses wheat as the dominant secondary grain instead of rye. The style is usually softer and sweeter, with W.L. Weller, Pappy Van Winkle, and Maker\'s Mark as familiar examples.',
-				tags: ['Non-Legal Designation', 'Wheat Secondary Grain', 'No Rye Secondary', 'Softer Profile', 'Sweeter Profile', 'Weller/Pappy/Maker\'s']
-			},
-			{
 				name: 'Wheat Whiskey',
 				description: 'Wheat Whiskey uses a mash bill of at least 51% wheat, matures in new charred oak, follows the same proof limits as bourbon, and needs at least 2 years of aging for the straight designation.',
 				tags: ['≥51% Wheat', 'New Charred Oak', 'Bourbon Proof Limits', 'Straight Requires 2+ Years']
@@ -149,21 +124,6 @@ const REGIONS = [
 				name: 'Light Whiskey',
 				description: 'Light Whiskey is distilled between 161° and 189° proof, aged in used or uncharred new oak, and designed for a lighter, more neutral flavor profile.',
 				tags: ['161°–189° Proof', 'Used or Uncharred Oak', 'Light Character', 'Neutral Profile']
-			},
-			{
-				name: 'Single Barrel Bourbon',
-				description: 'Single Barrel Bourbon is a non-legal designation indicating that the bottling comes from one specific barrel rather than a blend of barrels. Each barrel differs, and premium examples often include age and barrel identification on the label.',
-				tags: ['Non-Legal Designation', 'One Specific Barrel', 'Not Barrel-Blended', 'Each Barrel Differs', 'Age/Barrel ID Premium']
-			},
-			{
-				name: 'Small Batch Bourbon',
-				description: 'Small Batch Bourbon is an undefined marketing term suggesting a limited number of barrels blended together, often around 10–200 barrels, though no legal minimum or maximum exists.',
-				tags: ['No Legal Definition', 'Limited Barrel Blend', 'Typically 10–200 Barrels', 'No Set Minimum/Maximum']
-			},
-			{
-				name: 'Cask Strength / Barrel Proof',
-				description: 'Cask Strength or Barrel Proof Bourbon is a non-legal designation for bourbon bottled directly from the barrel without dilution or with minimal dilution. It typically falls around 110–140° proof and must still meet all bourbon requirements.',
-				tags: ['Non-Legal Designation', 'No or Minimal Dilution', 'Bottled from Barrel', 'Typically 110–140°', 'Bourbon Rules Still Apply']
 			}
 		]
 	},
@@ -182,22 +142,22 @@ const REGIONS = [
 		],
 		varieties: [
 			{
-				name: 'Irish Single Malt',
+				name: 'Single Malt',
 				description: 'Irish Single Malt is made from 100% malted barley at a single Irish distillery, distilled in pot stills, and aged at least 3 years. It is typically unpeated, with Connemara as a notable peated exception, and is often triple-distilled for smoothness.',
 				tags: ['100% Malted Barley', 'Pot Still Distillation', 'Single Irish Distillery', '3+ Years Aging', 'Typically Unpeated', 'Connemara Exception', 'Often Triple-Distilled']
 			},
 			{
-				name: 'Single Pot Still Irish',
+				name: 'Single Pot Still',
 				description: 'Single Pot Still Irish is Ireland\'s most distinctive whiskey category, made at one distillery from a mix of malted and unmalted barley with at least 30% of each. It is distilled only in pot stills, giving a creamy texture, green or grassy notes, spicy character, and characteristic oiliness, and it was historically dominant before Prohibition damaged export markets.',
 				tags: ['Distinctively Irish', '≥30% Malted Barley', '≥30% Unmalted Barley', 'Pot Still Only', 'Single Distillery', 'Creamy Texture', 'Green/Grassy Notes', 'Spicy/Oily Character', 'Historically Dominant']
 			},
 			{
-				name: 'Single Grain Irish',
+				name: 'Single Grain',
 				description: 'Single Grain Irish comes from one distillery and may use cereals other than, or in addition to, malted barley. It is typically column-distilled, producing a lighter and sweeter character.',
 				tags: ['Single Distillery', 'Other Cereals Allowed', 'Column Distilled', 'Lighter Character', 'Sweeter Character']
 			},
 			{
-				name: 'Blended Irish Whiskey',
+				name: 'Blended',
 				description: 'Blended Irish Whiskey combines two or more Irish whiskey categories and is the most widely sold Irish style. Familiar examples include Jameson, Bushmills Black Bush, and Tullamore D.E.W.',
 				tags: ['Two or More Categories', 'Most Widely Sold', 'Jameson', 'Bushmills Black Bush', 'Tullamore D.E.W.']
 			}
@@ -220,31 +180,26 @@ const REGIONS = [
 		],
 		varieties: [
 			{
-				name: 'Japanese Single Malt',
+				name: 'Single Malt',
 				description: 'Japanese Single Malt is made from 100% malted barley at a single Japanese distillery, distilled in pot stills, and aged at least 3 years in Japan. Producers often use diverse cask types, including Mizunara oak, ex-sherry, and ex-bourbon, and Japanese distilleries commonly run multiple still shapes to create blending diversity in-house.',
 				tags: ['100% Malted Barley', 'Pot Still', 'Single Japanese Distillery', '3+ Years in Japan', 'Mizunara/Ex-Sherry/Ex-Bourbon', 'Multiple Still Shapes', 'Internal Blending Diversity']
 			},
 			{
-				name: 'Blended Japanese Whisky',
+				name: 'Blended',
 				description: 'Blended Japanese Whisky combines malt and grain whiskies, and under the 2021 standards all components must be produced and aged in Japan, though historically some blends included imported spirit. Suntory and Nikka dominate the category, and cross-company barrel exchange is rare compared with Scotland.',
 				tags: ['Malt & Grain Whisky', 'All Japanese Components', '2021 Standards', 'Historically Imported Spirit', 'Suntory & Nikka', 'Rare Barrel Exchanges']
 			},
 			{
-				name: 'Grain Whisky (Japanese)',
+				name: 'Grain',
 				description: 'Japanese Grain Whisky is made from grains other than, or in addition to, malted barley and is typically column-distilled. It is generally lighter and cleaner in character and is often used as a blending component.',
 				tags: ['Other Grains Allowed', 'Includes Malted Barley Option', 'Column Distilled', 'Blending Component', 'Lighter/Cleaner Character']
-			},
-			{
-				name: 'Mizunara Expression',
-				description: 'A Mizunara Expression is a non-legal designation for whisky matured in Mizunara, the porous and difficult-to-cooper Japanese oak Quercus mongolica. It can add sandalwood, incense, and coconut notes, and is rare and expensive.',
-				tags: ['Non-Legal Designation', 'Mizunara Oak', 'Quercus Mongolica', 'Porous & Difficult', 'Sandalwood/Incense/Coconut', 'Rare & Expensive']
 			}
 		]
 	},
 	{
 		id: 'canada',
 		name: 'Canada',
-		regulator: `Regulated by Canada's Food and Drug Regulations (Division 2, B.02.020)`,
+		regulator: 'Regulated by Canada\'s Food and Drug Regulations (Division 2, B.02.020)',
 		bottleImage: 'assets/images/bottle-canadian.svg',
 		legalFramework: [
 			{ label: 'Production location', value: 'Must be mashed, distilled, and aged in Canada.' },
@@ -259,16 +214,6 @@ const REGIONS = [
 				name: 'Canadian Whisky / Rye',
 				description: 'Canadian Whisky, legally synonymous with rye whisky in Canada, is the primary national designation. It has no mash bill restrictions, comes from a blending-focused tradition, is often light and smooth, and includes examples such as Crown Royal and Canadian Club.',
 				tags: ['Primary Designation', 'Rye Synonym', 'No Mash Bill Restrictions', 'Blending Tradition', 'Light & Smooth', 'Crown Royal', 'Canadian Club']
-			},
-			{
-				name: 'Single Malt Canadian',
-				description: 'Single Malt Canadian is an emerging category made from 100% malted barley at one distillery. It follows general Canadian aging rules and is increasingly associated with craft distilleries.',
-				tags: ['Emerging Category', '100% Malted Barley', 'Single Distillery', 'Canadian Aging Rules', 'Craft Distillery Trend']
-			},
-			{
-				name: 'Single Barrel Canadian',
-				description: 'Single Barrel Canadian is a non-legally defined marketing designation indicating whisky from one specific barrel. There is no regulatory standard, so transparency depends on the producer.',
-				tags: ['Non-Legal Marketing', 'One Specific Barrel', 'No Regulatory Standard', 'Producer Transparency']
 			}
 		]
 	}

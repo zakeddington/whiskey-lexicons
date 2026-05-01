@@ -248,7 +248,6 @@
 		font-size: var(--font-size-body-xs);
 		font-weight: var(--font-weight-bold);
 		letter-spacing: var(--letter-spacing-wide);
-		margin-bottom: 1em;
 		text-transform: uppercase;
 	}
 

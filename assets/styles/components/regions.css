@@ -72,12 +72,17 @@
 
 .varieties-title {
 	border-bottom: 1px solid var(--color-token-outline-muted);
+	margin-bottom: 0;
 	padding-bottom: 1rem;
+}
+
+.varieties-list > :nth-child(odd) {
+	background-color: var(--color-token-surface-low);
 }
 
 .variety-item {
 	border-bottom: 1px solid var(--color-token-outline-muted);
-	padding: 2.5rem 0;
+	padding: 2.5rem 1rem;
 }
 
 .variety-item:last-child {

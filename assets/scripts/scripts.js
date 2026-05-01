@@ -231,10 +231,10 @@ function renderRegions() {
 					<div class="varieties-list">
 						${region.varieties.map(variety => `
 							<div class="variety-item grid">
-								<div class="variety-info grid-col-md-3">
+								<div class="variety-info grid-col-md-4">
 									<h4 class="variety-name">${variety.name}</h4>
 								</div>
-								<div class="variety-description grid-col-md-9">
+								<div class="variety-description grid-col-md-8">
 									<p>${variety.description}</p>
 									<div class="variety-tags">
 										${variety.tags.map(tag => `<span class="tag text-label">${tag}</span>`).join('')}

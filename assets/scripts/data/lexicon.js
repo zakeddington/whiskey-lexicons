@@ -58,8 +58,8 @@ const LEXICON_TERMS = [
 		name: 'Barrel Proof',
 		category: 'Measurements & Labeling',
 		letter: 'B',
-		description: 'Whisky bottled at, or very near, the strength it had when removed from the barrel, without dilution by added water. In the U.S., TTB rules allow barrel proof whiskey to be no more than two proof degrees below the strength recorded for tax determination.',
-		seeAlso: ['Cask Strength']
+		description: 'Whisky bottled at, or very near, the strength it had when removed from the barrel, without dilution by added water. In the U.S., TTB rules allow barrel proof whiskey to be no more than two proof degrees below the strength recorded for tax determination; bourbon labeled this way still has to meet all bourbon requirements.',
+		seeAlso: ['Cask Strength', 'Bourbon']
 	},
 	{
 		id: 'beer-still',
@@ -167,15 +167,16 @@ const LEXICON_TERMS = [
 		name: 'Cask Finish',
 		category: 'Maturation & Wood',
 		letter: 'C',
-		description: 'A secondary maturation step where whisky is transferred to a different type of cask (e.g., sherry, port, wine) after primary aging to add additional flavor complexity.'
+		description: 'A non-legally defined finishing practice in which mature whisky is transferred from its primary maturation cask into a different cask type, such as sherry, port, wine, rum, or another seasoned cask, to add flavor complexity. Scotch producers commonly use the term, and the finishing duration varies by producer.',
+		seeAlso: ['Cask', 'Maturation']
 	},
 	{
 		id: 'cask-strength',
 		name: 'Cask Strength',
 		category: 'Measurements & Labeling',
 		letter: 'C',
-		description: 'Whisky bottled at the natural strength it had when drawn from the cask, without significant dilution before bottling. Cask-strength whiskies are often around 55% to 65% ABV and let drinkers add water to taste.',
-		seeAlso: ['Barrel Proof']
+		description: 'Whisky bottled at the natural strength it had when drawn from the cask, without significant dilution before bottling. As a bourbon designation it is non-legal and usually indicates whiskey bottled directly from the barrel with no or minimal dilution, often around 110–140° proof, while still meeting all bourbon requirements.',
+		seeAlso: ['Barrel Proof', 'Bourbon']
 	},
 	{
 		id: 'charcoal-mellowing',
@@ -486,7 +487,8 @@ const LEXICON_TERMS = [
 		name: 'High Rye',
 		category: 'Styles & Regulations',
 		letter: 'H',
-		description: 'Refers to a bourbon containing a large percentage of rye in the mashbill—often around 20-35%.'
+		description: 'A non-legal bourbon designation for a mash bill with elevated rye content, typically around 20–35%, in the secondary grain bill. High-rye bourbons tend to taste spicier and drier than lower-rye bourbons, with Bulleit and Four Roses Single Barrel as common examples.',
+		seeAlso: ['Bourbon', 'Rye']
 	},
 	{
 		id: 'high-wines',
@@ -694,6 +696,14 @@ const LEXICON_TERMS = [
 		description: 'A rare species of Japanese oak (Quercus mongolica) used for whisky maturation. Imparts distinctive notes of incense, sandalwood, and coconut. Very porous and challenging to cooperage, making it expensive and rare.'
 	},
 	{
+		id: 'mizunara-expression',
+		name: 'Mizunara Expression',
+		category: 'Maturation & Wood',
+		letter: 'M',
+		description: 'A non-legal designation for whisky matured in Mizunara, the Japanese oak species Quercus mongolica. Mizunara is porous, difficult to cooper, rare, and expensive, and it can add sandalwood, incense, and coconut notes.',
+		seeAlso: ['Mizunara', 'Oak']
+	},
+	{
 		id: 'moonshine',
 		name: 'Moonshine',
 		category: 'Styles & Regulations',
@@ -719,7 +729,7 @@ const LEXICON_TERMS = [
 		name: 'NAS (No Age Statement)',
 		category: 'Measurements & Labeling',
 		letter: 'N',
-		description: 'A whisky released without stating an age on the label. It must still meet any legal minimum maturation requirements, but it does not claim how long the whisky aged; producers often use NAS releases to maintain consistency when older stock is limited.'
+		description: 'A whisky released without stating an age on the label. It must still meet any legal minimum maturation requirements, such as the 3-year minimum for Scotch, but it does not claim how long the whisky aged; producers often use NAS releases to vat whiskies of different ages while maintaining a consistent flavor profile.'
 	},
 	{
 		id: 'ndp-non-distiller-producer',
@@ -805,6 +815,14 @@ const LEXICON_TERMS = [
 		letter: 'P',
 		description: 'Partially decomposed vegetation compressed over time in bogs, dried, and burned as fuel during malting. Peat smoke infuses barley with phenolic compounds that create smoky, medicinal, earthy, or iodine-like flavors. Peated whisky is especially associated with Islay, though it is made in many regions.',
 		seeAlso: ['Phenol / Phenolic PPM']
+	},
+	{
+		id: 'peated-scotch',
+		name: 'Peated Scotch',
+		category: 'Styles & Regulations',
+		letter: 'P',
+		description: 'A non-legally defined Scotch style made with malted barley dried over peat fires. The peat smoke contributes phenolic smoky character measured in parts per million, or ppm; Islay is the best-known source, though peat is used across Scotch regions.',
+		seeAlso: ['Peat', 'Phenol / Phenolic PPM', 'Scotch']
 	},
 	{
 		id: 'phenol-phenolic-ppm',
@@ -971,7 +989,8 @@ const LEXICON_TERMS = [
 		name: 'Single Barrel',
 		category: 'Maturation & Wood',
 		letter: 'S',
-		description: 'A non-legally defined designation indicating a bottling sourced from one individual barrel. Each barrel offers unique characteristics due to its specific location in the warehouse and inherent variations.'
+		description: 'A non-legally defined designation indicating that a bottling comes from one specific barrel rather than a blend of barrels. Each barrel can differ because of warehouse location and natural maturation variation; bourbon examples often include age and barrel identification on premium labels, while Canadian single barrel releases rely on producer transparency because there is no specific regulatory standard.',
+		seeAlso: ['Barrel', 'Single Cask']
 	},
 	{
 		id: 'single-cask',
@@ -993,6 +1012,14 @@ const LEXICON_TERMS = [
 		category: 'Styles & Regulations',
 		letter: 'S',
 		description: 'Whisky made at a single distillery from malted barley and typically distilled in pot stills. The term is most closely associated with Scotch but also applies to Irish, Japanese, American, Indian, and other world whiskies, depending on local rules.'
+	},
+	{
+		id: 'single-malt-canadian',
+		name: 'Single Malt Canadian',
+		category: 'Styles & Regulations',
+		letter: 'S',
+		description: 'An emerging Canadian whisky style made from 100% malted barley at a single distillery. It follows general Canadian whisky aging rules and is increasingly associated with craft distilleries rather than a separate legally protected category.',
+		seeAlso: ['Canadian Whisky', 'Single Malt']
 	},
 	{
 		id: 'single-pot-still',
@@ -1021,7 +1048,8 @@ const LEXICON_TERMS = [
 		name: 'Small Batch',
 		category: 'Styles & Regulations',
 		letter: 'S',
-		description: 'A non-legally defined marketing term suggesting whisky is produced in limited quantities or from a small number of barrels. There is no legal minimum or maximum batch size. A term that is not legally defined, often used in marketing to suggest any product made in lesser quantities than the distiller\'s standard offerings.'
+		description: 'A non-legally defined marketing term suggesting whisky was made from a limited number of barrels or in lesser quantities than a producer\'s standard release. In bourbon, it often implies a blend of roughly 10–200 barrels, but no legal minimum or maximum exists.',
+		seeAlso: ['Bourbon']
 	},
 	{
 		id: 'solera',
@@ -1243,7 +1271,8 @@ const LEXICON_TERMS = [
 		name: 'Wheated Bourbon',
 		category: 'Styles & Regulations',
 		letter: 'W',
-		description: 'A bourbon made with wheat as a dominant secondary ingredient. These whiskeys often have a delicate flavor and can be referred to as "wheaters."'
+		description: 'A non-legal bourbon designation for bourbon that uses wheat as the dominant secondary grain instead of rye. Wheated bourbons are often softer, sweeter, and more delicate in flavor; familiar examples include W.L. Weller, Pappy Van Winkle, and Maker\'s Mark.',
+		seeAlso: ['Bourbon', 'Wheat Whiskey']
 	},
 	{
 		id: 'whiskey',
