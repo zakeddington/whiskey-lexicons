@@ -44,7 +44,7 @@
 	}
 
 	h5 {
-		color: var(--color-token-on-surface);
+		color: var(--color-token-accent);
 		font-size: var(--font-size-heading-sm);
 		font-weight: var(--font-weight-semibold);
 		letter-spacing: var(--letter-spacing-normal);

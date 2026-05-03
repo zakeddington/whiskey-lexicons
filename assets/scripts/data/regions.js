@@ -20,27 +20,27 @@ const REGIONS = [
 			{
 				name: 'Single Malt',
 				description: 'Single Malt Scotch is made from 100% malted barley at one distillery, batch distilled in copper pot stills, and matured in Scotland for at least 3 years in oak casks no larger than 700 litres. It contains no grain whisky from other distilleries, so each distillery\'s make remains distinct.',
-				tags: ['100% Malted Barley', 'Batch Pot Stills', 'Single Distillery', '3+ Years in Scotland', 'Oak Casks ≤700L', 'No Grain Whisky', 'Distinct Distillery Make']
+				tags: ['100% Malted Barley', 'Pot Still', 'One Distillery']
 			},
 			{
 				name: 'Single Grain',
 				description: 'Single Grain Scotch is produced at one distillery from cereals other than, or in addition to, malted barley and is typically distilled in column stills. It tends to be lighter and more neutral than malt whisky, with major producers including Cameronbridge and Girvan.',
-				tags: ['Single Distillery', 'Other Cereals Allowed', 'Column Distilled', 'Lighter Character', 'Cameronbridge & Girvan']
+				tags: ['Any Grain(s)', 'Column Still', 'One Distillery']
 			},
 			{
 				name: 'Blended Malt',
 				description: 'Blended Malt Scotch combines single malts from two or more Scottish distilleries without adding grain whisky. Formerly known as vatted malt or pure malt, it must still meet all Scotch regulations.',
-				tags: ['Multiple Single Malts', 'Two or More Distilleries', 'No Grain Whisky', 'Formerly Vatted Malt', 'SWR 2009 Terms']
+				tags: ['2+ Single Malts']
 			},
 			{
 				name: 'Blended Grain',
 				description: 'Blended Grain Scotch combines single grain whiskies from two or more distilleries without adding malt whisky. It is a relatively uncommon Scotch category.',
-				tags: ['Multiple Single Grains', 'Two or More Distilleries', 'No Malt Whisky', 'Uncommon Category']
+				tags: ['2+ Single Grains', 'Uncommon Category']
 			},
 			{
 				name: 'Blended Scotch',
 				description: 'Blended Scotch Whisky combines one or more single malts with one or more single grains and is the largest Scotch category by volume. Any age statement reflects the youngest component, major examples include Johnnie Walker and Chivas Regal, and Diageo and Pernod Ricard dominate the category.',
-				tags: ['Malt & Grain', 'Largest Scotch Category', 'Youngest Age Statement', 'Johnnie Walker & Chivas', 'Diageo/Pernod Ricard']
+				tags: ['1+ Single Malts & Single Grains', 'Largest Category']
 			}
 		],
 		subRegions: [
@@ -49,82 +49,6 @@ const REGIONS = [
 			{ name: 'Highlands', description: 'The Highlands are Scotland\'s largest whisky region, stretching north of the line from Greenock to Dundee and formally including Speyside as a sub-region. Because of its size, the region has no single required flavor profile and ranges widely from light, floral malts to robust, rich, and peated styles.' },
 			{ name: 'Lowlands', description: 'The Lowlands sit south of the Highland line and have historically been associated with lighter, grassier, gentler whiskies. The region has a tradition of triple distillation and was once an important heartland for grain whisky production.' },
 			{ name: 'Campbeltown', description: 'Campbeltown sits on the Kintyre peninsula and was once known as Scotland\'s whisky capital. Today it is a small but distinct region with only three operating distilleries, known for briny, oily, robust, and sometimes lightly peated whiskies from producers such as Springbank, Glen Scotia, and Glengyle.' }
-		]
-	},
-	{
-		id: 'usa',
-		name: 'United States',
-		regulator: 'Regulated by TTB (Alcohol and Tobacco Tax and Trade Bureau)',
-		bottleImage: 'assets/images/bottle-bourbon.svg',
-		legalFramework: [
-			{ label: 'Grain base', value: 'Whisky must be produced from a fermented mash of grain.' },
-			{ label: 'Distillation ceiling', value: 'Must be distilled to no more than 190° proof (95% ABV).' },
-			{ label: 'Entry proof', value: 'Must enter the barrel at no more than 125° proof (62.5% ABV).' },
-			{ label: 'Oak requirement', value: 'Must be aged in oak containers; type varies by category.' },
-			{ label: 'Bottling minimum', value: 'Must be bottled at no less than 80° proof (40% ABV).' },
-			{ label: 'Permitted additives', value: 'No colorings, flavorings, or additives permitted in straight whiskey designations. Blended categories may allow limited additions.' }
-		],
-		varieties: [
-			{
-				name: 'Bourbon',
-				description: 'Bourbon is the flagship American whiskey, made anywhere in the United States from a mash bill of at least 51% corn, aged in new charred oak, distilled to no more than 160° proof, entered into barrel at no more than 125° proof, and bottled at no less than 80° proof. It has no general age minimum, can qualify as straight after 2 years, needs no age statement once aged 4 years or more, and does not allow additives.',
-				tags: ['≥51% Corn', 'New Charred Oak', 'Distilled ≤160°', 'Barreled ≤125°', 'Bottled ≥80°', 'No Age Minimum', 'Straight at 2+yr', 'No Age Statement ≥4yr', 'No Additives', 'USA-Wide']
-			},
-			{
-				name: 'Straight Bourbon',
-				description: 'Straight Bourbon follows all bourbon rules and adds a minimum 2-year aging requirement. If it is younger than 4 years, the age must be stated, and it cannot be blended with other spirits or contain additives.',
-				tags: ['All Bourbon Rules', '2+ Years Aging', 'Age Stated <4yr', 'No Other Spirits', 'No Additives']
-			},
-			{
-				name: 'Kentucky Straight Bourbon',
-				description: 'Kentucky Straight Bourbon meets bourbon and straight bourbon requirements, then adds Kentucky distillation and at least 1 year of aging in Kentucky. It accounts for roughly 95% of global bourbon production.',
-				tags: ['Bourbon Rules', 'Straight Bourbon Rules', 'Distilled in Kentucky', 'Aged in Kentucky', '1+ Year in Kentucky', '~95% of Bourbon']
-			},
-			{
-				name: 'Tennessee Whiskey',
-				description: 'Tennessee Whiskey meets bourbon criteria, must be produced in Tennessee, and must use the Lincoln County Process, which filters spirit through sugar maple charcoal before or during aging. Benjamin Prichard\'s is a notable exemption, while Jack Daniel\'s and George Dickel are primary examples.',
-				tags: ['Bourbon Criteria', 'Made in Tennessee', 'Lincoln County Process', 'Maple Charcoal Filtering', 'Prichard\'s Exemption', 'Jack Daniel\'s & George Dickel']
-			},
-			{
-				name: 'Rye Whiskey',
-				description: 'Rye Whiskey uses a mash bill of at least 51% rye, matures in new charred oak, is distilled to no more than 160° proof, enters barrel at no more than 125° proof, and is bottled at no less than 80° proof.',
-				tags: ['≥51% Rye', 'New Charred Oak', 'Distilled ≤160°', 'Barreled ≤125°', 'Bottled ≥80°']
-			},
-			{
-				name: 'Straight Rye Whiskey',
-				description: 'Straight Rye Whiskey follows rye whiskey rules with at least 2 years of aging, an age statement if under 4 years, no blending with other whisky types, and no additives. It is generally spicier and drier than bourbon, with lighter Maryland and heavier Pennsylvania or Monongahela traditions.',
-				tags: ['Rye Rules', '2+ Years Aging', 'Age Stated <4yr', 'No Other Whisky Types', 'No Additives', 'Spicier/Drier', 'Maryland & Monongahela Styles']
-			},
-			{
-				name: 'Wheat Whiskey',
-				description: 'Wheat Whiskey uses a mash bill of at least 51% wheat, matures in new charred oak, follows the same proof limits as bourbon, and needs at least 2 years of aging for the straight designation.',
-				tags: ['≥51% Wheat', 'New Charred Oak', 'Bourbon Proof Limits', 'Straight Requires 2+ Years']
-			},
-			{
-				name: 'Malt Whiskey',
-				description: 'American Malt Whiskey uses at least 51% malted barley, matures in new charred oak, and follows the same proof limits as bourbon. It is not required to use pot stills, and the straight designation requires at least 2 years of aging.',
-				tags: ['≥51% Malted Barley', 'New Charred Oak', 'Bourbon Proof Limits', 'Pot Still Not Required', 'Straight Requires 2+ Years']
-			},
-			{
-				name: 'Corn Whiskey',
-				description: 'Corn Whiskey uses a mash bill of at least 80% corn, is distilled to no more than 160° proof, and does not require aging. If aged, it must use used or uncharred new oak, making it the major U.S. whiskey style not requiring new charred oak; it is often unaged as white dog and tied to moonshine tradition.',
-				tags: ['≥80% Corn', 'Distilled ≤160°', 'No Aging Required', 'Used or Uncharred Oak', 'No New Charred Oak', 'Often White Dog', 'Moonshine Tradition']
-			},
-			{
-				name: 'Bottled-in-Bond Bourbon',
-				description: 'Bottled-in-Bond Bourbon must be the product of one distillation season, one distiller, and one distillery, then aged at least 4 years in a federally bonded warehouse and bottled at exactly 100° proof. The label must identify the distillery, making it a government-backed authenticity guarantee from the 1897 Bottled-in-Bond Act.',
-				tags: ['One Season', 'One Distiller', 'One Distillery', '4+ Years Bonded', 'Exactly 100° Proof', 'Distillery on Label', '1897 Guarantee']
-			},
-			{
-				name: 'Blended Whiskey',
-				description: 'Blended Whiskey must contain at least 20% straight whiskey, while the remainder may be unaged neutral grain spirit or light whiskey. It may contain coloring or flavoring and must be labeled as blended.',
-				tags: ['≥20% Straight Whiskey', 'Neutral/Light Whiskey Allowed', 'Coloring/Flavoring Allowed', 'Blended Label Required']
-			},
-			{
-				name: 'Light Whiskey',
-				description: 'Light Whiskey is distilled between 161° and 189° proof, aged in used or uncharred new oak, and designed for a lighter, more neutral flavor profile.',
-				tags: ['161°–189° Proof', 'Used or Uncharred Oak', 'Light Character', 'Neutral Profile']
-			}
 		]
 	},
 	{
@@ -144,22 +68,98 @@ const REGIONS = [
 			{
 				name: 'Single Malt',
 				description: 'Irish Single Malt is made from 100% malted barley at a single Irish distillery, distilled in pot stills, and aged at least 3 years. It is typically unpeated, with Connemara as a notable peated exception, and is often triple-distilled for smoothness.',
-				tags: ['100% Malted Barley', 'Pot Still Distillation', 'Single Irish Distillery', '3+ Years Aging', 'Typically Unpeated', 'Connemara Exception', 'Often Triple-Distilled']
+				tags: ['100% Malted Barley', 'Pot Still', 'One Distillery']
 			},
 			{
 				name: 'Single Pot Still',
 				description: 'Single Pot Still Irish is Ireland\'s most distinctive whiskey category, made at one distillery from a mix of malted and unmalted barley with at least 30% of each. It is distilled only in pot stills, giving a creamy texture, green or grassy notes, spicy character, and characteristic oiliness, and it was historically dominant before Prohibition damaged export markets.',
-				tags: ['Distinctively Irish', '≥30% Malted Barley', '≥30% Unmalted Barley', 'Pot Still Only', 'Single Distillery', 'Creamy Texture', 'Green/Grassy Notes', 'Spicy/Oily Character', 'Historically Dominant']
+				tags: ['≥30% Malted Barley', '≥30% Unmalted Barley', 'Pot Still', 'One Distillery']
 			},
 			{
 				name: 'Single Grain',
 				description: 'Single Grain Irish comes from one distillery and may use cereals other than, or in addition to, malted barley. It is typically column-distilled, producing a lighter and sweeter character.',
-				tags: ['Single Distillery', 'Other Cereals Allowed', 'Column Distilled', 'Lighter Character', 'Sweeter Character']
+				tags: ['Any Grain(s)', 'Column Still', 'One Distillery']
 			},
 			{
 				name: 'Blended',
 				description: 'Blended Irish Whiskey combines two or more Irish whiskey categories and is the most widely sold Irish style. Familiar examples include Jameson, Bushmills Black Bush, and Tullamore D.E.W.',
-				tags: ['Two or More Categories', 'Most Widely Sold', 'Jameson', 'Bushmills Black Bush', 'Tullamore D.E.W.']
+				tags: ['2+ Categories', 'Largest Category']
+			}
+		]
+	},
+	{
+		id: 'usa',
+		name: 'United States',
+		regulator: 'Regulated by TTB (Alcohol and Tobacco Tax and Trade Bureau)',
+		bottleImage: 'assets/images/bottle-bourbon.svg',
+		legalFramework: [
+			{ label: 'Grain base', value: 'Whisky must be produced from a fermented mash of grain.' },
+			{ label: 'Distillation ceiling', value: 'Must be distilled to no more than 190° proof (95% ABV).' },
+			{ label: 'Entry proof', value: 'Must enter the barrel at no more than 125° proof (62.5% ABV).' },
+			{ label: 'Oak requirement', value: 'Must be aged in oak containers; type varies by category.' },
+			{ label: 'Bottling minimum', value: 'Must be bottled at no less than 80° proof (40% ABV).' },
+			{ label: 'Permitted additives', value: 'No colorings, flavorings, or additives permitted in straight whiskey designations. Blended categories may allow limited additions.' }
+		],
+		varieties: [
+			{
+				name: 'Bourbon',
+				description: 'Bourbon is the flagship American whiskey, made anywhere in the United States from a mash bill of at least 51% corn, aged in new charred oak, distilled to no more than 160° proof, entered into barrel at no more than 125° proof, and bottled at no less than 80° proof. It has no general age minimum, can qualify as straight after 2 years, needs no age statement once aged 4 years or more, and does not allow additives.',
+				tags: ['≥51% Corn', 'New Charred Oak', 'Distilled ≤160°', 'Barreled ≤125°', 'Bottled ≥80°', 'No Age Minimum', 'Age Stated if <4yr', 'No Additives']
+			},
+			{
+				name: 'Straight Bourbon',
+				description: 'Straight Bourbon follows all bourbon rules and adds a minimum 2-year aging requirement. If it is younger than 4 years, the age must be stated, and it cannot be blended with other spirits or contain additives.',
+				tags: ['Bourbon Rules', '2+ Years Aging']
+			},
+			{
+				name: 'Kentucky Straight Bourbon',
+				description: 'Kentucky Straight Bourbon meets bourbon and straight bourbon requirements, then adds Kentucky distillation and at least 1 year of aging in Kentucky. It accounts for roughly 95% of global bourbon production.',
+				tags: ['Bourbon Rules', 'Distilled in Kentucky', 'Aged in Kentucky 1+ Yr', 'Largest Category (~95%)']
+			},
+			{
+				name: 'Tennessee Whiskey',
+				description: 'Tennessee Whiskey meets bourbon criteria, must be produced in Tennessee, and must use the Lincoln County Process, which filters spirit through sugar maple charcoal before or during aging. Benjamin Prichard\'s is a notable exemption, while Jack Daniel\'s and George Dickel are primary examples.',
+				tags: ['Bourbon Rules', 'Distilled in Tennessee', 'Aged in Tennessee (no min)', 'Lincoln County Process']
+			},
+			{
+				name: 'Rye Whiskey',
+				description: 'Rye Whiskey uses a mash bill of at least 51% rye, matures in new charred oak, is distilled to no more than 160° proof, enters barrel at no more than 125° proof, and is bottled at no less than 80° proof.',
+				tags: ['Bourbon Rules', '≥51% Rye']
+			},
+			{
+				name: 'Straight Rye Whiskey',
+				description: 'Straight Rye Whiskey follows rye whiskey rules with at least 2 years of aging, an age statement if under 4 years, no blending with other whisky types, and no additives. It is generally spicier and drier than bourbon, with lighter Maryland and heavier Pennsylvania or Monongahela traditions.',
+				tags: ['Rye Rules', '2+ Years Aging']
+			},
+			{
+				name: 'Wheat Whiskey',
+				description: 'Wheat Whiskey uses a mash bill of at least 51% wheat, matures in new charred oak, follows the same proof limits as bourbon, and needs at least 2 years of aging for the straight designation.',
+				tags: ['Bourbon Rules', '≥51% Wheat']
+			},
+			{
+				name: 'Malt Whiskey',
+				description: 'American Malt Whiskey uses at least 51% malted barley, matures in new charred oak, and follows the same proof limits as bourbon. It is not required to use pot stills, and the straight designation requires at least 2 years of aging.',
+				tags: ['Bourbon Rules', '≥51% Malted Barley']
+			},
+			{
+				name: 'Corn Whiskey',
+				description: 'Corn Whiskey uses a mash bill of at least 80% corn, is distilled to no more than 160° proof, and does not require aging. If aged, it must use used or uncharred new oak, making it the major U.S. whiskey style not requiring new charred oak; it is often unaged as white dog and tied to moonshine tradition.',
+				tags: ['Most Bourbon Rules', '≥80% Corn', 'Used or Uncharred Oak', 'No New Charred Oak']
+			},
+			{
+				name: 'Bottled-in-Bond',
+				description: 'Bottled-in-Bond is a U.S. designation from the Bottled-in-Bond Act of 1897. The whiskey must be the product of one distillation season, one distiller, and one distillery, then aged at least 4 years in a federally bonded warehouse and bottled at exactly 100° proof. The label must identify the distillery, making it a government-backed authenticity guarantee.',
+				tags: ['One Season', 'One Distiller', 'One Distillery', 'Aged 4+ Yr Bonded Warehouse', 'Bottled 100°', 'Distillery on Label']
+			},
+			{
+				name: 'Light Whiskey',
+				description: 'Light Whiskey is distilled between 161° and 189° proof, aged in used or uncharred new oak, and designed for a lighter, more neutral flavor profile.',
+				tags: ['Distilled 161°–189° Proof', 'Used or Uncharred Oak']
+			},
+			{
+				name: 'Blended Whiskey',
+				description: 'Blended Whiskey must contain at least 20% straight whiskey, while the remainder may be unaged neutral grain spirit or light whiskey. It may contain coloring or flavoring and must be labeled as blended.',
+				tags: ['≥20% Straight Whiskey', 'Neutral Grain/Light Whiskey Allowed', 'Coloring/Flavoring Allowed', 'Blended Label Required']
 			}
 		]
 	},
