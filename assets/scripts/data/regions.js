@@ -102,6 +102,11 @@ const REGIONS = [
 		],
 		varieties: [
 			{
+				name: 'American Single Malt',
+				description: 'American Single Malt Whisky became a distinct federal category in December 2024. It must be made from a fermented mash of 100% malted barley, mashed, distilled, and aged in the United States, distilled entirely at one U.S. distillery to no more than 160° proof, stored in oak barrels no larger than 700 liters, and bottled at no less than 80° proof. The category has no minimum aging requirement, allows used, uncharred new, or charred new oak, permits caramel coloring if disclosed on the label, and establishes a straight designation at 2 years of aging. The single-distillery rule applies to distillation only, so fermentation, aging, and bottling may occur elsewhere; the 160° proof ceiling is stricter than Scotch single malt and is intended to preserve grain character without requiring pot stills.',
+				tags: ['100% Malted Barley', 'Used/New Oak Allowed', 'One Distillery', 'Distilled ≤160°', 'Bottled ≥80°', 'No Age Minimum', 'Caramel Color Disclosed']
+			},
+			{
 				name: 'Bourbon',
 				description: 'Bourbon is the flagship American whiskey, made anywhere in the United States from a mash bill of at least 51% corn, aged in new charred oak, distilled to no more than 160° proof, entered into barrel at no more than 125° proof, and bottled at no less than 80° proof. It has no general age minimum, can qualify as straight after 2 years, needs no age statement once aged 4 years or more, and does not allow additives.',
 				tags: ['≥51% Corn', 'New Charred Oak', 'Distilled ≤160°', 'Barreled ≤125°', 'Bottled ≥80°', 'No Age Minimum', 'Age Stated if <4yr', 'No Additives']
@@ -109,7 +114,7 @@ const REGIONS = [
 			{
 				name: 'Straight Bourbon',
 				description: 'Straight Bourbon follows all bourbon rules and adds a minimum 2-year aging requirement. If it is younger than 4 years, the age must be stated, and it cannot be blended with other spirits or contain additives.',
-				tags: ['Bourbon Rules', '2+ Years Aging']
+				tags: ['Bourbon Rules', 'Aged 2+ Years']
 			},
 			{
 				name: 'Kentucky Straight Bourbon',
@@ -129,7 +134,7 @@ const REGIONS = [
 			{
 				name: 'Straight Rye Whiskey',
 				description: 'Straight Rye Whiskey follows rye whiskey rules with at least 2 years of aging, an age statement if under 4 years, no blending with other whisky types, and no additives. It is generally spicier and drier than bourbon, with lighter Maryland and heavier Pennsylvania or Monongahela traditions.',
-				tags: ['Rye Rules', '2+ Years Aging']
+				tags: ['Rye Rules', 'Aged 2+ Years']
 			},
 			{
 				name: 'Wheat Whiskey',
@@ -182,17 +187,17 @@ const REGIONS = [
 			{
 				name: 'Single Malt',
 				description: 'Japanese Single Malt is made from 100% malted barley at a single Japanese distillery, distilled in pot stills, and aged at least 3 years in Japan. Producers often use diverse cask types, including Mizunara oak, ex-sherry, and ex-bourbon, and Japanese distilleries commonly run multiple still shapes to create blending diversity in-house.',
-				tags: ['100% Malted Barley', 'Pot Still', 'Single Japanese Distillery', '3+ Years in Japan', 'Mizunara/Ex-Sherry/Ex-Bourbon', 'Multiple Still Shapes', 'Internal Blending Diversity']
+				tags: ['100% Malted Barley', 'Pot Still', 'One Distillery', 'Aged 3+ Years in Japan']
 			},
 			{
 				name: 'Blended',
 				description: 'Blended Japanese Whisky combines malt and grain whiskies, and under the 2021 standards all components must be produced and aged in Japan, though historically some blends included imported spirit. Suntory and Nikka dominate the category, and cross-company barrel exchange is rare compared with Scotland.',
-				tags: ['Malt & Grain Whisky', 'All Japanese Components', '2021 Standards', 'Historically Imported Spirit', 'Suntory & Nikka', 'Rare Barrel Exchanges']
+				tags: ['Malt & Grain Whisky', 'All Japanese Components']
 			},
 			{
 				name: 'Grain',
 				description: 'Japanese Grain Whisky is made from grains other than, or in addition to, malted barley and is typically column-distilled. It is generally lighter and cleaner in character and is often used as a blending component.',
-				tags: ['Other Grains Allowed', 'Includes Malted Barley Option', 'Column Distilled', 'Blending Component', 'Lighter/Cleaner Character']
+				tags: ['Any Grain(s)', 'Column Still']
 			}
 		]
 	},
@@ -213,7 +218,7 @@ const REGIONS = [
 			{
 				name: 'Canadian Whisky / Rye',
 				description: 'Canadian Whisky, legally synonymous with rye whisky in Canada, is the primary national designation. It has no mash bill restrictions, comes from a blending-focused tradition, is often light and smooth, and includes examples such as Crown Royal and Canadian Club.',
-				tags: ['Primary Designation', 'Rye Synonym', 'No Mash Bill Restrictions', 'Blending Tradition', 'Light & Smooth', 'Crown Royal', 'Canadian Club']
+				tags: ['No Mash Bill Restrictions', 'Aged 3+ Years', 'Primary Designation', 'Rye Synonym']
 			}
 		]
 	}
