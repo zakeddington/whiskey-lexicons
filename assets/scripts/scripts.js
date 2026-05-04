@@ -205,64 +205,67 @@ function renderRegions() {
 	if (!regionsList) return;
 
 	regionsList.innerHTML = REGIONS.map(region => `
-		<section class="region-section grid grid-align-stretch grid-col-full">
-			<aside class="region-sidebar grid-col-md-3">
-				<div class="region-sidebar-block theme-accent">
-					<h3 class="sidebar-title text-label">
-						LEGAL FRAMEWORK
-					</h3>
-					<ul class="list-reset text-body-sm">
-						${region.legalFramework.map(rule => `
-							<li><strong>${escapeHtml(rule.label)}:</strong> ${escapeHtml(rule.value)}</li>
-						`).join('')}
-					</ul>
-				</div>
-				<img alt="${region.name} Bottle" class="region-bottle" src="${region.bottleImage}" />
-			</aside>
+		<section class="region-section">
 
-			<div class="region-main grid-col-md-9">
-				<div class="region-header">
-					<h2>${region.name}</h2>
-					<p class="text-body-md">Regulator: ${region.regulator}</p>
-				</div>
+			<header class="region-header">
+				<h2>${region.name}</h2>
+				<p class="text-body-md">Regulator: ${region.regulator}</p>
+			</header>
 
-				<div class="region-varieties">
-					<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${region.name} Varieties</h3>
-					<div class="varieties-list">
-						${region.varieties.map(variety => `
-							<div class="variety-item grid">
-								<div class="variety-info grid-col-md-4">
-									<h4 class="variety-name">${variety.name}</h4>
-								</div>
-								<div class="variety-description grid-col-md-8">
-									<p>${variety.description}</p>
-									<div class="variety-tags">
-										${variety.tags.map(tag => `<span class="tag text-label">${tag}</span>`).join('')}
-									</div>
-								</div>
-							</div>
-						`).join('')}
+			<div class="grid grid-align-stretch grid-col-full">
+				<aside class="region-sidebar grid-col-md-3">
+					<div class="region-sidebar-block theme-accent">
+						<h3 class="sidebar-title text-label">
+							LEGAL FRAMEWORK
+						</h3>
+						<ul class="list-reset text-body-sm">
+							${region.legalFramework.map(rule => `
+								<li><strong>${escapeHtml(rule.label)}:</strong> ${escapeHtml(rule.value)}</li>
+							`).join('')}
+						</ul>
 					</div>
-				</div>
+					<img alt="${region.name} Bottle" class="region-bottle" src="${region.bottleImage}" />
+				</aside>
 
-				${region.subRegions ? `
-					<div class="region-map">
-						<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${region.name} Regions</h3>
-						<div class="map-container grid grid-align-center">
-							<div class="map-image grid-col-md-12 grid-col-lg-6">
-								<img alt="${region.name} Regions Map" src="${region.mapImage}" />
-							</div>
-							<div class="sub-regions grid grid-col-md-12 grid-col-lg-6">
-								${region.subRegions.map(sub => `
-									<div class="sub-region grid-col-full">
-										<h5>${sub.name}</h5>
-										<p class="text-body-sm">${sub.description}</p>
+				<div class="region-main grid-col-md-9">
+					<div class="region-varieties">
+						<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${region.name} Varieties</h3>
+						<div class="varieties-list">
+							${region.varieties.map(variety => `
+								<div class="variety-item grid">
+									<div class="variety-info grid-col-md-4">
+										<h4 class="variety-name">${variety.name}</h4>
 									</div>
-								`).join('')}
-							</div>
+									<div class="variety-description grid-col-md-8">
+										<p>${variety.description}</p>
+										<div class="variety-tags">
+											${variety.tags.map(tag => `<span class="tag text-label">${tag}</span>`).join('')}
+										</div>
+									</div>
+								</div>
+							`).join('')}
 						</div>
 					</div>
-				` : ''}
+
+					${region.subRegions ? `
+						<div class="region-map">
+							<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${region.name} Regions</h3>
+							<div class="map-container grid grid-align-center">
+								<div class="map-image grid-col-md-12 grid-col-lg-6">
+									<img alt="${region.name} Regions Map" src="${region.mapImage}" />
+								</div>
+								<div class="sub-regions grid grid-col-md-12 grid-col-lg-6">
+									${region.subRegions.map(sub => `
+										<div class="sub-region grid-col-full">
+											<h5>${sub.name}</h5>
+											<p class="text-body-sm">${sub.description}</p>
+										</div>
+									`).join('')}
+								</div>
+							</div>
+						</div>
+					` : ''}
+				</div>
 			</div>
 		</section>
 	`).join('');

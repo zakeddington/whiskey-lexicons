@@ -59,7 +59,18 @@
 }
 
 .region-header {
-	margin-bottom: 2rem;
+	border-top: 2px solid var(--color-token-accent);
+	padding: 2rem 0;
+
+	:last-child {
+		margin-bottom: 0;
+	}
+
+	@media (min-width: 768px) {
+		border-bottom: 2px solid var(--color-token-accent);
+		border-top: 0;
+		padding: 4rem 0 2rem;
+	}
 }
 
 .region-indicator {
