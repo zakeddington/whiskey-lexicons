@@ -5,7 +5,7 @@
 }
 
 .region-section {
-	margin-bottom: var(--grid-gap);
+	margin-bottom: 6rem;
 }
 
 .region-section:last-child {
@@ -69,7 +69,7 @@
 	@media (min-width: 768px) {
 		border-bottom: 2px solid var(--color-token-accent);
 		border-top: 0;
-		padding: 4rem 0 2rem;
+		padding-top: 0;
 	}
 }
 
@@ -130,7 +130,15 @@
 }
 
 .region-map {
-	margin-top: 5rem;
+	margin-top: var(--grid-gap);
+
+	@media (min-width: 768px) {
+		margin-top: 6rem;
+	}
+}
+
+.map-image {
+	align-self: start;
 }
 
 .map-image img {
