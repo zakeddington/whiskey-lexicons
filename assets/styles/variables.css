@@ -2,9 +2,7 @@
 :root {
 	/* Brown scale */
 	--color-palette-brown-900: #1c1c16;  /* darkest */
-	--color-palette-brown-900-alpha-60: #1c1c1699;
 	--color-palette-brown-700: #5f3800;  /* dark */
-	--color-palette-brown-700-alpha-20: #5f380033;
 	--color-palette-brown-500: #54433a;  /* medium */
 	--color-palette-brown-400: #712B13;  /* reddish */
 	--color-palette-brown-400-alpha-10: #7f4d031a;
@@ -16,7 +14,6 @@
 	--color-palette-cream-200: #ece8de;  /* light */
 	--color-palette-cream-200-alpha-50: #ece8de80;
 	--color-palette-cream-300: #e6e2d8;  /* medium */
-	--color-palette-cream-400-alpha-20: #dac2b633;
 	--color-palette-cream-400-alpha-30: #dac2b64d;
 
 	/* Neutral scale */
@@ -47,30 +44,27 @@
 
 	/* Borders */
 	--color-border-muted: var(--color-palette-cream-400-alpha-30);
-	--color-border-soft: var(--color-palette-cream-400-alpha-20);
 	--color-border-strong: var(--color-palette-cream-300);
 	--color-border-accent: var(--color-palette-brown-400);
-	--color-border-primary: var(--color-palette-brown-700);
-	--color-border-primary-subtle: var(--color-palette-brown-700-alpha-20);
 	--color-border-focus-visible: var(--color-palette-brown-400);
 
 	/* Links */
-	--color-link-default: var(--color-palette-brown-700);
-	--color-link-hover: var(--color-palette-brown-900);
+	--color-link-default: var(--color-palette-brown-400);
+	--color-link-hover: var(--color-palette-brown-400);
 
 	/* Buttons */
 	--color-button-background-default: var(--color-palette-transparent);
 	--color-button-background-hover: var(--color-palette-transparent);
 	--color-button-background-active: var(--color-palette-transparent);
-	--color-button-text-default: var(--color-palette-brown-900-alpha-60);
-	--color-button-text-hover: var(--color-palette-brown-700);
-	--color-button-text-active: var(--color-palette-brown-700);
-	--color-button-border-active: var(--color-palette-brown-700);
+	--color-button-text-default: var(--color-palette-brown-500);
+	--color-button-text-hover: var(--color-palette-brown-400);
+	--color-button-text-active: var(--color-palette-brown-400);
+	--color-button-border-active: var(--color-palette-brown-400);
 
 	/* Forms */
 	--color-form-input-background: var(--color-palette-cream-200-alpha-50);
 	--color-form-input-text: var(--color-palette-brown-400);
-	--color-form-input-placeholder: var(--color-text-primary);
+	--color-form-input-placeholder: var(--color-palette-brown-500);
 
 	/* Disabled states */
 }
