@@ -46,7 +46,7 @@
 }
 
 .alphabet-link:not(.active) {
-	color: var(--color-token-primary-ghost);
+	color: var(--color-text-disabled);
 	pointer-events: none;
 }
 
@@ -81,24 +81,18 @@
 	}
 }
 
-.search-input {
-	background-color: var(--color-token-surface-high-muted);
+/* .search-input {
+	background-color: var(--color-form-input-background);
 	border: none;
-	border-radius: 0.25rem;
-	color: var(--color-token-on-surface);
-	padding: 0.625rem 2.5rem;
+	color: var(--color-form-input-text);
+	padding: 0.625rem 0.75rem;
 	transition: box-shadow 0.2s;
 	width: 100%;
 }
 
 .search-input::placeholder {
-	color: var(--color-token-on-surface-subtle);
-}
-
-.search-input:focus {
-	box-shadow: 0 0 0 1px var(--color-token-outline-muted);
-	outline: none;
-}
+	color: var(--color-form-input-placeholder);
+} */
 
 .sort-buttons {
 	align-items: center;
@@ -108,10 +102,9 @@
 
 .category-select {
 	appearance: auto;
-	background-color: var(--color-token-surface-high-muted);
+	background-color: var(--color-form-input-background);
 	border: none;
-	border-radius: 0.25rem;
-	color: var(--color-token-primary);
+	color: var(--color-form-input-text);
 	font-family: var(--font-sans-serif);
 	font-size: var(--font-size-body-xs);
 	font-weight: var(--font-weight-bold);
@@ -120,21 +113,16 @@
 	text-transform: uppercase;
 }
 
-.category-select:focus {
-	box-shadow: 0 0 0 1px var(--color-token-outline-muted);
-	outline: none;
-}
-
 .lexicon-section {
 	position: relative;
 }
 
 .lexicon-section-title {
-	color: var(--color-token-primary-ghost);
+	color: var(--color-text-disabled);
 }
 
 .lexicon-section-title.is-category {
-	color: var(--color-token-primary);
+	color: var(--color-text-brand);
 }
 
 @media (min-width: 768px) {
@@ -150,5 +138,5 @@
 }
 
 .term-description {
-	color: var(--color-token-on-variant);
+	color: var(--color-text-muted);
 }

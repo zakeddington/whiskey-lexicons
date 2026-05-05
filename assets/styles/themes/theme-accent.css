@@ -1,7 +1,7 @@
 /* Accent theme */
 .theme-accent {
-	background-color: var(--color-token-accent);
-	color: var(--color-token-on-accent-muted);
+	background-color: var(--color-theme-accent-background);
+	color: var(--color-theme-accent-text);
 }
 
 .theme-accent :where(h1, h2, h3, h4, h5, h6, p, ul, ol, li, span) {
@@ -9,9 +9,9 @@
 }
 
 .theme-accent :where(.text-label) {
-	color: var(--color-token-on-accent);
+	color: var(--color-theme-accent-text-strong);
 }
 
 .theme-accent :where(strong, b) {
-	color: var(--color-token-on-primary);
+	color: var(--color-theme-accent-text-emphasis);
 }

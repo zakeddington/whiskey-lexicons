@@ -1,7 +1,7 @@
 /* Header styles */
 .header {
-	background-color: var(--color-token-surface-low);
-	border-bottom: 2px solid var(--color-token-surface-highest);
+	background-color: var(--color-background-muted);
+	border-bottom: 2px solid var(--color-border-strong);
 	left: 0;
 	position: fixed;
 	right: 0;
@@ -24,7 +24,7 @@
 	text-decoration: none;
 
 	&:hover {
-		color: var(--color-token-on-surface);
+		color: var(--color-text-primary);
 	}
 }
 

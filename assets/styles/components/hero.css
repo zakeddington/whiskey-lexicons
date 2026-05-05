@@ -17,11 +17,11 @@
 }
 
 .hero-title-note {
-	color: var(--color-token-primary);
+	color: var(--color-text-brand);
 }
 
 .hero-meta {
-	border-top: 1px solid var(--color-token-outline-muted);
+	border-top: 1px solid var(--color-border-muted);
 	display: flex;
 	flex-direction: column;
 	gap: var(--grid-gap);
@@ -35,5 +35,5 @@
 }
 
 .meta-item p {
-	color: var(--color-token-on-surface);
+	color: var(--color-text-primary);
 }
