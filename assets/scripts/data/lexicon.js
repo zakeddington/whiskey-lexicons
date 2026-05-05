@@ -1,5 +1,5 @@
 // Lexicon data
-const LEXICON_TERMS = [
+export const LEXICON_TERMS = [
 	{
 		id: 'abv',
 		name: 'ABV',

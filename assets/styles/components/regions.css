@@ -59,6 +59,11 @@
 	}
 }
 
+.sidebar-title-icon {
+	height: 1.5em;
+	width: 1.5em;
+}
+
 .region-bottle {
 	display: block;
 	height: auto;
