@@ -17,6 +17,6 @@ body {
 }
 
 ::selection {
-	background-color: var(--color-token-primary-container);
+	background-color: var(--color-token-primary);
 	color: var(--color-token-on-primary);
 }
