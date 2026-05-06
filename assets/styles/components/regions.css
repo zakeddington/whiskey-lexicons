@@ -129,7 +129,7 @@
 }
 
 .region-regulator {
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 }
 
 .region-accordion-icon {
@@ -186,13 +186,13 @@
 }
 
 .variety-name {
-	color: var(--color-text-accent);
+	color: var(--color-text-secondary);
 	margin-bottom: 0;
 }
 
 .variety-description,
 .variety-description p {
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 }
 
 .variety-tags {
@@ -248,5 +248,5 @@
 }
 
 .sub-region p {
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 }

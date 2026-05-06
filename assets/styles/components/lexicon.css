@@ -122,7 +122,7 @@
 }
 
 .lexicon-section-title.is-category {
-	color: var(--color-text-brand);
+	color: var(--color-text-secondary);
 }
 
 @media (min-width: 768px) {
@@ -138,5 +138,5 @@
 }
 
 .term-description {
-	color: var(--color-text-muted);
+	color: var(--color-text-secondary);
 }
