@@ -1,17 +1,12 @@
 /* Accent theme */
 .theme-accent {
-	background-color: var(--color-theme-accent-background);
-	color: var(--color-theme-accent-text);
-}
-
-.theme-accent :where(h1, h2, h3, h4, h5, h6, p, ul, ol, li, span) {
-	color: inherit;
-}
-
-.theme-accent :where(.text-label) {
-	color: var(--color-theme-accent-text-strong);
+	--color-background-primary: var(--color-palette-brown-400);
+	--color-text-primary: var(--color-palette-cream-50-alpha-80);
+	--color-text-secondary: var(--color-palette-white);
+	background-color: var(--color-background-primary);
+	color: var(--color-text-primary);
 }
 
 .theme-accent :where(strong, b) {
-	color: var(--color-theme-accent-text-emphasis);
+	color: var(--color-text-secondary);
 }

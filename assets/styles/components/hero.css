@@ -21,7 +21,7 @@
 }
 
 .hero-meta {
-	border-bottom: 1px solid var(--color-border-muted);
+	border-bottom: 1px solid var(--color-border-primary);
 	display: flex;
 	flex-direction: column;
 	gap: var(--grid-gap);

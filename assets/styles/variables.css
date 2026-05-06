@@ -3,30 +3,29 @@
 	/* Brown scale */
 	--color-palette-brown-900: #1c1c16;  /* darkest */
 	--color-palette-brown-700: #613F28;  /* medium */
+	--color-palette-brown-700-alpha-10: rgba(97, 63, 40, 0.1);
+	--color-palette-brown-700-alpha-05: rgba(97, 63, 40, 0.05);
 	--color-palette-brown-400: #712B13;  /* reddish */
 	--color-palette-brown-400-alpha-10: #7f4d031a;
 
 	/* Cream scale */
 	--color-palette-cream-50: #fdf9ef;   /* lightest */
-	--color-palette-cream-50-alpha-80: #fdf9efcc;
-	--color-palette-cream-100: #f7f3e9;  /* very light */
+	--color-palette-cream-50-alpha-80: rgba(253, 249, 239, 0.8); /* accent theme text */
 	--color-palette-cream-200: #ece8de;  /* light */
-	--color-palette-cream-200-alpha-50: #ece8de80;
 	--color-palette-cream-300: #e6e2d8;  /* medium */
-	--color-palette-cream-400-alpha-30: #dac2b64d;
 
 	/* Neutral scale */
-	--color-palette-white: #ffffff;
-	--color-palette-white-alpha-90: #ffffffe6;
+	--color-palette-white: #ffffff; /* accent theme text */
 	--color-palette-transparent: transparent;
 }
 
 /* Color Tokens */
 :root {
 	/* Backgrounds */
-	--color-background-page: var(--color-palette-cream-50);
-	--color-background-muted: var(--color-palette-cream-100);
-	--color-background-tag: var(--color-palette-cream-200);
+	--color-background-primary: var(--color-palette-cream-50);
+	--color-background-secondary: var(--color-palette-brown-700-alpha-05);
+	--color-background-header: var(--color-palette-cream-200);
+	--color-background-tag: var(--color-palette-brown-700-alpha-10);
 
 	/* Text */
 	--color-text-primary: var(--color-palette-brown-900);
@@ -34,15 +33,9 @@
 	--color-text-accent: var(--color-palette-brown-400);
 	--color-text-disabled: var(--color-palette-brown-400-alpha-10);
 
-	/* Theme text */
-	--color-theme-accent-background: var(--color-palette-brown-400);
-	--color-theme-accent-text: var(--color-palette-cream-50-alpha-80);
-	--color-theme-accent-text-strong: var(--color-palette-white-alpha-90);
-	--color-theme-accent-text-emphasis: var(--color-palette-white);
-
 	/* Borders */
-	--color-border-muted: var(--color-palette-cream-400-alpha-30);
-	--color-border-strong: var(--color-palette-cream-300);
+	--color-border-primary: var(--color-palette-brown-700-alpha-10);
+	--color-border-secondary: var(--color-palette-cream-300);
 	--color-border-accent: var(--color-palette-brown-400);
 	--color-border-focus-visible: var(--color-palette-brown-400);
 
@@ -60,11 +53,9 @@
 	--color-button-border-active: var(--color-palette-brown-400);
 
 	/* Forms */
-	--color-form-input-background: var(--color-palette-cream-200-alpha-50);
+	--color-form-input-background: var(--color-palette-brown-700-alpha-10);
 	--color-form-input-text: var(--color-palette-brown-400);
 	--color-form-input-placeholder: var(--color-palette-brown-700);
-
-	/* Disabled states */
 }
 
 /* Layout Grid */

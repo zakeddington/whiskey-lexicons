@@ -13,7 +13,7 @@ html {
 body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-	background-color: var(--color-background-page);
+	background-color: var(--color-background-primary);
 }
 
 :focus-visible {

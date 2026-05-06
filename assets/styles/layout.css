@@ -1,7 +1,7 @@
 /* Header styles */
 .header {
-	background-color: var(--color-background-muted);
-	border-bottom: 2px solid var(--color-border-strong);
+	background-color: var(--color-background-header);
+	border-bottom: 2px solid var(--color-border-secondary);
 	left: 0;
 	position: fixed;
 	right: 0;
