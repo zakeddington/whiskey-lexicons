@@ -124,7 +124,7 @@ export class Regions {
 	renderVarieties(region) {
 		return `
 			<div class="region-varieties">
-				<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${escapeHtml(region.name)} Varieties</h3>
+				<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase line-height-normal">${escapeHtml(region.name)} Varieties</h3>
 				<div class="varieties-list">
 					${region.varieties.map(variety => this.renderVariety(variety)).join('')}
 				</div>
@@ -151,7 +151,7 @@ export class Regions {
 	renderSubRegions(region) {
 		return `
 			<div class="region-map">
-				<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase leading-normal">${escapeHtml(region.name)} Regions</h3>
+				<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase line-height-normal">${escapeHtml(region.name)} Regions</h3>
 				<div class="map-container grid grid-align-center">
 					<div class="map-image grid-col-md-12 grid-col-lg-6">
 						<img alt="${escapeHtml(region.name)} Regions Map" src="${region.mapImage}" />

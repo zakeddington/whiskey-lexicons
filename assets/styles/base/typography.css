@@ -266,15 +266,15 @@
 		font-weight: var(--font-weight-bold);
 	}
 
-	.leading-tight {
+	.line-height-tight {
 		line-height: var(--line-height-tight);
 	}
 
-	.leading-normal {
+	.line-height-normal {
 		line-height: var(--line-height-normal);
 	}
 
-	.leading-relaxed {
+	.line-height-relaxed {
 		line-height: var(--line-height-relaxed);
 	}
 
