@@ -4,7 +4,7 @@ export const REGIONS = [
 		id: 'scotland',
 		name: 'Scotland',
 		regulator: 'Regulated by the Scotch Whisky Regulations 2009 (SWR 2009)',
-		bottleImage: 'assets/images/bottle-scotch.svg',
+		bottleImage: 'assets/images/bottle-scotch-color-low.svg',
 		mapImage: 'assets/images/scotch-regions.svg',
 		legalFramework: [
 			{ label: 'Production location', value: 'Must be entirely produced at a distillery in Scotland.' },
@@ -55,7 +55,7 @@ export const REGIONS = [
 		id: 'ireland',
 		name: 'Ireland',
 		regulator: 'Regulated by Irish Whiskey Technical File (2014) & EU Geographic Indication',
-		bottleImage: 'assets/images/bottle-irish.svg',
+		bottleImage: 'assets/images/bottle-irish-color-low.svg',
 		legalFramework: [
 			{ label: 'Production location', value: 'Must be distilled and matured on the island of Ireland (Republic and Northern Ireland).' },
 			{ label: 'Grain base', value: 'Produced from a mash of malted cereals, with or without whole unmalted cereal grains.' },
@@ -91,7 +91,7 @@ export const REGIONS = [
 		id: 'usa',
 		name: 'United States',
 		regulator: 'Regulated by TTB (Alcohol and Tobacco Tax and Trade Bureau)',
-		bottleImage: 'assets/images/bottle-bourbon.svg',
+		bottleImage: 'assets/images/bottle-bourbon-color-low.svg',
 		legalFramework: [
 			{ label: 'Grain base', value: 'Whisky must be produced from a fermented mash of grain.' },
 			{ label: 'Distillation ceiling', value: 'Must be distilled to no more than 190° proof (95% ABV).' },
@@ -172,7 +172,7 @@ export const REGIONS = [
 		id: 'japan',
 		name: 'Japan',
 		regulator: 'Regulated by Japan Spirits & Liqueurs Makers Association Standards (2021)',
-		bottleImage: 'assets/images/bottle-japanese.svg',
+		bottleImage: 'assets/images/bottle-japanese-color-low.svg',
 		legalFramework: [
 			{ label: 'Production location', value: 'Must be saccharified, fermented, distilled, matured, and bottled in Japan.' },
 			{ label: 'Water source', value: 'Must use water extracted in Japan.' },
@@ -205,7 +205,7 @@ export const REGIONS = [
 		id: 'canada',
 		name: 'Canada',
 		regulator: 'Regulated by Canada\'s Food and Drug Regulations (Division 2, B.02.020)',
-		bottleImage: 'assets/images/bottle-canadian.svg',
+		bottleImage: 'assets/images/bottle-canadian-color-low.svg',
 		legalFramework: [
 			{ label: 'Production location', value: 'Must be mashed, distilled, and aged in Canada.' },
 			{ label: 'Grain base', value: 'Produced from cereal grains; no specific grain percentages mandated.' },
