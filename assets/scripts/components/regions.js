@@ -1,10 +1,12 @@
 import { REGIONS } from '../data/regions.js';
 import { escapeHtml } from '../utils.js';
+import { SubRegionMapSwitcher } from './sub-region-map-switcher.js';
 
 export class Regions {
 	constructor() {
 		this.regions = REGIONS;
 		this.regionsList = document.getElementById('regions-list');
+		this.subRegionMapSwitcher = new SubRegionMapSwitcher();
 	}
 
 	init() {
@@ -12,6 +14,7 @@ export class Regions {
 
 		this.render();
 		this.setupAccordions();
+		this.subRegionMapSwitcher.init(this.regionsList);
 	}
 
 	setupAccordions() {
@@ -148,21 +151,57 @@ export class Regions {
 		`;
 	}
 
+	getRegionKey(name) {
+		return name
+			.toLowerCase()
+			.replace(/&/g, 'and')
+			.replace(/[^a-z0-9]+/g, '-')
+			.replace(/^-+|-+$/g, '');
+	}
+
 	renderSubRegions(region) {
+		const mapId = `${region.id}-regions-map`;
+		const defaultMapAlt = `${region.name} Regions Map`;
+		const baseMapSrc = region.mapBaseImage || region.mapHoverImage || region.mapImage;
+		const initialHighlightSrc = region.mapAllHighlightImage || region.mapImage;
+
 		return `
 			<div class="region-map">
 				<h3 class="varieties-title text-heading-md font-sans-serif tracking-wide uppercase line-height-normal">${escapeHtml(region.name)} Regions</h3>
 				<div class="map-container grid grid-align-center">
-					<div class="map-image grid-col-md-12 grid-col-lg-6">
-						<img alt="${escapeHtml(region.name)} Regions Map" src="${region.mapImage}" />
+					<div
+						class="map-image grid-col-md-12 grid-col-lg-6"
+						data-base-src="${escapeHtml(baseMapSrc)}"
+						data-initial-highlight-src="${escapeHtml(initialHighlightSrc)}"
+						id="${escapeHtml(mapId)}"
+					>
+						<img
+							alt="${escapeHtml(defaultMapAlt)}"
+							class="map-base-image"
+							src="${escapeHtml(baseMapSrc)}"
+						/>
+						<img alt="" aria-hidden="true" class="map-all-highlight-image is-visible" src="${escapeHtml(initialHighlightSrc)}" />
+						<img alt="" aria-hidden="true" class="map-region-image" />
+						<img alt="" aria-hidden="true" class="map-region-image" />
 					</div>
-					<div class="sub-regions grid grid-col-md-12 grid-col-lg-6">
-						${region.subRegions.map(sub => `
-							<div class="sub-region grid-col-full">
-								<h5>${escapeHtml(sub.name)}</h5>
-								<p class="text-body-sm">${escapeHtml(sub.description)}</p>
-							</div>
-						`).join('')}
+					<div class="sub-regions grid grid-col-md-12 grid-col-lg-6" data-map-target="${escapeHtml(mapId)}">
+						${region.subRegions.map(sub => {
+							const subMapImage = sub.mapImage || region.mapImage;
+							const subMapHighlightImage = sub.mapHighlightImage || subMapImage.replace(/\.png$/i, '-highlight.png');
+							const regionKey = this.getRegionKey(sub.name);
+
+							return `
+								<div
+									class="sub-region grid-col-full"
+									data-region-key="${escapeHtml(regionKey)}"
+									data-map-highlight-image="${escapeHtml(subMapHighlightImage)}"
+									tabindex="0"
+								>
+									<h5>${escapeHtml(sub.name)}</h5>
+									<p class="text-body-sm">${escapeHtml(sub.description)}</p>
+								</div>
+							`;
+						}).join('')}
 					</div>
 				</div>
 			</div>
