@@ -1,4 +1,4 @@
-	export class SubRegionMapSwitcher {
+export class SubRegionMapSwitcher {
 	init(root = document) {
 		const subRegionGroups = root.querySelectorAll('.sub-regions[data-map-target]');
 
