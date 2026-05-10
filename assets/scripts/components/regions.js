@@ -151,19 +151,11 @@ export class Regions {
 		`;
 	}
 
-	getRegionKey(name) {
-		return name
-			.toLowerCase()
-			.replace(/&/g, 'and')
-			.replace(/[^a-z0-9]+/g, '-')
-			.replace(/^-+|-+$/g, '');
-	}
-
 	renderSubRegions(region) {
 		const mapId = `${region.id}-regions-map`;
 		const defaultMapAlt = `${region.name} Regions Map`;
-		const baseMapSrc = region.mapBaseImage || region.mapHoverImage || region.mapImage;
-		const initialHighlightSrc = region.mapAllHighlightImage || region.mapImage;
+		const baseMapSrc = region.mapBaseImage;
+		const initialHighlightSrc = region.mapAllHighlightImage;
 
 		return `
 			<div class="region-map">
@@ -186,15 +178,11 @@ export class Regions {
 					</div>
 					<div class="sub-regions grid grid-col-md-12 grid-col-lg-6" data-map-target="${escapeHtml(mapId)}">
 						${region.subRegions.map(sub => {
-							const subMapImage = sub.mapImage || region.mapImage;
-							const subMapHighlightImage = sub.mapHighlightImage || subMapImage.replace(/\.png$/i, '-highlight.png');
-							const regionKey = this.getRegionKey(sub.name);
-
 							return `
 								<div
 									class="sub-region grid-col-full"
-									data-region-key="${escapeHtml(regionKey)}"
-									data-map-highlight-image="${escapeHtml(subMapHighlightImage)}"
+									data-region-key="${escapeHtml(sub.key)}"
+									data-map-highlight-image="${escapeHtml(sub.mapHighlightImage)}"
 									tabindex="0"
 								>
 									<h5>${escapeHtml(sub.name)}</h5>
