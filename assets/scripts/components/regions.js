@@ -68,7 +68,7 @@ export class Regions {
 		return `
 			<section class="region-section${isOpen ? ' is-open' : ''}">
 				<header class="region-header">
-					<h2 class="region-heading">
+					<h2 class="region-title">
 						<button
 							aria-controls="${panelId}"
 							aria-expanded="${isOpen}"
@@ -76,8 +76,9 @@ export class Regions {
 							id="${triggerId}"
 							type="button"
 						>
-							<span class="region-header-copy">
+							<span class="region-title-content">
 								<span class="region-title-text">${escapeHtml(region.name)}</span>
+								${this.renderKeyRegulationsSummary(region.keyRegulationsSummary)}
 							</span>
 							<span class="region-accordion-icon" aria-hidden="true">▼</span>
 						</button>
@@ -104,6 +105,17 @@ export class Regions {
 					</div>
 				</div>
 			</section>
+		`;
+	}
+
+	renderKeyRegulationsSummary(summary) {
+		const summaryItems = Array.isArray(summary) ? summary : [summary].filter(Boolean);
+		if (summaryItems.length === 0) return '';
+
+		return `
+			<ul class="region-title-description text-body-md">
+				${summaryItems.map(item => `<li class="region-title-description-item">${escapeHtml(item)}</li>`).join('')}
+			</ul>
 		`;
 	}
 
