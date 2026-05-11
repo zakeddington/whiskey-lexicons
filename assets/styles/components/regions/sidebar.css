@@ -38,9 +38,13 @@
 	margin-left: auto;
 	margin-right: auto;
 	max-height: 35dvh;
-	max-width: 50%;
+	max-width: 70%;
 	mix-blend-mode: multiply;
 	object-fit: contain;
 	transition: transform 0.5s ease;
 	width: 100%;
+
+	@media (min-width: 768px) {
+		max-height: 100%;
+	}
 }
