@@ -11,6 +11,7 @@
 	/* Cream scale */
 	--color-palette-cream-50: #fdf9ef;   /* lightest */
 	--color-palette-cream-50-alpha-80: rgba(253, 249, 239, 0.8); /* accent theme text */
+	--color-palette-cream-50-alpha-50: rgba(253, 249, 239, 0.5); /* accent theme border */
 	--color-palette-cream-200: #ece8de;  /* light */
 	--color-palette-cream-300: #e6e2d8;  /* medium */
 

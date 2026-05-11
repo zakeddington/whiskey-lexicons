@@ -78,7 +78,6 @@ export class Regions {
 						>
 							<span class="region-header-copy">
 								<span class="region-title-text">${escapeHtml(region.name)}</span>
-								<span class="region-regulator text-body-md">Regulator: ${escapeHtml(region.regulator)}</span>
 							</span>
 							<span class="region-accordion-icon" aria-hidden="true">▼</span>
 						</button>
@@ -115,11 +114,12 @@ export class Regions {
 					<img alt="Legal Icon" class="sidebar-title-icon" src="assets/images/icon-legal.svg" />
 					LEGAL FRAMEWORK
 				</h3>
-				<ul class="list-reset text-body-sm">
+				<ul class="sidebar-list text-body-sm">
 					${region.legalFramework.map(rule => `
 						<li><strong>${escapeHtml(rule.label)}:</strong> ${escapeHtml(rule.value)}</li>
 					`).join('')}
 				</ul>
+				<p class="text-body-sm"><strong>${escapeHtml(region.regulator)}</strong></p>
 			</div>
 		`;
 	}

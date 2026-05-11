@@ -45,10 +45,6 @@
 	line-height: var(--line-height-tight);
 }
 
-.region-regulator {
-	color: var(--color-text-secondary);
-}
-
 .region-accordion-icon {
 	align-items: center;
 	color: var(--color-text-accent);
