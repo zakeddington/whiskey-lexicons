@@ -20,3 +20,9 @@ body {
 	outline: 2px solid var(--color-border-focus-visible);
 	outline-offset: 2px;
 }
+
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}

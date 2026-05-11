@@ -12,8 +12,7 @@
 .hero-title {
 	align-items: baseline;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 1rem;
+	flex-wrap: nowrap;
 }
 
 .hero-title-note {
@@ -40,4 +39,9 @@
 	&:last-child {
 		margin-bottom: 0;
 	}
+}
+
+.hero-image {
+	margin: auto;
+	mix-blend-mode: multiply;
 }
