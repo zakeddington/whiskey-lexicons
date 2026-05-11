@@ -373,6 +373,14 @@ export const LEXICON_TERMS = [
 		description: 'A specific bottling or variant of a whisky from a given distillery. Different expressions from the same distillery may vary by age, cask type, strength, or release series.'
 	},
 	{
+		id: 'exogenous-enzymes',
+		name: 'Enzymes (Exogenous Enzymes)',
+		category: 'Malting & Mashing',
+		letter: 'E',
+		description: 'Commercial enzyme preparations added during mashing to break starches into fermentable sugars when natural malt enzyme content is insufficient, such as in high-adjunct or unmalted grain recipes. Their use is restricted or prohibited in some whisky categories, including Scotch single malt.',
+		seeAlso: ['Saccharification', 'Mashing']
+	},
+	{
 		id: 'feints',
 		name: 'Feints',
 		category: 'Distillation',
@@ -948,6 +956,14 @@ export const LEXICON_TERMS = [
 		category: 'Malting & Mashing',
 		letter: 'S',
 		description: 'A vessel in which barley is germinated before malting that uses a system of turning screws to agitate the grain. Invented in the late 19th century, it offered a mechanical alternative to hand turning.'
+	},
+	{
+		id: 'saccharification',
+		name: 'Saccharification',
+		category: 'Malting & Mashing',
+		letter: 'S',
+		description: 'The conversion of starches into fermentable sugars during mashing, primarily by amylase enzymes from malted grain or added exogenous enzymes. This step creates a sugar-rich wort that yeast can ferment into alcohol.',
+		seeAlso: ['Mashing', 'Enzymes (Exogenous Enzymes)']
 	},
 	{
 		id: 'scotch',
