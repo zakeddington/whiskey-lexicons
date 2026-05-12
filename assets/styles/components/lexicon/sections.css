@@ -1,4 +1,5 @@
 .lexicon-entries {
+	min-height: calc(100dvh - var(--layout-scroll-header-lexcion-controls-offset));
 	scroll-margin-top: var(--layout-scroll-header-lexcion-controls-offset);
 }
 
