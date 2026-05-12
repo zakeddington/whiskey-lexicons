@@ -327,7 +327,7 @@ export const LEXICON_TERMS = [
 		category: 'Distillation',
 		letter: 'C',
 		description: 'The decision made during distillation about which portion of the spirit to collect. The stillman separates foreshots, heads, heart (the desirable middle cut), and tails. The cut points dramatically affect flavor. The middle, best section of the distillate, often called the heart, which goes into the cask/barrel. Also refers to the process itself, i.e. "making the cut."',
-		seeAlso: ['Barrel', 'Cask', 'Distillate', 'Distillation', 'Foreshots', 'Heads', 'Heart', 'Middle Cut', 'Tails']
+		seeAlso: ['Barrel', 'Cask', 'Distillate', 'Distillation', 'Foreshots', 'Heads', 'Heart', 'Middle Cut', 'Queen\'s Run', 'Tails']
 	},
 	{
 		id: 'devil-s-cut',
@@ -553,7 +553,7 @@ export const LEXICON_TERMS = [
 		category: 'Distillation',
 		letter: 'H',
 		description: 'The desirable middle portion of a distillation run, collected between the foreshots/heads and the feints/tails. The primary spirit collected for aging. The middle, best section of the distillate, often called the middle cut, which goes into the cask/barrel.',
-		seeAlso: ['Barrel', 'Cask', 'Cut', 'Distillate', 'Distillation', 'Feints', 'Foreshots', 'Heads', 'Middle Cut', 'Tails']
+		seeAlso: ['Barrel', 'Cask', 'Cut', 'Distillate', 'Distillation', 'Feints', 'Foreshots', 'Heads', 'Middle Cut', 'Queen\'s Run', 'Tails']
 	},
 	{
 		id: 'high-rye',
@@ -787,7 +787,7 @@ export const LEXICON_TERMS = [
 		category: 'Distillation',
 		letter: 'M',
 		description: 'The middle, best section of the distillate, often called the heart, which goes into the cask/barrel.',
-		seeAlso: ['Barrel', 'Cask', 'Distillate', 'Heart']
+		seeAlso: ['Barrel', 'Cask', 'Distillate', 'Heart', 'Queen\'s Run']
 	},
 	{
 		id: 'mizunara',
@@ -985,6 +985,14 @@ export const LEXICON_TERMS = [
 		letter: 'Q',
 		description: 'A traditional, two-handled Scottish drinking cup.',
 		pronunciation: 'quake'
+	},
+	{
+		id: 'queens-run',
+		name: 'Queen\'s Run',
+		category: 'Distillation',
+		letter: 'Q',
+		description: 'A traditional term for the heart or middle cut of a distillation run: the clean, desirable portion collected after the foreshots/heads and before the feints/tails. In pot still distilling, this is the part of the run typically retained for maturation.',
+		seeAlso: ['Cut', 'Distillation', 'Heart', 'Middle Cut', 'Pot Still', 'Tails']
 	},
 	{
 		id: 'quarter-cask',
