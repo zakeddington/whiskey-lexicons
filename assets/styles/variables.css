@@ -63,10 +63,16 @@
 :root {
 	--layout-max-width: 1600px;
 	--layout-inline-padding: clamp(1.5rem, 2vw, 2rem);
-	--layout-nav-offset: 6rem;
+	--layout-header-height: 3.625rem;
+	--layout-header-offset: 2rem;
+	--layout-scroll-offset: calc(var(--layout-header-height) + var(--layout-header-offset));
 	--grid-column-count: 12;
 	--grid-template-columns: repeat(var(--grid-column-count), minmax(0, 1fr));
 	--grid-gap: clamp(1.5rem, 3vw, 3rem);
+
+	@media (min-width: 768px) {
+		--layout-header-height: 4.625rem;
+	}
 }
 
 /* Typography Families */

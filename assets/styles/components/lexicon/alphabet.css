@@ -8,9 +8,9 @@
 		align-items: center;
 		display: flex;
 		flex-direction: column;
-		height: calc(100vh - var(--layout-nav-offset));
+		height: calc(100vh - var(--layout-scroll-offset));
 		position: sticky;
-		top: var(--layout-nav-offset);
+		top: var(--layout-scroll-offset);
 	}
 }
 

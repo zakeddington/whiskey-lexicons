@@ -2,6 +2,7 @@
 .header {
 	background-color: var(--color-background-header);
 	border-bottom: 2px solid var(--color-border-secondary);
+	height: var(--layout-header-height);
 	left: 0;
 	position: fixed;
 	right: 0;
@@ -50,5 +51,5 @@
 	padding-bottom: 6rem;
 	padding-left: var(--layout-inline-padding);
 	padding-right: var(--layout-inline-padding);
-	padding-top: calc(var(--layout-nav-offset) + 2rem);
+	padding-top: var(--layout-scroll-offset);
 }

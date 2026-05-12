@@ -1,13 +1,29 @@
 /* Lexicon controls */
 .lexicon-controls {
 	align-items: center;
+	background-color: var(--color-background-primary);
 	border-bottom: 1px solid var(--color-border-primary);
 	display: flex;
 	flex-direction: column;
 	gap: 1.5rem;
 	justify-content: space-between;
 	margin-bottom: 4rem;
-	padding-bottom: 2rem;
+	padding-top: var(--layout-header-offset);
+	padding-bottom: 1rem;
+	position: sticky;
+	top: var(--layout-header-height);
+	z-index: 30;
+}
+
+.lexicon-controls::after {
+	background: linear-gradient(to bottom, var(--color-background-primary) 0%, rgba(253, 249, 239, 0) 100%);
+	content: "";
+	height: 1rem;
+	left: 0;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 100%;
 }
 
 @media (min-width: 640px) {
