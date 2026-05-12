@@ -1,0 +1,274 @@
+
+<style>
+  .whisky-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    /* background: #0a0a0a; */
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 520px;
+    font-family: var(--font-sans);
+  }
+
+  .map-panel {
+    position: relative;
+    /* background: #0a0a0a; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+  }
+
+  .map-stack {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 380px;
+  }
+
+  .map-stack img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .map-stack img.base { opacity: 1; z-index: 1; }
+  .map-stack img.all-color { opacity: 1; z-index: 2; }
+  .map-stack img.region { opacity: 0; z-index: 3; }
+
+  .map-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    cursor: default;
+  }
+
+  svg.hit-areas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    overflow: visible;
+  }
+
+  svg.hit-areas path, svg.hit-areas polygon {
+    fill: transparent;
+    cursor: pointer;
+  }
+
+  svg.hit-areas path:hover, svg.hit-areas polygon:hover {
+    fill: rgba(255,255,255,0.04);
+  }
+
+  .info-panel {
+    /* background: #111; */
+    padding: 28px 24px;
+    overflow-y: auto;
+    border-left: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .info-header {
+    color: #c8a96e;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    font-weight: 500;
+    opacity: 0.7;
+  }
+
+  .region-item {
+    padding: 10px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+    border: 1px solid transparent;
+    position: relative;
+  }
+
+  .region-item:hover {
+    background: #1a1a1a;
+    border-color: #2a2a2a;
+  }
+
+  .region-item.active {
+    background: #1a1a1a;
+    border-color: #333;
+  }
+
+  .region-item h3 {
+    margin: 0 0 3px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .region-item p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #666;
+    transition: color 0.2s;
+  }
+
+  .region-item:hover p, .region-item.active p {
+    color: #888;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: inline-block;
+  }
+
+  .dot-highlands { background: #c8a940; }
+  .dot-speyside  { background: #5a8a3a; }
+  .dot-islands   { background: #5a8ab0; }
+  .dot-islay     { background: #8a3a3a; }
+  .dot-lowlands  { background: #4a6888; }
+  .dot-campbeltown { background: #7a5a30; }
+
+  .name-highlands  { color: #c8a940; }
+  .name-speyside   { color: #7ab04a; }
+  .name-islands    { color: #7aaad0; }
+  .name-islay      { color: #b04a4a; }
+  .name-lowlands   { color: #6a88a8; }
+  .name-campbeltown{ color: #a07840; }
+</style>
+
+<h2 class="sr-only">Interactive map of Scotland's whisky regions — hover over a region to learn about it</h2>
+
+<div class="whisky-layout" id="whisky-section">
+  <div class="map-panel">
+    <div class="map-stack" id="mapStack">
+      <img class="base" src="/assets/images/map-all-base.png" alt="Scotland whisky regions map">
+      <img class="all-color" id="img-all" src="/assets/images/map-all-highlight.png" alt="">
+      <img class="region" id="img-highlands"    src="/assets/images/map-highlands-highlight.png" alt="">
+      <img class="region" id="img-speyside"     src="/assets/images/map-speyside-highlight.png" alt="">
+      <img class="region" id="img-islands"      src="/assets/images/map-islands-highlight.png" alt="">
+      <img class="region" id="img-islay"        src="/assets/images/map-islay-highlight.png" alt="">
+      <img class="region" id="img-lowlands"     src="/assets/images/map-lowlands-highlight.png" alt="">
+      <img class="region" id="img-campbeltown"  src="/assets/images/map-campbeltown-highlight.png" alt="">
+
+      <svg class="hit-areas" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet">
+        <polygon data-region="highlands"    points="35,12 65,12 72,20 68,42 52,46 45,52 38,48 30,38 28,22" />
+        <polygon data-region="speyside"     points="68,12 82,18 80,36 70,40 68,28 65,14" />
+        <polygon data-region="islands"      points="8,14 20,14 22,38 18,44 8,42 6,28" />
+        <polygon data-region="islay"        points="10,56 22,54 24,68 14,70 8,64" />
+        <polygon data-region="campbeltown"  points="32,62 38,60 40,72 34,76 28,70" />
+        <polygon data-region="lowlands"     points="48,52 80,50 84,70 72,86 50,88 38,76 42,56" />
+      </svg>
+    </div>
+  </div>
+
+  <div class="info-panel" id="infoPanel">
+    <p class="info-header">Scotland's whisky regions</p>
+
+    <div class="region-item" data-region="highlands">
+      <h3><span class="dot dot-highlands"></span><span class="name-highlands">Highlands</span></h3>
+      <p>Scotland's largest region, producing a vast array of styles — from light and floral in the east to rich and peaty on the northern coast. Home to iconic distilleries like Glenmorangie and Dalmore.</p>
+    </div>
+
+    <div class="region-item" data-region="speyside">
+      <h3><span class="dot dot-speyside"></span><span class="name-speyside">Speyside</span></h3>
+      <p>Nestled in the Cairngorms, this is the most densely distilled region on earth. Renowned for elegant, fruity, and honeyed single malts — Glenfiddich, Macallan, and Balvenie call it home.</p>
+    </div>
+
+    <div class="region-item" data-region="islands">
+      <h3><span class="dot dot-islands"></span><span class="name-islands">Islands</span></h3>
+      <p>A loose collection of island distilleries from Skye to Orkney. Expect maritime salt and varying degrees of smoke — Highland Park and Talisker are the standard-bearers.</p>
+    </div>
+
+    <div class="region-item" data-region="islay">
+      <h3><span class="dot dot-islay"></span><span class="name-islay">Islay</span></h3>
+      <p>A small island with an outsized reputation. Islay whiskies are defined by powerful peat smoke and medicinal iodine character. Laphroaig, Ardbeg, and Bowmore are legends of the craft.</p>
+    </div>
+
+    <div class="region-item" data-region="lowlands">
+      <h3><span class="dot dot-lowlands"></span><span class="name-lowlands">Lowlands</span></h3>
+      <p>Gentle, approachable, and often triple-distilled. Lowland malts are floral and light — ideal for those new to Scotch. Auchentoshan is the most notable name in this style.</p>
+    </div>
+
+    <div class="region-item" data-region="campbeltown">
+      <h3><span class="dot dot-campbeltown"></span><span class="name-campbeltown">Campbeltown</span></h3>
+      <p>Once the whisky capital of the world, now home to just three distilleries. Campbeltown drams are distinctive — briny, oily, and complex. Springbank leads the region's revival.</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  const section    = document.getElementById('whisky-section');
+  const imgAll     = document.getElementById('img-all');
+  const regionImgs = {};
+  ['highlands','speyside','islands','islay','lowlands','campbeltown'].forEach(r => {
+    regionImgs[r] = document.getElementById('img-' + r);
+  });
+
+  const regionItems = document.querySelectorAll('.region-item');
+  const svgRegions  = document.querySelectorAll('svg.hit-areas [data-region]');
+
+  let currentRegion = null;
+  let sectionHovered = false;
+
+  function setState(region) {
+    if (region === currentRegion) return;
+    currentRegion = region;
+
+    if (region === null) {
+      imgAll.style.opacity = '1';
+      Object.values(regionImgs).forEach(img => img.style.opacity = '0');
+    } else if (region === 'none') {
+      imgAll.style.opacity = '0';
+      Object.values(regionImgs).forEach(img => img.style.opacity = '0');
+    } else {
+      imgAll.style.opacity = '0';
+      Object.entries(regionImgs).forEach(([r, img]) => {
+        img.style.opacity = r === region ? '1' : '0';
+      });
+    }
+
+    regionItems.forEach(item => {
+      item.classList.toggle('active', item.dataset.region === region);
+    });
+  }
+
+  section.addEventListener('mouseenter', () => {
+    sectionHovered = true;
+    if (currentRegion === null) setState('none');
+  });
+
+  section.addEventListener('mouseleave', () => {
+    sectionHovered = false;
+    setState(null);
+  });
+
+  regionItems.forEach(item => {
+    item.addEventListener('mouseenter', () => setState(item.dataset.region));
+    item.addEventListener('mouseleave', () => {
+      if (sectionHovered) setState('none');
+    });
+  });
+
+  svgRegions.forEach(el => {
+    el.addEventListener('mouseenter', () => setState(el.dataset.region));
+    el.addEventListener('mouseleave', () => {
+      if (sectionHovered) setState('none');
+    });
+  });
+})();
+</script>
