@@ -3,89 +3,92 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Lexicon | The Whiskey Lexicon</title>
+	<title>Lexicon | Cask & Quill</title>
+	<link rel="icon" type="image/png" href="/assets/images/favicon/favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/svg+xml" href="/assets/images/favicon/favicon.svg" />
+	<link rel="shortcut icon" href="/assets/images/favicon/favicon.ico" />
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+	<link rel="manifest" href="/site.webmanifest" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="../assets/styles/styles.css">
 </head>
 <body>
-	<div id="app">
-		<header class="header">
-			<nav class="nav">
-				<a class="nav-logo" href="/">
-					<img class="nav-logo-img" src="/assets/images/logo.png" alt="Cask & Quill Logo">
-				</a>
-				<div class="nav-buttons">
-					<a id="regions-btn" class="button nav-btn" href="/">Regions</a>
-					<a id="lexicon-btn" class="button nav-btn active" href="/lexicon/">Lexicon</a>
-				</div>
-			</nav>
-		</header>
-
-		<main class="main-content">
-			<div class="lexicon-container">
-				<aside class="alphabet-nav">
-					<div class="alphabet-list">
-						<a href="#A" class="alphabet-link">A</a>
-						<a href="#B" class="alphabet-link">B</a>
-						<a href="#C" class="alphabet-link">C</a>
-						<a href="#D" class="alphabet-link">D</a>
-						<a href="#E" class="alphabet-link">E</a>
-						<a href="#F" class="alphabet-link">F</a>
-						<a href="#G" class="alphabet-link">G</a>
-						<a href="#H" class="alphabet-link">H</a>
-						<a href="#I" class="alphabet-link">I</a>
-						<a href="#J" class="alphabet-link">J</a>
-						<a href="#K" class="alphabet-link">K</a>
-						<a href="#L" class="alphabet-link">L</a>
-						<a href="#M" class="alphabet-link">M</a>
-						<a href="#N" class="alphabet-link">N</a>
-						<a href="#O" class="alphabet-link">O</a>
-						<a href="#P" class="alphabet-link">P</a>
-						<a href="#Q" class="alphabet-link">Q</a>
-						<a href="#R" class="alphabet-link">R</a>
-						<a href="#S" class="alphabet-link">S</a>
-						<a href="#T" class="alphabet-link">T</a>
-						<a href="#U" class="alphabet-link">U</a>
-						<a href="#V" class="alphabet-link">V</a>
-						<a href="#W" class="alphabet-link">W</a>
-						<a href="#X" class="alphabet-link">X</a>
-						<a href="#Y" class="alphabet-link">Y</a>
-						<a href="#Z" class="alphabet-link">Z</a>
-					</div>
-				</aside>
-
-				<div class="lexicon-main">
-					<section class="hero grid">
-						<div class="hero-heading grid-col-md-12 grid-col-lg-7">
-							<h1 class="hero-title">Lexicon</h1>
-							<p>An exhaustive index of the technical, chemical, and poetic language defining the world of fine spirits.</p>
-						</div>
-						<div class="hero-image-col grid-col-md-12 grid-col-lg-5">
-							<img class="hero-image" src="/assets/images/hero-lexicon.jpg" alt="illustration of a quill, ink and book" />
-						</div>
-					</section>
-
-					<section class="lexicon-controls">
-						<div class="search-container">
-							<input type="text" id="search-input" placeholder="Find a term..." class="search-input">
-						</div>
-						<div class="sort-buttons">
-							<button id="sort-alpha" class="button sort-btn active">Alphabetical</button>
-							<select id="category-select" class="category-select" aria-label="Select category">
-								<option value="">Categories</option>
-							</select>
-						</div>
-					</section>
-
-					<section id="lexicon-entries" class="lexicon-entries grid">
-						<!-- Terms will be populated by JavaScript -->
-					</section>
-				</div>
+	<header class="header">
+		<nav class="nav">
+			<a class="nav-logo" href="/">
+				<img class="nav-logo-img" src="/assets/images/logo.png" alt="Cask & Quill Logo">
+			</a>
+			<div class="nav-buttons">
+				<a id="regions-btn" class="button nav-btn" href="/">Regions</a>
+				<a id="lexicon-btn" class="button nav-btn active" href="/lexicon/">Lexicon</a>
 			</div>
-		</main>
-	</div>
+		</nav>
+	</header>
+
+	<main class="main-content">
+		<div class="lexicon-container">
+			<aside class="alphabet-nav">
+				<div class="alphabet-list">
+					<a href="#A" class="alphabet-link">A</a>
+					<a href="#B" class="alphabet-link">B</a>
+					<a href="#C" class="alphabet-link">C</a>
+					<a href="#D" class="alphabet-link">D</a>
+					<a href="#E" class="alphabet-link">E</a>
+					<a href="#F" class="alphabet-link">F</a>
+					<a href="#G" class="alphabet-link">G</a>
+					<a href="#H" class="alphabet-link">H</a>
+					<a href="#I" class="alphabet-link">I</a>
+					<a href="#J" class="alphabet-link">J</a>
+					<a href="#K" class="alphabet-link">K</a>
+					<a href="#L" class="alphabet-link">L</a>
+					<a href="#M" class="alphabet-link">M</a>
+					<a href="#N" class="alphabet-link">N</a>
+					<a href="#O" class="alphabet-link">O</a>
+					<a href="#P" class="alphabet-link">P</a>
+					<a href="#Q" class="alphabet-link">Q</a>
+					<a href="#R" class="alphabet-link">R</a>
+					<a href="#S" class="alphabet-link">S</a>
+					<a href="#T" class="alphabet-link">T</a>
+					<a href="#U" class="alphabet-link">U</a>
+					<a href="#V" class="alphabet-link">V</a>
+					<a href="#W" class="alphabet-link">W</a>
+					<a href="#X" class="alphabet-link">X</a>
+					<a href="#Y" class="alphabet-link">Y</a>
+					<a href="#Z" class="alphabet-link">Z</a>
+				</div>
+			</aside>
+
+			<div class="lexicon-main">
+				<section class="hero grid">
+					<div class="hero-heading grid-col-md-12 grid-col-lg-7">
+						<h1 class="hero-title">Lexicon</h1>
+						<p>An exhaustive index of the technical, chemical, and poetic language defining the world of fine spirits.</p>
+					</div>
+					<div class="hero-image-col grid-col-md-12 grid-col-lg-5">
+						<img class="hero-image" src="/assets/images/hero-lexicon.jpg" alt="illustration of a quill, ink and book" />
+					</div>
+				</section>
+
+				<section class="lexicon-controls">
+					<div class="search-container">
+						<input type="text" id="search-input" placeholder="Find a term..." class="search-input">
+					</div>
+					<div class="sort-buttons">
+						<button id="sort-alpha" class="button sort-btn active">Alphabetical</button>
+						<select id="category-select" class="category-select" aria-label="Select category">
+							<option value="">Categories</option>
+						</select>
+					</div>
+				</section>
+
+				<section id="lexicon-entries" class="lexicon-entries grid">
+					<!-- Terms will be populated by JavaScript -->
+				</section>
+			</div>
+		</div>
+	</main>
 
 	<script type="module" src="../assets/scripts/scripts.js"></script>
 </body>
