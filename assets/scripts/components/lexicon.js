@@ -112,6 +112,19 @@ export class Lexicon {
 		return `category-${normalizeTermName(category).replace(/\s+/g, '-')}`;
 	}
 
+	renderNoResults() {
+		const query = this.searchQuery.trim();
+		const message = query
+			? `No results for "${escapeHtml(query)}".`
+			: 'No entries found for the current filters.';
+
+		return `
+			<div class="lexicon-empty-state grid-col-full">
+				<h2 class="text-heading-lg">${message}</h2>
+			</div>
+		`;
+	}
+
 	renderSeeAlso(term) {
 		if (!term.seeAlso?.length) return '';
 
@@ -179,7 +192,9 @@ export class Lexicon {
 		const groupedTerms = this.groupTerms(filteredTerms);
 		const sortedGroups = this.getSortedGroups(groupedTerms);
 
-		this.lexiconEntries.innerHTML = sortedGroups.map(group => this.renderGroup(group, groupedTerms[group])).join('');
+		this.lexiconEntries.innerHTML = filteredTerms.length
+			? sortedGroups.map(group => this.renderGroup(group, groupedTerms[group])).join('')
+			: this.renderNoResults();
 		this.updateAlphabetNav(this.sortMode === 'alphabetical' ? filteredTerms : []);
 
 		if (scrollToTop) {
@@ -196,7 +211,7 @@ export class Lexicon {
 
 		return `
 			<section class="lexicon-section grid grid-col-full" id="${sectionId}">
-				<div class="${headingClass}">${escapeHtml(group)}</div>
+				<h2 class="${headingClass}">${escapeHtml(group)}</h2>
 				<div class="term-group grid grid-col-md-8">
 					${groupedItems.map(term => this.renderTerm(term)).join('')}
 				</div>
