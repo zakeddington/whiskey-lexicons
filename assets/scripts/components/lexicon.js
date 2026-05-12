@@ -50,7 +50,7 @@ export class Lexicon {
 
 	handleSearch(event) {
 		this.searchQuery = event.target.value.toLowerCase();
-		this.render();
+		this.render(true);
 	}
 
 	setSortMode(mode) {
@@ -61,7 +61,7 @@ export class Lexicon {
 		}
 
 		this.sortAlphaBtn.classList.toggle('active', mode === 'alphabetical');
-		this.render();
+		this.render(true);
 	}
 
 	setupCategorySelect() {
@@ -77,7 +77,14 @@ export class Lexicon {
 		this.selectedCategory = event.target.value;
 		this.sortMode = this.selectedCategory ? 'category' : 'alphabetical';
 		this.sortAlphaBtn.classList.toggle('active', this.sortMode === 'alphabetical');
-		this.render();
+		this.render(true);
+	}
+
+	scrollResultsToTop() {
+		this.lexiconEntries.scrollIntoView({
+			behavior: 'smooth',
+			block: 'start'
+		});
 	}
 
 	getTermByName(name) {
@@ -159,13 +166,17 @@ export class Lexicon {
 		});
 	}
 
-	render() {
+	render(scrollToTop = false) {
 		const filteredTerms = this.getFilteredTerms();
 		const groupedTerms = this.groupTerms(filteredTerms);
 		const sortedGroups = this.getSortedGroups(groupedTerms);
 
 		this.lexiconEntries.innerHTML = sortedGroups.map(group => this.renderGroup(group, groupedTerms[group])).join('');
 		this.updateAlphabetNav(this.sortMode === 'alphabetical' ? filteredTerms : []);
+
+		if (scrollToTop) {
+			this.scrollResultsToTop();
+		}
 	}
 
 	renderGroup(group, terms) {
