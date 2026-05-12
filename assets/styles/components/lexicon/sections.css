@@ -15,7 +15,7 @@
 	.lexicon-section-title {
 		height: fit-content;
 		position: sticky;
-		top: calc(var(--layout-scroll-offset) + 5rem); /* adjust for height of the sticky search controls */
+		top: var(--layout-scroll-header-lexcion-controls-offset);
 	}
 }
 

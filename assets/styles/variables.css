@@ -65,13 +65,16 @@
 	--layout-inline-padding: clamp(1.5rem, 2vw, 2rem);
 	--layout-header-height: 3.625rem;
 	--layout-header-offset: 2rem;
-	--layout-scroll-offset: calc(var(--layout-header-height) + var(--layout-header-offset));
+	--layout-lexicon-controls-height: 8.5rem;
+	--layout-scroll-header-offset: calc(var(--layout-header-height) + var(--layout-header-offset));
+	--layout-scroll-header-lexcion-controls-offset: calc(var(--layout-header-height) + var(--layout-header-offset) + var(--layout-lexicon-controls-height));
 	--grid-column-count: 12;
 	--grid-template-columns: repeat(var(--grid-column-count), minmax(0, 1fr));
 	--grid-gap: clamp(1.5rem, 3vw, 3rem);
 
 	@media (min-width: 768px) {
 		--layout-header-height: 4.625rem;
+		--layout-lexicon-controls-height: 5rem;
 	}
 }
 

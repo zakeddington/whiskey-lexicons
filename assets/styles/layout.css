@@ -51,5 +51,5 @@
 	padding-bottom: 6rem;
 	padding-left: var(--layout-inline-padding);
 	padding-right: var(--layout-inline-padding);
-	padding-top: var(--layout-scroll-offset);
+	padding-top: var(--layout-scroll-header-offset);
 }

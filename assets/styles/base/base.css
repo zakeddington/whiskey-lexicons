@@ -7,7 +7,7 @@
 
 html {
 	scroll-behavior: smooth;
-	scroll-padding-top: var(--layout-scroll-offset);
+	scroll-padding-top: var(--layout-scroll-header-lexcion-controls-offset);
 }
 
 body {
