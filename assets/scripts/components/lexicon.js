@@ -14,6 +14,8 @@ const CATEGORY_ORDER = [
 	'Tasting & Service'
 ];
 
+const SEARCH_DEBOUNCE_DELAY = 250;
+
 export class Lexicon {
 	constructor() {
 		this.terms = LEXICON_TERMS;
@@ -22,6 +24,7 @@ export class Lexicon {
 		this.categorySelect = document.getElementById('category-select');
 		this.lexiconEntries = document.getElementById('lexicon-entries');
 		this.searchQuery = '';
+		this.searchDebounceTimer = null;
 		this.sortMode = 'alphabetical';
 		this.selectedCategory = '';
 	}
@@ -49,8 +52,13 @@ export class Lexicon {
 	}
 
 	handleSearch(event) {
-		this.searchQuery = event.target.value.toLowerCase();
-		this.render(true);
+		const nextQuery = event.target.value.toLowerCase();
+
+		window.clearTimeout(this.searchDebounceTimer);
+		this.searchDebounceTimer = window.setTimeout(() => {
+			this.searchQuery = nextQuery;
+			this.render(true);
+		}, SEARCH_DEBOUNCE_DELAY);
 	}
 
 	setSortMode(mode) {
