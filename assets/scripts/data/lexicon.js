@@ -92,6 +92,7 @@ export const LEXICON_TERMS = [
 		category: 'Ingredients & Grain',
 		letter: 'B',
 		description: 'One of the oldest varieties of barley in Britain, occasionally used for making malt whisky. These days, it\'s grown mainly in the north of Scotland, including on Orkney and Shetland.',
+		pronunciation: 'BEER BAR-lee',
 		seeAlso: ['Barley', 'Malt', 'Malt Whisky', 'Whisky']
 	},
 	{
@@ -164,6 +165,7 @@ export const LEXICON_TERMS = [
 		category: 'Regions & Terroir',
 		letter: 'C',
 		description: 'A whisky-producing region of Scotland, or a term describing whisky from this region. Historically a major center of distillation, Campbeltown now has only three working distilleries.',
+		pronunciation: 'cam-bul-tun',
 		seeAlso: ['Distillation', 'Whisky']
 	},
 	{
@@ -244,6 +246,7 @@ export const LEXICON_TERMS = [
 		category: 'Distillation',
 		letter: 'C',
 		description: 'A column still design patented by Aeneas Coffey in 1830. It enables continuous distillation, uses heated perforated plates to separate alcohol vapor, and can produce lighter, higher-proof spirit more efficiently than batch pot stills.',
+		pronunciation: 'COFF-ee still',
 		seeAlso: ['Column Still', 'Continuous Still', 'Distillation', 'Pot Still', 'Proof', 'Still']
 	},
 	{
@@ -380,6 +383,7 @@ export const LEXICON_TERMS = [
 		category: 'Malting & Mashing',
 		letter: 'D',
 		description: 'A term used in Scotland for the remnants of grain drained from the wash following fermentation. Often used as animal feed.',
+		pronunciation: 'draft',
 		seeAlso: ['Fermentation', 'Wash']
 	},
 	{
@@ -396,6 +400,7 @@ export const LEXICON_TERMS = [
 		category: 'Maturation & Wood',
 		letter: 'D',
 		description: 'A traditional low-lying, earth-floored warehouse used in Scotland for cask storage. Casks are laid on wooden runners in two or three tiers. Temperature-stable, producing slow maturation. A traditional warehouse, typically found in Scotland and Ireland, built with an earth floor and brick or stone walls.',
+		pronunciation: 'DUN-ij warehouse',
 		seeAlso: ['Cask', 'Maturation', 'Warehouse']
 	},
 	{
@@ -620,6 +625,7 @@ export const LEXICON_TERMS = [
 		category: 'Regions & Terroir',
 		letter: 'I',
 		description: 'A whisky-producing island off the west coast of Scotland, or a term describing whisky from this island. Islay whiskies are generally heavily peated.',
+		pronunciation: 'EYE-luh',
 		seeAlso: ['Whisky']
 	},
 	{
@@ -675,6 +681,7 @@ export const LEXICON_TERMS = [
 		category: 'Distillation',
 		letter: 'L',
 		description: 'The angled pipe that connects the top of a pot still to the condenser. The angle (upward or downward) influences how much reflux occurs, affecting the weight and character of the final spirit. In pot distillation, the conduit connecting the head of the still to the condensing unit.',
+		pronunciation: 'line arm',
 		seeAlso: ['Condenser', 'Distillation', 'Pot Still', 'Reflux', 'Still']
 	},
 	{
@@ -788,6 +795,7 @@ export const LEXICON_TERMS = [
 		category: 'Ingredients & Grain',
 		letter: 'M',
 		description: 'A rare species of Japanese oak (Quercus mongolica) used for whisky maturation. Imparts distinctive notes of incense, sandalwood, and coconut. Very porous and challenging to cooperage, making it expensive and rare.',
+		pronunciation: 'mee-zoo-NAH-rah',
 		seeAlso: ['Cooperage', 'Maturation', 'Oak', 'Whisky']
 	},
 	{
@@ -943,7 +951,8 @@ export const LEXICON_TERMS = [
 		name: 'Poitín',
 		category: 'Styles & Regulations',
 		letter: 'P',
-		description: 'A traditional Irish spirit which translates to "little pot." Historically produced illicitly, it is now regulated by Irish law. It can be produced from a number of ingredients, including grain, potatoes, and sugar beet molasses, and is unaged. Pronounced put-cheen.'
+		description: 'A traditional Irish spirit which translates to "little pot." Historically produced illicitly, it is now regulated by Irish law. It can be produced from a number of ingredients, including grain, potatoes, and sugar beet molasses, and is unaged. Pronounced put-cheen.',
+		pronunciation: 'PUT-cheen'
 	},
 	{
 		id: 'pot-ale',
@@ -974,7 +983,8 @@ export const LEXICON_TERMS = [
 		name: 'Quaich',
 		category: 'Tasting & Service',
 		letter: 'Q',
-		description: 'A traditional, two-handled Scottish drinking cup.'
+		description: 'A traditional, two-handled Scottish drinking cup.',
+		pronunciation: 'quake'
 	},
 	{
 		id: 'quarter-cask',
@@ -1047,6 +1057,7 @@ export const LEXICON_TERMS = [
 		category: 'Malting & Mashing',
 		letter: 'S',
 		description: 'A vessel in which barley is germinated before malting that uses a system of turning screws to agitate the grain. Invented in the late 19th century, it offered a mechanical alternative to hand turning.',
+		pronunciation: 'SAL-uh-din box',
 		seeAlso: ['Barley', 'Malting']
 	},
 	{
@@ -1141,7 +1152,8 @@ export const LEXICON_TERMS = [
 		name: 'Sláinte',
 		category: 'Tasting & Service',
 		letter: 'S',
-		description: 'A Gaelic toast that translates to "health" commonly used in Ireland and Scotland. Pronounced slanj or slan-juh.'
+		description: 'A Gaelic toast that translates to "health" commonly used in Ireland and Scotland. Pronounced slanj or slan-juh.',
+		pronunciation: 'SLAHN-chuh'
 	},
 	{
 		id: 'small-barrel',
