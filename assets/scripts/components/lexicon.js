@@ -143,8 +143,8 @@ export class Lexicon {
 			(
 				term.name.toLowerCase().includes(this.searchQuery) ||
 				term.aliases?.some(alias => alias.toLowerCase().includes(this.searchQuery)) ||
-				term.category.toLowerCase().includes(this.searchQuery) ||
-				term.description.toLowerCase().includes(this.searchQuery)
+				term.category.toLowerCase().includes(this.searchQuery)/* ||
+				term.description.toLowerCase().includes(this.searchQuery)*/
 			)
 		);
 	}
