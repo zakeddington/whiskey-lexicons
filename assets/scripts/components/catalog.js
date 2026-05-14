@@ -64,9 +64,14 @@ function getFillLabel(fill) {
 	return labels[fill] || fill || 'Unlisted';
 }
 
+function hasJournalContent(bottle) {
+	return TASTING_NOTE_FIELDS.some(field => String(bottle.tastingNotes?.[field.name] ?? '').trim());
+}
+
 export class Catalog {
 	constructor() {
 		this.catalogList = document.getElementById('catalog-list');
+		this.catalogCount = document.getElementById('catalog-count');
 		this.modalRoot = document.getElementById('catalog-modal-root');
 		this.bottles = this.loadBottles();
 		this.expandedId = this.bottles[0]?.id || null;
@@ -233,7 +238,7 @@ export class Catalog {
 
 	groupBottles() {
 		return this.bottles.reduce((groups, bottle) => {
-			const key = `${bottle.category || 'Uncategorized'} ${bottle.type ? `• ${bottle.type}` : ''}`;
+			const key = bottle.category || 'Uncategorized';
 			if (!groups[key]) groups[key] = [];
 			groups[key].push(bottle);
 			return groups;
@@ -244,9 +249,17 @@ export class Catalog {
 		const groupedBottles = this.groupBottles();
 		const groupNames = Object.keys(groupedBottles).sort((a, b) => a.localeCompare(b));
 
+		this.renderCount();
 		this.catalogList.innerHTML = groupNames.length
 			? groupNames.map(group => this.renderGroup(group, groupedBottles[group])).join('')
 			: this.renderEmptyState();
+	}
+
+	renderCount() {
+		if (!this.catalogCount) return;
+
+		const count = this.bottles.length;
+		this.catalogCount.textContent = `${count} bottle${count === 1 ? '' : 's'}`;
 	}
 
 	renderEmptyState() {
@@ -263,8 +276,15 @@ export class Catalog {
 		return `
 			<section class="catalog-group">
 				<div class="catalog-group-heading">
-					<p class="text-label">${html(group)}</p>
-					<span class="catalog-count text-body-sm">${sortedBottles.length} bottle${sortedBottles.length === 1 ? '' : 's'}</span>
+					<h2>${html(group)}</h2>
+				</div>
+				<div class="catalog-column-headings" aria-hidden="true">
+					<span>Fill</span>
+					<span>Category/Type</span>
+					<span>Brand/Bottle</span>
+					<span>Specs</span>
+					<span>Cask/Finish/Notes</span>
+					<span>Journal</span>
 				</div>
 				<div class="catalog-bottles">
 					${sortedBottles.map(bottle => this.renderBottle(bottle)).join('')}
@@ -290,6 +310,10 @@ export class Catalog {
 						type="button"
 					>
 						<span class="catalog-fill catalog-fill-${html(bottle.fill)}">${html(getFillLabel(bottle.fill))}</span>
+						<span class="catalog-category-type">
+							<span>${html(bottle.category)}</span>
+							<span>${html(bottle.type)}</span>
+						</span>
 						<span class="catalog-title-block">
 							<span class="catalog-brand">${html(bottle.brand)}</span>
 							<span class="catalog-bottle-name">${html(bottle.bottle)}</span>
@@ -300,7 +324,10 @@ export class Catalog {
 							<span>${html(bottle.proof)} Proof</span>
 						</span>
 						<span class="catalog-cask-summary">${html(bottle.cask)}</span>
-						<span class="catalog-accordion-icon" aria-hidden="true">▼</span>
+						<span class="catalog-journal-status">
+							${this.renderJournalIcon(bottle)}
+							<span class="catalog-accordion-icon" aria-hidden="true">▼</span>
+						</span>
 					</button>
 				</h3>
 
@@ -316,6 +343,28 @@ export class Catalog {
 					</div>
 				</div>
 			</article>
+		`;
+	}
+
+	renderJournalIcon(bottle) {
+		const hasContent = hasJournalContent(bottle);
+		const label = hasContent ? 'Journal notes entered' : 'No journal notes entered';
+		const lines = hasContent
+			? `
+				<path d="M9 10.5h6" />
+				<path d="M9 13.5h6" />
+				<path d="M9 16.5h4" />
+			`
+			: '';
+
+		return `
+			<span class="catalog-journal-icon${hasContent ? ' has-content' : ' is-empty'}" aria-label="${label}" role="img">
+				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+					<path d="M7 3.75h7l4 4v12.5H7z" />
+					<path d="M14 3.75v4h4" />
+					${lines}
+				</svg>
+			</span>
 		`;
 	}
 

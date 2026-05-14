@@ -35,24 +35,20 @@
 					<h1 class="hero-title">Catalog</h1>
 					<p>A working ledger of bottles, production notes, mash bills, and tasting impressions from the private collection.</p>
 				</div>
-				<div class="hero-meta grid-col-full">
-					<div class="meta-item">
-						<p class="text-label">Status</p>
-						<p>Static prototype • Local drafts enabled</p>
-					</div>
-					<div class="meta-item">
-						<p class="text-label">Source</p>
-						<p>Demo bottle data prepared for future Sheet and database import</p>
-					</div>
-				</div>
 			</section>
 
 			<section class="catalog-heading">
-				<div>
-					<p class="text-label">Bottle Library</p>
-					<h2>Library of Spirits</h2>
+				<div class="catalog-controls-row">
+					<div class="catalog-search-container">
+						<input type="search" id="catalog-search" placeholder="Search bottles..." class="catalog-search-input" aria-label="Search bottles">
+					</div>
+					<div class="catalog-filter-controls">
+						<select id="catalog-filter" class="catalog-filter-select" aria-label="Filter catalog">
+							<option value="">Filter</option>
+						</select>
+					</div>
 				</div>
-				<p class="catalog-heading-note text-body-sm">Edits are saved only in this browser until the owner-only database layer is added.</p>
+				<p id="catalog-count" class="catalog-count text-body-sm">0 bottles</p>
 			</section>
 
 			<div id="catalog-list" class="catalog-list">
