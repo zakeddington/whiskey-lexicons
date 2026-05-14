@@ -10,6 +10,12 @@ async function initApp() {
 
 		new Regions().init();
 	}
+
+	if (document.getElementById('catalog-list')) {
+		const { Catalog } = await import('./components/catalog.js');
+
+		new Catalog().init();
+	}
 }
 
 document.addEventListener('DOMContentLoaded', initApp);
