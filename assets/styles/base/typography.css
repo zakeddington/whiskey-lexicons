@@ -127,36 +127,6 @@
 		color: var(--color-form-input-placeholder);
 		font-weight: var(--font-weight-regular);
 	}
-
-	button,
-	.button {
-		background-color: var(--color-button-background-default);
-		border: none;
-		color: var(--color-button-text-default);
-		cursor: pointer;
-		font-family: var(--font-sans-serif);
-		font-size: var(--font-size-body-xs);
-		font-weight: var(--font-weight-bold);
-		letter-spacing: var(--letter-spacing-wide);
-		line-height: var(--line-height-normal);
-		padding: 0.25rem;
-		position: relative;
-		text-decoration: none;
-		text-transform: uppercase;
-		transition: all 0.3s ease;
-
-		&.active {
-			background-color: var(--color-button-background-active);
-			border-bottom: 2px solid var(--color-button-border-active);
-			color: var(--color-button-text-active);
-		}
-
-		&:hover {
-			background-color: var(--color-button-background-hover);
-			color: var(--color-button-text-hover);
-			text-decoration: none;
-		}
-	}
 }
 
 /* Typography Utility Classes */

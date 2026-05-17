@@ -408,7 +408,7 @@ export class Catalog {
 							</div>
 						`).join('')}
 					</dl>
-					<button class="catalog-edit-button button" data-catalog-action="edit" data-bottle-id="${html(bottle.id)}" type="button">Edit Entry</button>
+					<button class="catalog-edit-button button-primary" data-catalog-action="edit" data-bottle-id="${html(bottle.id)}" type="button">Edit Entry</button>
 				</section>
 				<section class="catalog-detail-block">
 					<h4 class="text-body-md text-color-secondary">Mash Bill</h4>
@@ -473,8 +473,8 @@ export class Catalog {
 					</div>
 
 					<footer class="catalog-modal-footer">
-						<button class="button catalog-secondary-button" type="button" data-close-modal>Cancel</button>
-						<button class="button catalog-primary-button" type="submit">Save Changes</button>
+						<button class="button-secondary" type="button" data-close-modal>Cancel</button>
+						<button class="button-primary" type="submit">Save Changes</button>
 					</footer>
 				</form>
 			</div>

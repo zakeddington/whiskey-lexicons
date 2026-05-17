@@ -20,6 +20,8 @@
 
 .catalog-accordion-trigger {
 	align-items: flex-start;
+	background: none;
+	border: 0;
 	color: var(--color-text-primary);
 	display: grid;
 	font-weight: var(--font-weight-regular);

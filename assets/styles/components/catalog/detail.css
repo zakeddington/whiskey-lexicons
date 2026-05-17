@@ -110,9 +110,3 @@
 	color: var(--color-text-secondary);
 	margin: 0;
 }
-
-.catalog-edit-button {
-	border-bottom: 2px solid var(--color-border-accent);
-	margin-top: 1.5rem;
-	padding: 0.25rem 0;
-}
