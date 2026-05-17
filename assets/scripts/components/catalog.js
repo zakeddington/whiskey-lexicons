@@ -332,19 +332,19 @@ export class Catalog {
 					>
 						<span class="catalog-bottle-heading-col catalog-fill-${html(bottle.fill)}">${html(getFillLabel(bottle.fill))}</span>
 						<span class="catalog-bottle-heading-col">
-							<span class="text-heading-sm">${html(bottle.category)}</span>
-							<span class="text-body-md text-color-secondary">${html(bottle.type)}</span>
+							<span class="text-heading-sm text-color-accent">${html(bottle.category)}</span>
+							<span class="text-body-md">${html(bottle.type)}</span>
 						</span>
 						<span class="catalog-bottle-heading-col">
-							<span class="text-heading-md">${html(bottle.brand)}</span>
-							<span class="text-heading-sm text-color-accent">${html(bottle.bottle)}</span>
+							<span class="text-heading-sm text-color-accent">${html(bottle.brand)}</span>
+							<span class="text-body-md">${html(bottle.bottle)}</span>
 						</span>
-						<span class="catalog-bottle-heading-col text-body-xs">
+						<span class="catalog-bottle-heading-col text-color-accent text-body-xs">
 							<span>${html(bottle.age)}</span>
 							<span>${html(bottle.abv)} ABV</span>
 							<span>${html(bottle.proof)} Proof</span>
 						</span>
-						<span class="catalog-bottle-heading-col text-body-sm text-color-secondary">${html(bottle.cask)}</span>
+						<span class="catalog-bottle-heading-col text-body-sm">${html(bottle.cask)}</span>
 						<span class="catalog-journal-status">
 							${this.renderJournalIcon(bottle)}
 							<span class="catalog-accordion-icon" aria-hidden="true">▼</span>
@@ -394,15 +394,15 @@ export class Catalog {
 			{ label: 'Distillery', value: bottle.distillery },
 			{ label: 'Corp. Owner', value: bottle.corpOwner },
 			{ label: 'Origin', value: bottle.origin },
-			{ label: 'Category', value: bottle.category },
-			{ label: 'Type', value: bottle.type },
+			// { label: 'Category', value: bottle.category },
+			// { label: 'Type', value: bottle.type },
 			{ label: 'Char', value: bottle.char }
 		];
 
 		return `
 			<div class="catalog-detail-grid">
 				<section class="catalog-detail-block">
-					<h4 class="text-label">Technical Details</h4>
+					<h4 class="text-body-md text-color-secondary">Brand Details</h4>
 					<dl class="catalog-detail-list">
 						${details.map(item => `
 							<div>
@@ -414,11 +414,11 @@ export class Catalog {
 					<button class="catalog-edit-button button" data-catalog-action="edit" data-bottle-id="${html(bottle.id)}" type="button">Edit Entry</button>
 				</section>
 				<section class="catalog-detail-block">
-					<h4 class="text-label">Mash Bill</h4>
+					<h4 class="text-body-md text-color-secondary">Mash Bill</h4>
 					${this.renderMashBill(bottle.mashBill)}
 				</section>
 				<section class="catalog-detail-block catalog-tasting-block">
-					<h4 class="text-label">Tasting Profile</h4>
+					<h4 class="text-label">Journal</h4>
 					${this.renderTastingNotes(bottle.tastingNotes)}
 				</section>
 			</div>

@@ -3,6 +3,7 @@
 	/* Brown scale */
 	--color-palette-brown-900: #1c1c16;  /* darkest */
 	--color-palette-brown-700: #613F28;  /* medium */
+	--color-palette-brown-700-alpha-25: rgba(97, 63, 40, 0.25);
 	--color-palette-brown-700-alpha-10: rgba(97, 63, 40, 0.1);
 	--color-palette-brown-700-alpha-05: rgba(97, 63, 40, 0.05);
 	--color-palette-brown-400: #712B13;  /* reddish */
@@ -33,6 +34,7 @@
 	--color-text-secondary: var(--color-palette-brown-700);
 	--color-text-accent: var(--color-palette-brown-400);
 	--color-text-disabled: var(--color-palette-brown-400-alpha-10);
+	--color-text-muted: var(--color-palette-brown-700-alpha-25);
 
 	/* Borders */
 	--color-border-primary: var(--color-palette-brown-700-alpha-10);

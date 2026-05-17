@@ -74,7 +74,7 @@
 		font-weight: var(--font-weight-bold);
 		gap: 1rem;
 		letter-spacing: var(--letter-spacing-wide);
-		padding: 0.875rem 1rem;
+		padding: 1rem 2rem;
 		text-transform: uppercase;
 	}
 }
