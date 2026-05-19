@@ -4,6 +4,7 @@
 @import "variables.css" layer(variables);
 @import "base/base.css" layer(base);
 @import "base/grid.css" layer(base);
+@import "base/icons.css" layer(base);
 @import "base/typography.css";
 @import "base/buttons.css";
 @import "layout.css" layer(layout);

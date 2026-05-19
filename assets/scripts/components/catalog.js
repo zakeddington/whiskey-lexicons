@@ -18,17 +18,19 @@ const SPEC_FIELDS = [
 	{ name: 'age', label: 'Age' },
 	{ name: 'abv', label: 'ABV' },
 	{ name: 'proof', label: 'Proof' },
-	{ name: 'char', label: 'Char Level' },
+	{ name: 'char', label: 'Char Level', icon: 'barrel' },
 	{ name: 'cask', label: 'Cask / Finish / Notes', multiline: true }
 ];
 
+const SPRITE_URL = '/assets/images/icon-sprite.svg';
+
 const MASH_BILL_FIELDS = [
-	{ name: 'corn', label: 'Corn' },
-	{ name: 'barley', label: 'Barley' },
-	{ name: 'maltedBarley', label: 'Malted Barley' },
-	{ name: 'rye', label: 'Rye' },
-	{ name: 'maltedRye', label: 'Malted Rye' },
-	{ name: 'wheat', label: 'Wheat' }
+	{ name: 'corn', label: 'Corn', icon: 'corn' },
+	{ name: 'barley', label: 'Barley', icon: 'barley' },
+	{ name: 'maltedBarley', label: 'Malted Barley', icon: 'barley' },
+	{ name: 'rye', label: 'Rye', icon: 'rye' },
+	{ name: 'maltedRye', label: 'Malted Rye', icon: 'rye' },
+	{ name: 'wheat', label: 'Wheat', icon: 'wheat' }
 ];
 
 const TASTING_NOTE_FIELDS = [
@@ -370,21 +372,10 @@ export class Catalog {
 	renderJournalIcon(bottle) {
 		const hasContent = hasJournalContent(bottle);
 		const label = hasContent ? 'Journal notes entered' : 'No journal notes entered';
-		const lines = hasContent
-			? `
-				<path d="M9 10.5h6" />
-				<path d="M9 13.5h6" />
-				<path d="M9 16.5h4" />
-			`
-			: '';
 
 		return `
 			<span class="catalog-journal-icon${hasContent ? ' has-content' : ' is-empty'}" aria-label="${label}" role="img">
-				<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-					<path d="M7 3.75h7l4 4v12.5H7z" />
-					<path d="M14 3.75v4h4" />
-					${lines}
-				</svg>
+				<svg class="svg-icon" aria-hidden="true" focusable="false"><use href="${SPRITE_URL}#${hasContent ? 'icon-file-text' : 'icon-file'}"></use></svg>
 			</span>
 		`;
 	}
@@ -408,7 +399,6 @@ export class Catalog {
 							</div>
 						`).join('')}
 					</dl>
-					<button class="catalog-edit-button button-primary" data-catalog-action="edit" data-bottle-id="${html(bottle.id)}" type="button">Edit Entry</button>
 				</section>
 				<section class="catalog-detail-block">
 					<h4 class="text-body-md text-color-secondary">Mash Bill</h4>
@@ -418,6 +408,9 @@ export class Catalog {
 					<h4 class="text-label">Journal</h4>
 					${this.renderTastingNotes(bottle.tastingNotes)}
 				</section>
+				<div class="catalog-detail-actions">
+					<button class="catalog-edit-button button-primary" data-catalog-action="edit" data-bottle-id="${html(bottle.id)}" type="button">Edit Entry</button>
+				</div>
 			</div>
 		`;
 	}
@@ -427,11 +420,13 @@ export class Catalog {
 			<dl class="catalog-detail-list is-horizontal">
 				${MASH_BILL_FIELDS.map(field => `
 					<div class="catalog-detail-list-item ${Number(mashBill?.[field.name]) === 0 ? 'is-muted' : ''}">
+						<svg class="svg-icon mash-bill-icon" aria-hidden="true" focusable="false"><use href="${SPRITE_URL}#icon-${field.icon}"></use></svg>
 						<dt>${html(field.label)}</dt>
 						<dd>${html(mashBill?.[field.name] ?? 0)}%</dd>
 					</div>
 				`).join('')}
 				<div class="catalog-detail-list-item ${char === 'N/A' ? 'is-muted' : ''}">
+					<svg class="svg-icon mash-bill-icon" aria-hidden="true" focusable="false"><use href="${SPRITE_URL}#icon-barrel"></use></svg>
 					<dt>Char Level</dt>
 					<dd>${html(char)}</dd>
 				</div>

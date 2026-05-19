@@ -42,14 +42,19 @@
 
 .catalog-detail-list-item {
 	border-top: 1px solid var(--color-border-primary);
+	color: var(--color-text-secondary);
 	display: grid;
 	gap: 0.25rem;
 	padding-top: 0.5rem;
 
+	&.is-muted {
+		color: var(--color-text-muted);
+	}
+
 	.is-horizontal & {
 		align-items: center;
 		border-top: 0;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: auto 1fr auto;
 		padding-top: 0;
 
 		/* Separate Char from mash bill */
@@ -59,6 +64,12 @@
 			padding-top: 0.5rem;
 		}
 	}
+}
+
+.mash-bill-icon {
+	flex-shrink: 0;
+	height: 1.25rem;
+	width: 1.25rem;
 }
 
 .catalog-detail-list dt {
@@ -109,4 +120,13 @@
 .catalog-tasting-notes p {
 	color: var(--color-text-secondary);
 	margin: 0;
+}
+
+.catalog-detail-actions {
+	display: flex;
+	justify-content: flex-end;
+
+	@media (min-width: 768px) {
+		grid-column: 1 / -1;
+	}
 }

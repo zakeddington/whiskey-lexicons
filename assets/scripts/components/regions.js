@@ -123,7 +123,7 @@ export class Regions {
 		return `
 			<div class="region-sidebar-block theme-accent">
 				<h3 class="sidebar-title text-label">
-					<img alt="Legal Icon" class="sidebar-title-icon" src="assets/images/icon-legal.svg" />
+					<svg class="svg-icon sidebar-title-icon" aria-hidden="true" focusable="false"><use href="/assets/images/icon-sprite.svg#icon-gavel"></use></svg>
 					LEGAL FRAMEWORK
 				</h3>
 				<ul class="sidebar-list text-body-sm">
