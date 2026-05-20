@@ -124,3 +124,43 @@
 	min-height: 0;
 	overflow: hidden;
 }
+
+.catalog-fill-icon {
+	align-items: center;
+	aspect-ratio: 1/1;
+	background: var(--color-background-tertiary);
+	border-radius: 50%;
+	color: var(--color-bottle-fill-text);
+	display: inline-flex;
+	font-size: 1.375rem;
+	justify-content: center;
+	width: 1.875rem;
+}
+
+.catalog-fill-icon svg {
+	display: block;
+	height: 1em;
+	width: 1em;
+}
+
+.catalog-fill-plenty {
+	background: var(--color-bottle-fill-plenty);
+}
+
+.catalog-fill-average {
+	background: var(--color-bottle-fill-average);
+}
+
+.catalog-fill-low {
+	background: var(--color-bottle-fill-low);
+}
+
+.catalog-fill-extremely-low {
+	background: var(--color-bottle-fill-text);
+	border: 2px solid var(--color-bottle-fill-x-low);
+	color: var(--color-bottle-fill-x-low);
+}
+
+.catalog-fill-bottle-kill {
+	background: var(--color-bottle-fill-x);
+}

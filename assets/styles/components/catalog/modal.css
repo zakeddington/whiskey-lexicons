@@ -134,7 +134,7 @@
 	text-transform: uppercase;
 }
 
-.catalog-field input,
+.catalog-field input:not([type="radio"]),
 .catalog-field textarea {
 	background-color: var(--color-background-secondary);
 	border-bottom: 2px solid var(--color-border-accent);
@@ -143,6 +143,30 @@
 
 .catalog-field textarea {
 	resize: vertical;
+}
+
+.catalog-field-radio {
+	grid-column: 1 / -1;
+}
+
+.catalog-radio-group {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.25rem 1.5rem;
+}
+
+.catalog-radio-option {
+	align-items: center;
+	cursor: pointer;
+	display: inline-flex;
+	gap: 0.4rem;
+}
+
+.catalog-radio-option input[type="radio"] {
+	accent-color: var(--color-border-accent);
+	cursor: pointer;
+	height: 1rem;
+	width: 1rem;
 }
 
 .catalog-modal-footer {

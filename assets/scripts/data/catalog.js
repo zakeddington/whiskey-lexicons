@@ -30,7 +30,7 @@ export const CATALOG_BOTTLES = [
 	},
 	{
 		id: '0043',
-		fill: 'low',
+		fill: 'average',
 		category: 'Scotch',
 		type: 'Single Malt',
 		brand: 'Lagavulin',
@@ -88,7 +88,7 @@ export const CATALOG_BOTTLES = [
 	},
 	{
 		id: '0045',
-		fill: 'plenty',
+		fill: 'extremely-low',
 		category: 'Scotch',
 		type: 'Single Malt',
 		brand: 'Ardbeg',
@@ -117,7 +117,7 @@ export const CATALOG_BOTTLES = [
 	},
 	{
 		id: '0046',
-		fill: 'low',
+		fill: 'bottle-kill',
 		category: 'Scotch',
 		type: 'Single Malt',
 		brand: 'Lagavulin',

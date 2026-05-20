@@ -13,8 +13,24 @@ const IDENTITY_FIELDS = [
 	{ name: 'type', label: 'Type' }
 ];
 
+const FILL_OPTIONS = [
+	{ value: 'plenty', label: 'Plenty' },
+	{ value: 'average', label: 'Average' },
+	{ value: 'low', label: 'Low' },
+	{ value: 'extremely-low', label: 'Extremely Low' },
+	{ value: 'bottle-kill', label: 'Bottle Kill' }
+];
+
+const FILL_ICON_CONFIG = {
+	'plenty': { icon: 'water-drop', colorClass: 'catalog-fill-plenty' },
+	'average': { icon: 'water-drop', colorClass: 'catalog-fill-average' },
+	'low': { icon: 'water-drop', colorClass: 'catalog-fill-low' },
+	'extremely-low': { icon: 'exclamation-mark', colorClass: 'catalog-fill-extremely-low' },
+	'bottle-kill': { icon: 'drop-slash', colorClass: 'catalog-fill-bottle-kill' }
+};
+
 const SPEC_FIELDS = [
-	{ name: 'fill', label: 'Fill' },
+	{ name: 'fill', label: 'Fill', options: FILL_OPTIONS },
 	{ name: 'age', label: 'Age' },
 	{ name: 'abv', label: 'ABV' },
 	{ name: 'proof', label: 'Proof' },
@@ -57,13 +73,8 @@ function getMashBillValue(formData, key) {
 }
 
 function getFillLabel(fill) {
-	const labels = {
-		plenty: 'Plenty',
-		low: 'Low',
-		empty: 'Empty'
-	};
-
-	return labels[fill] || fill || 'Unlisted';
+	const option = FILL_OPTIONS.find(o => o.value === fill);
+	return option ? option.label : fill || 'Unlisted';
 }
 
 function hasJournalContent(bottle) {
@@ -332,7 +343,7 @@ export class Catalog {
 						id="${html(triggerId)}"
 						type="button"
 					>
-						<span class="catalog-bottle-heading-col catalog-fill-${html(bottle.fill)}">${html(getFillLabel(bottle.fill))}</span>
+						<span class="catalog-bottle-heading-col">${this.renderFillIcon(bottle.fill)}</span>
 						<span class="catalog-bottle-heading-col">
 							<span class="text-heading-sm text-color-accent">${html(bottle.category)}</span>
 							<span class="text-body-md">${html(bottle.type)}</span>
@@ -366,6 +377,17 @@ export class Catalog {
 					</div>
 				</div>
 			</article>
+		`;
+	}
+
+	renderFillIcon(fill) {
+		const { icon, colorClass } = FILL_ICON_CONFIG[fill] || {};
+		const label = getFillLabel(fill);
+		if (!icon) return `<span>${html(label)}</span>`;
+		return `
+			<span class="catalog-fill-icon ${html(colorClass)}" aria-label="${html(label)}" role="img">
+				<svg class="svg-icon" aria-hidden="true" focusable="false"><use href="${SPRITE_URL}#icon-${html(icon)}"></use></svg>
+			</span>
 		`;
 	}
 
@@ -518,6 +540,10 @@ export class Catalog {
 	}
 
 	renderField(field, value) {
+		if (field.options) {
+			return this.renderRadioField(field, value);
+		}
+
 		const fieldId = `catalog-field-${field.name.replace(/\./g, '-')}`;
 		const input = field.multiline
 			? `<textarea id="${html(fieldId)}" name="${html(field.name)}" rows="4">${html(value)}</textarea>`
@@ -528,6 +554,23 @@ export class Catalog {
 				<span>${html(field.label)}</span>
 				${input}
 			</label>
+		`;
+	}
+
+	renderRadioField(field, value) {
+		const labelId = `catalog-field-${field.name.replace(/\./g, '-')}-label`;
+		return `
+			<div class="catalog-field catalog-field-radio" role="group" aria-labelledby="${html(labelId)}">
+				<span id="${html(labelId)}">${html(field.label)}</span>
+				<div class="catalog-radio-group">
+					${field.options.map(option => `
+						<label class="catalog-radio-option">
+							<input type="radio" name="${html(field.name)}" value="${html(option.value)}"${value === option.value ? ' checked' : ''}>
+							<span>${html(option.label)}</span>
+						</label>
+					`).join('')}
+				</div>
+			</div>
 		`;
 	}
 }

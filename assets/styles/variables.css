@@ -16,6 +16,11 @@
 	--color-palette-cream-200: #ece8de;  /* light */
 	--color-palette-cream-300: #e6e2d8;  /* medium */
 
+	/* Bottle fill */
+	--color-palette-green: #2e9432;
+	--color-palette-yellow: #ffc107;
+	--color-palette-red: #e61303;
+
 	/* Neutral scale */
 	--color-palette-white: #ffffff; /* accent theme text */
 	--color-palette-transparent: transparent;
@@ -26,6 +31,7 @@
 	/* Backgrounds */
 	--color-background-primary: var(--color-palette-cream-50);
 	--color-background-secondary: var(--color-palette-brown-700-alpha-05);
+	--color-background-tertiary: var(--color-palette-cream-50-alpha-50);
 	--color-background-header: var(--color-palette-cream-200);
 	--color-background-tag: var(--color-palette-brown-700-alpha-10);
 
@@ -83,6 +89,14 @@
 	--color-form-input-background: var(--color-palette-brown-700-alpha-10);
 	--color-form-input-text: var(--color-palette-brown-400);
 	--color-form-input-placeholder: var(--color-palette-brown-700);
+
+	/* Bottle fill */
+	--color-bottle-fill-text: var(--color-palette-cream-50);
+	--color-bottle-fill-plenty: var(--color-palette-green);
+	--color-bottle-fill-average: var(--color-palette-yellow);
+	--color-bottle-fill-low: var(--color-palette-red);
+	--color-bottle-fill-x-low: var(--color-palette-red);
+	--color-bottle-fill-x: var(--color-palette-brown-900);
 }
 
 /* Layout Grid */
