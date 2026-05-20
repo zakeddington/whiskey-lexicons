@@ -360,7 +360,9 @@ export class Catalog {
 						<span class="catalog-bottle-heading-col text-body-sm">${html(bottle.cask)}</span>
 						<span class="catalog-journal-status">
 							${this.renderJournalIcon(bottle)}
-							<span class="catalog-accordion-icon" aria-hidden="true">▼</span>
+							<span class="catalog-accordion-icon" aria-hidden="true">
+								<svg class="svg-icon" aria-hidden="true" focusable="false"><use href="${SPRITE_URL}#icon-caret-down"></use></svg>
+							</span>
 						</span>
 					</button>
 				</h3>

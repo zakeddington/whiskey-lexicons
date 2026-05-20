@@ -90,6 +90,11 @@
 	line-height: 1;
 	transition: transform 0.25s ease;
 	width: 2rem;
+
+	.svg-icon {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
 }
 
 .region-section.is-open .region-accordion-icon {

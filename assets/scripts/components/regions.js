@@ -2,6 +2,8 @@ import { REGIONS } from '../data/regions.js';
 import { escapeHtml } from '../utils.js';
 import { SubRegionMapSwitcher } from './sub-region-map-switcher.js';
 
+const SPRITE_URL = '/assets/images/icon-sprite.svg';
+
 export class Regions {
 	constructor() {
 		this.regions = REGIONS;
@@ -80,7 +82,9 @@ export class Regions {
 								<span class="region-title-text">${escapeHtml(region.name)}</span>
 								${this.renderKeyRegulationsSummary(region.keyRegulationsSummary)}
 							</span>
-							<span class="region-accordion-icon" aria-hidden="true">▼</span>
+							<span class="region-accordion-icon" aria-hidden="true">
+								<svg class="svg-icon" aria-hidden="true" focusable="false"><use href="${SPRITE_URL}#icon-caret-down"></use></svg>
+							</span>
 						</button>
 					</h2>
 				</header>

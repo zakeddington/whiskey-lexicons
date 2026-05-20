@@ -98,6 +98,11 @@
 	@media (prefers-reduced-motion: reduce) {
 		transition: none;
 	}
+
+	.svg-icon {
+		height: 1.5rem;
+		width: 1.5rem;
+	}
 }
 
 .catalog-bottle.is-open .catalog-accordion-icon {
