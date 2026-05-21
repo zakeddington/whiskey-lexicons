@@ -30,6 +30,7 @@ const FILL_ICON_CONFIG = {
 };
 
 const SPEC_FIELDS = [
+	{ name: 'fill', label: 'Fill', options: FILL_OPTIONS },
 	{ name: 'age', label: 'Age' },
 	{ name: 'abv', label: 'ABV' },
 	{ name: 'proof', label: 'Proof' },
@@ -49,7 +50,6 @@ const MASH_BILL_FIELDS = [
 ];
 
 const TASTING_NOTE_FIELDS = [
-	{ name: 'fill', label: 'Fill', options: FILL_OPTIONS },
 	{ name: 'nose', label: 'Nose', icon: 'icon-wind' },
 	{ name: 'palate', label: 'Palate', icon: 'icon-wine' },
 	{ name: 'finish', label: 'Finish', icon: 'icon-clock-countdown' }
