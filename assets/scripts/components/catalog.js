@@ -6,11 +6,11 @@ const STORAGE_KEY = 'caskAndQuill.catalogDrafts.v1';
 const IDENTITY_FIELDS = [
 	{ name: 'brand', label: 'Brand' },
 	{ name: 'bottle', label: 'Bottle' },
+	{ name: 'category', label: 'Category' },
+	{ name: 'type', label: 'Type' },
 	{ name: 'distillery', label: 'Distillery' },
 	{ name: 'corpOwner', label: 'Corp. Owner' },
 	{ name: 'origin', label: 'Origin' },
-	{ name: 'category', label: 'Category' },
-	{ name: 'type', label: 'Type' }
 ];
 
 const FILL_OPTIONS = [
@@ -30,7 +30,6 @@ const FILL_ICON_CONFIG = {
 };
 
 const SPEC_FIELDS = [
-	{ name: 'fill', label: 'Fill', options: FILL_OPTIONS },
 	{ name: 'age', label: 'Age' },
 	{ name: 'abv', label: 'ABV' },
 	{ name: 'proof', label: 'Proof' },
@@ -50,6 +49,7 @@ const MASH_BILL_FIELDS = [
 ];
 
 const TASTING_NOTE_FIELDS = [
+	{ name: 'fill', label: 'Fill', options: FILL_OPTIONS },
 	{ name: 'nose', label: 'Nose', icon: 'icon-wind' },
 	{ name: 'palate', label: 'Palate', icon: 'icon-wine' },
 	{ name: 'finish', label: 'Finish', icon: 'icon-clock-countdown' }
@@ -484,7 +484,9 @@ export class Catalog {
 							<p class="text-label">Bottle Log ID: #${html(bottle.id)}</p>
 							<h2 id="catalog-modal-title">Edit Bottle Entry</h2>
 						</div>
-						<button class="catalog-modal-close" type="button" data-close-modal aria-label="Close edit modal">×</button>
+						<button class="catalog-modal-close" type="button" data-close-modal aria-label="Close edit modal">
+							<svg class="svg-icon" aria-hidden="true" focusable="false"><use href="${SPRITE_URL}#icon-x"></use></svg>
+						</button>
 					</header>
 
 					<div class="catalog-modal-body">
@@ -517,7 +519,7 @@ export class Catalog {
 	renderMashBillFieldset(bottle) {
 		return `
 			<fieldset class="catalog-fieldset">
-				<legend>Mash Bill %</legend>
+				<legend>Mash Bill</legend>
 				<div class="catalog-form-grid catalog-form-grid-compact">
 					${MASH_BILL_FIELDS.map(field => this.renderField({
 						...field,
@@ -555,7 +557,7 @@ export class Catalog {
 			: `<input id="${html(fieldId)}" name="${html(field.name)}" type="${html(field.type || 'text')}" value="${html(value)}">`;
 
 		return `
-			<label class="catalog-field" for="${html(fieldId)}">
+			<label class="catalog-field ${html(fieldId)}" for="${html(fieldId)}">
 				<span>${html(field.label)}</span>
 				${input}
 			</label>

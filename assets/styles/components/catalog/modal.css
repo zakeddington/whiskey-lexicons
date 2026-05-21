@@ -29,8 +29,8 @@
 	box-shadow: 0 1.5rem 4rem rgba(28, 28, 22, 0.25);
 	display: flex;
 	flex-direction: column;
-	max-height: min(90dvh, 56rem);
-	max-width: 64rem;
+	max-height: 90dvh;
+	max-width: 90dvw;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
@@ -105,7 +105,7 @@
 	grid-template-columns: 1fr;
 
 	@media (min-width: 768px) {
-		grid-template-columns: repeat(3, minmax(0, 1fr));
+		grid-template-columns: repeat(4, minmax(0, 1fr));
 	}
 }
 
@@ -136,8 +136,6 @@
 
 .catalog-field input:not([type="radio"]),
 .catalog-field textarea {
-	background-color: var(--color-background-secondary);
-	border-bottom: 2px solid var(--color-border-accent);
 	color: var(--color-text-primary);
 }
 
@@ -145,7 +143,8 @@
 	resize: vertical;
 }
 
-.catalog-field-radio {
+.catalog-field-radio,
+.catalog-field-cask {
 	grid-column: 1 / -1;
 }
 
